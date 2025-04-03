@@ -1,5 +1,20 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F17134 `(v ~T0 @X0 0 tf ]
+"18 ir_servo.c
+[; ;ir_servo.c: 18: static volatile ir_servo_state_t irServoState = IR_STATE_IDLE;
+[c E36 0 1 2 3 4 5 .. ]
+[n E36 . IR_STATE_IDLE IR_STATE_WEIGHT_READ IR_STATE_REJECT_STEP1 IR_STATE_REJECT_STEP2 IR_STATE_REJECT_STEP3 IR_STATE_COMPLETE  ]
+"101 ./mcc_generated_files/system/../pwm/pwm1_16bit.h
+[; ;./mcc_generated_files/system/../pwm/pwm1_16bit.h: 101: void PWM1_16BIT_LoadBufferRegisters(void);
+[v _PWM1_16BIT_LoadBufferRegisters `(v ~T0 @X0 0 ef ]
+"83
+[; ;./mcc_generated_files/system/../pwm/pwm1_16bit.h: 83: void PWM1_16BIT_SetSlice1Output1DutyCycleRegister(uint16_t value);
+[v _PWM1_16BIT_SetSlice1Output1DutyCycleRegister `(v ~T0 @X0 0 ef1`us ]
+"91
+[; ;./mcc_generated_files/system/../pwm/pwm1_16bit.h: 91: void PWM1_16BIT_SetSlice1Output2DutyCycleRegister(uint16_t value);
+[v _PWM1_16BIT_SetSlice1Output2DutyCycleRegister `(v ~T0 @X0 0 ef1`us ]
+"188 ./mcc_generated_files/system/../timer/tmr0.h
+[; ;./mcc_generated_files/system/../timer/tmr0.h: 188: void TMR0_Stop(void);
+[v _TMR0_Stop `(v ~T0 @X0 0 ef ]
 "23436 C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h
 [; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 23436: extern volatile unsigned char TMR0H __attribute__((address(0x319)));
 [v _TMR0H `Vuc ~T0 @X0 0 e@793 ]
@@ -9,10 +24,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23814
 [; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 23814: extern volatile unsigned char T0CON1 __attribute__((address(0x31B)));
 [v _T0CON1 `Vuc ~T0 @X0 0 e@795 ]
-"39 mcc_generated_files/timer/src/tmr0.c
-[; ;mcc_generated_files/timer/src/tmr0.c: 39: static void TMR0_DefaultCallback(void);
-[v _TMR0_DefaultCallback `(v ~T0 @X0 0 sf ]
-"48152 C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h
+"23690
+[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 23690: extern volatile unsigned char T0CON0 __attribute__((address(0x31A)));
+[v _T0CON0 `Vuc ~T0 @X0 0 e@794 ]
+"48152
 [; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 48152:     struct {
 [s S2256 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S2256 . SPI1RXIF SPI1TXIF SPI1IF TMR2IF TMR1IF TMR1GIF CCP1IF TMR0IF ]
@@ -34,35 +49,59 @@ Version 4.0 HI-TECH Software Intermediate Code
 "47289
 [; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 47289: extern volatile PIE3bits_t PIE3bits __attribute__((address(0x4A1)));
 [v _PIE3bits `VS2223 ~T0 @X0 0 e@1185 ]
-"23690
-[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 23690: extern volatile unsigned char T0CON0 __attribute__((address(0x31A)));
-[v _T0CON0 `Vuc ~T0 @X0 0 e@794 ]
-"23696
-[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 23696:     struct {
-[s S1137 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1137 . OUTPS MD16 OUT . EN ]
-"23703
-[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 23703:     struct {
-[s S1138 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1138 . T0OUTPS T0MD16 T0OUT . T0EN ]
-"23710
-[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 23710:     struct {
-[s S1139 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1139 . OUTPS0 OUTPS1 OUTPS2 OUTPS3 T016BIT ]
-"23717
-[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 23717:     struct {
-[s S1140 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1140 . T0OUTPS0 T0OUTPS1 T0OUTPS2 T0OUTPS3 ]
-"23695
-[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 23695: typedef union {
-[u S1136 `S1137 1 `S1138 1 `S1139 1 `S1140 1 ]
-[n S1136 . . . . . ]
-"23724
-[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 23724: extern volatile T0CON0bits_t T0CON0bits __attribute__((address(0x31A)));
-[v _T0CON0bits `VS1136 ~T0 @X0 0 e@794 ]
-[v F17153 `(v ~T0 @X0 0 tf ]
-[v F17155 `(v ~T0 @X0 0 tf ]
-[v F17157 `(v ~T0 @X0 0 tf ]
+"179 ./mcc_generated_files/system/../timer/tmr0.h
+[; ;./mcc_generated_files/system/../timer/tmr0.h: 179: void TMR0_Start(void);
+[v _TMR0_Start `(v ~T0 @X0 0 ef ]
+"117 C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\stdio.h: 117: int printf(const char *restrict, ...);
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"206 ./mcc_generated_files/system/../adc/adc.h
+[; ;./mcc_generated_files/system/../adc/adc.h: 206: void ADC_SampleCapacitorDischarge(void);
+[v _ADC_SampleCapacitorDischarge `(v ~T0 @X0 0 ef ]
+"108 ir_servo.c
+[; ;ir_servo.c: 108:     itemWeight = ADC_ChannelSelectAndConvert(ADC_CHANNEL_ANA0);
+[c E17730 59 60 61 62 63 0 .. ]
+[n E17730 . ADC_CHANNEL_VSS ADC_CHANNEL_TEMP ADC_CHANNEL_DAC1 ADC_CHANNEL_FVR_BUFFER1 ADC_CHANNEL_FVR_BUFFER2 ADC_CHANNEL_ANA0  ]
+"181 ./mcc_generated_files/system/../adc/adc.h
+[; ;./mcc_generated_files/system/../adc/adc.h: 181: adc_result_t ADC_ChannelSelectAndConvert(adc_channel_t channel);
+[v _ADC_ChannelSelectAndConvert `(s ~T0 @X0 0 ef1`E17730 ]
+"29 C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\string.h
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\string.h: 29: void *memset (void *, int, size_t);
+[v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
+"121 C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"162 ./nrf24_lib.h
+[; ;./nrf24_lib.h: 162: void nrf24_send_rf_data(unsigned char *buffer);
+[v _nrf24_send_rf_data `(v ~T0 @X0 0 ef1`*uc ]
+"48322 C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h
+[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 48322:     struct {
+[s S2262 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2262 . INT1IF CLC2IF CWG1IF NCO1IF DMA2SCNTIF DMA2DCNTIF DMA2ORIF DMA2AIF ]
+"48321
+[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 48321: typedef union {
+[u S2261 `S2262 1 ]
+[n S2261 . . ]
+"48333
+[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 48333: extern volatile PIR6bits_t PIR6bits __attribute__((address(0x4B4)));
+[v _PIR6bits `VS2261 ~T0 @X0 0 e@1204 ]
+"45663
+[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 45663: extern volatile unsigned char PWM1PRH __attribute__((address(0x464)));
+[v _PWM1PRH `Vuc ~T0 @X0 0 e@1124 ]
+"45643
+[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 45643: extern volatile unsigned char PWM1PRL __attribute__((address(0x463)));
+[v _PWM1PRL `Vuc ~T0 @X0 0 e@1123 ]
+[v F17711 `(v ~T0 @X0 0 tf ]
+"282 ./mcc_generated_files/system/../system/interrupt.h
+[; ;./mcc_generated_files/system/../system/interrupt.h: 282: void INT1_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _INT1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F17711 ]
+[v F17902 `(v ~T0 @X0 0 tf ]
+"264 ./mcc_generated_files/system/../timer/tmr0.h
+[; ;./mcc_generated_files/system/../timer/tmr0.h: 264: void TMR0_PeriodMatchCallbackRegister(void (* CallbackHandler)(void));
+[v _TMR0_PeriodMatchCallbackRegister `(v ~T0 @X0 0 ef1`*F17902 ]
+"30 ./ir_servo.h
+[; ;./ir_servo.h: 30: static uint16_t totalPeriod;
+[v _totalPeriod `us ~T0 @X0 1 s ]
 "328 C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h
 [; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 328: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2634,286 +2673,575 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51171
 [; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 51171: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"38 mcc_generated_files/timer/src/tmr0.c
-[; ;mcc_generated_files/timer/src/tmr0.c: 38: static void (*TMR0_PeriodMatchCallback)(void);
-[v _TMR0_PeriodMatchCallback `*F17134 ~T0 @X0 1 s ]
-"45
-[; ;mcc_generated_files/timer/src/tmr0.c: 45: void TMR0_Initialize(void)
-[v _TMR0_Initialize `(v ~T0 @X0 1 ef ]
-"46
-[; ;mcc_generated_files/timer/src/tmr0.c: 46: {
+"32 ./nrf24_lib.h
+[; ;./nrf24_lib.h: 32: unsigned char ADDRESS_DATA_RXPIPE0[5] = {0x00,0x00,0x00,0x00,0x01};
+[v _ADDRESS_DATA_RXPIPE0 `uc ~T0 @X0 -> 5 `i e ]
+[i _ADDRESS_DATA_RXPIPE0
+:U ..
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+..
+]
+"33
+[; ;./nrf24_lib.h: 33: unsigned char ADDRESS_DATA_TXPIPE0[5] = {0x00,0x00,0x00,0x00,0x01};
+[v _ADDRESS_DATA_TXPIPE0 `uc ~T0 @X0 -> 5 `i e ]
+[i _ADDRESS_DATA_TXPIPE0
+:U ..
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+..
+]
+"18 ir_servo.c
+[; ;ir_servo.c: 18: static volatile ir_servo_state_t irServoState = IR_STATE_IDLE;
+[v _irServoState `VE36 ~T0 @X0 1 s ]
+[i _irServoState
+. `E36 0
+]
+"21
+[; ;ir_servo.c: 21: static volatile uint8_t itemNbr = 0;
+[v _itemNbr `Vuc ~T0 @X0 1 s ]
+[i _itemNbr
+-> -> 0 `i `uc
+]
+"24
+[; ;ir_servo.c: 24: static volatile int16_t itemWeight = 0;
+[v _itemWeight `Vs ~T0 @X0 1 s ]
+[i _itemWeight
+-> -> 0 `i `s
+]
+"27
+[; ;ir_servo.c: 27: static uint16_t weightMin = 10;
+[v _weightMin `us ~T0 @X0 1 s ]
+[i _weightMin
+-> -> 10 `i `us
+]
+"28
+[; ;ir_servo.c: 28: static uint16_t weightMax = 2600;
+[v _weightMax `us ~T0 @X0 1 s ]
+[i _weightMax
+-> -> 2600 `i `us
+]
+"31
+[; ;ir_servo.c: 31: static unsigned char bufferTX[32];
+[v _bufferTX `uc ~T0 @X0 -> 32 `i s ]
+"38
+[; ;ir_servo.c: 38: void reload_PWM1_dutyCycle(double slice1, double slice2)
+[v _reload_PWM1_dutyCycle `(v ~T0 @X0 1 ef2`d`d ]
+"39
+[; ;ir_servo.c: 39: {
 {
-[e :U _TMR0_Initialize ]
+[e :U _reload_PWM1_dutyCycle ]
+"38
+[; ;ir_servo.c: 38: void reload_PWM1_dutyCycle(double slice1, double slice2)
+[v _slice1 `d ~T0 @X0 1 r1 ]
+[v _slice2 `d ~T0 @X0 1 r2 ]
+"39
+[; ;ir_servo.c: 39: {
 [f ]
-"47
-[; ;mcc_generated_files/timer/src/tmr0.c: 47:     TMR0H = 0xE;
-[e = _TMR0H -> -> 14 `i `uc ]
-"48
-[; ;mcc_generated_files/timer/src/tmr0.c: 48:     TMR0L = 0x0;
-[e = _TMR0L -> -> 0 `i `uc ]
-"50
-[; ;mcc_generated_files/timer/src/tmr0.c: 50:     T0CON1 = (4 << 0x5)
-[e = _T0CON1 -> | | << -> 4 `i -> 5 `i << -> 4 `i -> 0 `i << -> 1 `i -> 4 `i `uc ]
-"54
-[; ;mcc_generated_files/timer/src/tmr0.c: 54:     TMR0_PeriodMatchCallback = TMR0_DefaultCallback;
-[e = _TMR0_PeriodMatchCallback &U _TMR0_DefaultCallback ]
-"56
-[; ;mcc_generated_files/timer/src/tmr0.c: 56:     PIR3bits.TMR0IF = 0;
-[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
-"57
-[; ;mcc_generated_files/timer/src/tmr0.c: 57:     PIE3bits.TMR0IE = 1;
-[e = . . _PIE3bits 0 7 -> -> 1 `i `uc ]
-"59
-[; ;mcc_generated_files/timer/src/tmr0.c: 59:     T0CON0 = (15 << 0x0)
-[e = _T0CON0 -> | | << -> 15 `i -> 0 `i << -> 1 `i -> 7 `i << -> 0 `i -> 4 `i `uc ]
-"62
-[; ;mcc_generated_files/timer/src/tmr0.c: 62: }
-[e :UE 2413 ]
-}
-"64
-[; ;mcc_generated_files/timer/src/tmr0.c: 64: void TMR0_Deinitialize(void)
-[v _TMR0_Deinitialize `(v ~T0 @X0 1 ef ]
-"65
-[; ;mcc_generated_files/timer/src/tmr0.c: 65: {
-{
-[e :U _TMR0_Deinitialize ]
-[f ]
-"66
-[; ;mcc_generated_files/timer/src/tmr0.c: 66:     T0CON0bits.T0EN = 0;
-[e = . . _T0CON0bits 1 4 -> -> 0 `i `uc ]
-"68
-[; ;mcc_generated_files/timer/src/tmr0.c: 68:     PIR3bits.TMR0IF = 0;
-[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
-"69
-[; ;mcc_generated_files/timer/src/tmr0.c: 69:     PIE3bits.TMR0IE = 0;
-[e = . . _PIE3bits 0 7 -> -> 0 `i `uc ]
-"71
-[; ;mcc_generated_files/timer/src/tmr0.c: 71:     T0CON0 = 0x0;
-[e = _T0CON0 -> -> 0 `i `uc ]
-"72
-[; ;mcc_generated_files/timer/src/tmr0.c: 72:     T0CON1 = 0x0;
-[e = _T0CON1 -> -> 0 `i `uc ]
-"73
-[; ;mcc_generated_files/timer/src/tmr0.c: 73:     TMR0H = 0xFF;
-[e = _TMR0H -> -> 255 `i `uc ]
-"74
-[; ;mcc_generated_files/timer/src/tmr0.c: 74:     TMR0L =0x0;
-[e = _TMR0L -> -> 0 `i `uc ]
-"75
-[; ;mcc_generated_files/timer/src/tmr0.c: 75: }
-[e :UE 2414 ]
-}
-"77
-[; ;mcc_generated_files/timer/src/tmr0.c: 77: void TMR0_Start(void)
-[v _TMR0_Start `(v ~T0 @X0 1 ef ]
-"78
-[; ;mcc_generated_files/timer/src/tmr0.c: 78: {
-{
-[e :U _TMR0_Start ]
-[f ]
-"79
-[; ;mcc_generated_files/timer/src/tmr0.c: 79:     T0CON0bits.T0EN = 1;
-[e = . . _T0CON0bits 1 4 -> -> 1 `i `uc ]
-"80
-[; ;mcc_generated_files/timer/src/tmr0.c: 80: }
-[e :UE 2415 ]
-}
-"82
-[; ;mcc_generated_files/timer/src/tmr0.c: 82: void TMR0_Stop(void)
-[v _TMR0_Stop `(v ~T0 @X0 1 ef ]
-"83
-[; ;mcc_generated_files/timer/src/tmr0.c: 83: {
-{
-[e :U _TMR0_Stop ]
-[f ]
-"84
-[; ;mcc_generated_files/timer/src/tmr0.c: 84:     T0CON0bits.T0EN = 0;
-[e = . . _T0CON0bits 1 4 -> -> 0 `i `uc ]
-"85
-[; ;mcc_generated_files/timer/src/tmr0.c: 85: }
-[e :UE 2416 ]
-}
-"87
-[; ;mcc_generated_files/timer/src/tmr0.c: 87: uint8_t TMR0_CounterGet(void)
-[v _TMR0_CounterGet `(uc ~T0 @X0 1 ef ]
-"88
-[; ;mcc_generated_files/timer/src/tmr0.c: 88: {
-{
-[e :U _TMR0_CounterGet ]
-[f ]
-"89
-[; ;mcc_generated_files/timer/src/tmr0.c: 89:     uint8_t counterValue;
-[v _counterValue `uc ~T0 @X0 1 a ]
-"91
-[; ;mcc_generated_files/timer/src/tmr0.c: 91:     counterValue = TMR0L;
-[e = _counterValue _TMR0L ]
-"93
-[; ;mcc_generated_files/timer/src/tmr0.c: 93:     return counterValue;
-[e ) _counterValue ]
-[e $UE 2417  ]
-"94
-[; ;mcc_generated_files/timer/src/tmr0.c: 94: }
-[e :UE 2417 ]
-}
-"96
-[; ;mcc_generated_files/timer/src/tmr0.c: 96: void TMR0_CounterSet(uint8_t counterValue)
-[v _TMR0_CounterSet `(v ~T0 @X0 1 ef1`uc ]
-"97
-[; ;mcc_generated_files/timer/src/tmr0.c: 97: {
-{
-[e :U _TMR0_CounterSet ]
-"96
-[; ;mcc_generated_files/timer/src/tmr0.c: 96: void TMR0_CounterSet(uint8_t counterValue)
-[v _counterValue `uc ~T0 @X0 1 r1 ]
-"97
-[; ;mcc_generated_files/timer/src/tmr0.c: 97: {
-[f ]
-"98
-[; ;mcc_generated_files/timer/src/tmr0.c: 98:     TMR0L = counterValue;
-[e = _TMR0L _counterValue ]
-"99
-[; ;mcc_generated_files/timer/src/tmr0.c: 99:  }
-[e :UE 2418 ]
-}
-"101
-[; ;mcc_generated_files/timer/src/tmr0.c: 101: void TMR0_PeriodSet(uint8_t periodValue)
-[v _TMR0_PeriodSet `(v ~T0 @X0 1 ef1`uc ]
-"102
-[; ;mcc_generated_files/timer/src/tmr0.c: 102: {
-{
-[e :U _TMR0_PeriodSet ]
-"101
-[; ;mcc_generated_files/timer/src/tmr0.c: 101: void TMR0_PeriodSet(uint8_t periodValue)
-[v _periodValue `uc ~T0 @X0 1 r1 ]
-"102
-[; ;mcc_generated_files/timer/src/tmr0.c: 102: {
-[f ]
-"103
-[; ;mcc_generated_files/timer/src/tmr0.c: 103:    TMR0H = periodValue;
-[e = _TMR0H _periodValue ]
-"104
-[; ;mcc_generated_files/timer/src/tmr0.c: 104: }
-[e :UE 2419 ]
-}
-"106
-[; ;mcc_generated_files/timer/src/tmr0.c: 106: uint8_t TMR0_PeriodGet(void)
-[v _TMR0_PeriodGet `(uc ~T0 @X0 1 ef ]
-"107
-[; ;mcc_generated_files/timer/src/tmr0.c: 107: {
-{
-[e :U _TMR0_PeriodGet ]
-[f ]
-"108
-[; ;mcc_generated_files/timer/src/tmr0.c: 108:     return TMR0H;
-[e ) _TMR0H ]
-[e $UE 2420  ]
-"109
-[; ;mcc_generated_files/timer/src/tmr0.c: 109: }
+"40
+[; ;ir_servo.c: 40:     PWM1_16BIT_LoadBufferRegisters();
+[e ( _PWM1_16BIT_LoadBufferRegisters ..  ]
+"41
+[; ;ir_servo.c: 41:     PWM1_16BIT_SetSlice1Output1DutyCycleRegister((uint16_t)((double)(slice1)*totalPeriod));
+[e ( _PWM1_16BIT_SetSlice1Output1DutyCycleRegister (1 -> * _slice1 -> -> _totalPeriod `ui `d `us ]
+"42
+[; ;ir_servo.c: 42:     PWM1_16BIT_SetSlice1Output2DutyCycleRegister((uint16_t)((double)(slice2)*totalPeriod));
+[e ( _PWM1_16BIT_SetSlice1Output2DutyCycleRegister (1 -> * _slice2 -> -> _totalPeriod `ui `d `us ]
+"43
+[; ;ir_servo.c: 43: }
 [e :UE 2420 ]
 }
-"111
-[; ;mcc_generated_files/timer/src/tmr0.c: 111: uint8_t TMR0_MaxCountGet(void)
-[v _TMR0_MaxCountGet `(uc ~T0 @X0 1 ef ]
-"112
-[; ;mcc_generated_files/timer/src/tmr0.c: 112: {
+"48
+[; ;ir_servo.c: 48: static void TMR0_ConfigureAndStart(uint8_t period, uint8_t prescale, uint8_t postscale, uint8_t clockSource)
+[v _TMR0_ConfigureAndStart `(v ~T0 @X0 1 sf4`uc`uc`uc`uc ]
+"49
+[; ;ir_servo.c: 49: {
 {
-[e :U _TMR0_MaxCountGet ]
+[e :U _TMR0_ConfigureAndStart ]
+"48
+[; ;ir_servo.c: 48: static void TMR0_ConfigureAndStart(uint8_t period, uint8_t prescale, uint8_t postscale, uint8_t clockSource)
+[v _period `uc ~T0 @X0 1 r1 ]
+[v _prescale `uc ~T0 @X0 1 r2 ]
+[v _postscale `uc ~T0 @X0 1 r3 ]
+[v _clockSource `uc ~T0 @X0 1 r4 ]
+"49
+[; ;ir_servo.c: 49: {
 [f ]
-"113
-[; ;mcc_generated_files/timer/src/tmr0.c: 113:     return (255U);
-[e ) -> -> 255 `ui `uc ]
-[e $UE 2421  ]
-"114
-[; ;mcc_generated_files/timer/src/tmr0.c: 114: }
+"51
+[; ;ir_servo.c: 51:     TMR0_Stop();
+[e ( _TMR0_Stop ..  ]
+"54
+[; ;ir_servo.c: 54:     TMR0H = period;
+[e = _TMR0H _period ]
+"57
+[; ;ir_servo.c: 57:     TMR0L = 0;
+[e = _TMR0L -> -> 0 `i `uc ]
+"60
+[; ;ir_servo.c: 60:     T0CON1 = (clockSource << 0x5) |
+[e = _T0CON1 -> | | << -> _clockSource `i -> 5 `i << -> _prescale `i -> 0 `i << -> 1 `i -> 4 `i `uc ]
+"65
+[; ;ir_servo.c: 65:     T0CON0 = (postscale << 0x0) |
+[e = _T0CON0 -> | << -> _postscale `i -> 0 `i << -> 0 `i -> 4 `i `uc ]
+"69
+[; ;ir_servo.c: 69:     PIR3bits.TMR0IF = 0;
+[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
+"72
+[; ;ir_servo.c: 72:     PIE3bits.TMR0IE = 1;
+[e = . . _PIE3bits 0 7 -> -> 1 `i `uc ]
+"75
+[; ;ir_servo.c: 75:     TMR0_Start();
+[e ( _TMR0_Start ..  ]
+"76
+[; ;ir_servo.c: 76: }
 [e :UE 2421 ]
 }
-"116
-[; ;mcc_generated_files/timer/src/tmr0.c: 116: void TMR0_TMRInterruptEnable(void)
-[v _TMR0_TMRInterruptEnable `(v ~T0 @X0 1 ef ]
-"117
-[; ;mcc_generated_files/timer/src/tmr0.c: 117: {
+"81
+[; ;ir_servo.c: 81: void ir_servo_start(void)
+[v _ir_servo_start `(v ~T0 @X0 1 ef ]
+"82
+[; ;ir_servo.c: 82: {
 {
-[e :U _TMR0_TMRInterruptEnable ]
+[e :U _ir_servo_start ]
 [f ]
-"118
-[; ;mcc_generated_files/timer/src/tmr0.c: 118:     PIE3bits.TMR0IE = 1;
-[e = . . _PIE3bits 0 7 -> -> 1 `i `uc ]
-"119
-[; ;mcc_generated_files/timer/src/tmr0.c: 119: }
+"84
+[; ;ir_servo.c: 84:     TMR0_Stop();
+[e ( _TMR0_Stop ..  ]
+"87
+[; ;ir_servo.c: 87:     itemNbr++;
+[e ++ _itemNbr -> -> 1 `i `Vuc ]
+"88
+[; ;ir_servo.c: 88:     (void) printf("itemNumber: %d\r\n", itemNbr);
+[e ( _printf , (. :s 1C -> _itemNbr `i ]
+"91
+[; ;ir_servo.c: 91:     irServoState = IR_STATE_WEIGHT_READ;
+[e = _irServoState . `E36 1 ]
+"92
+[; ;ir_servo.c: 92:     TMR0_ConfigureAndStart(0x79, 4, 15, 4);
+[e ( _TMR0_ConfigureAndStart (4 , , , -> -> 121 `i `uc -> -> 4 `i `uc -> -> 15 `i `uc -> -> 4 `i `uc ]
+"94
+[; ;ir_servo.c: 94: }
 [e :UE 2422 ]
 }
+"99
+[; ;ir_servo.c: 99: static void ir_servo_weight_read(void)
+[v _ir_servo_weight_read `(v ~T0 @X0 1 sf ]
+"100
+[; ;ir_servo.c: 100: {
+{
+[e :U _ir_servo_weight_read ]
+[f ]
+"107
+[; ;ir_servo.c: 107:     ADC_SampleCapacitorDischarge();
+[e ( _ADC_SampleCapacitorDischarge ..  ]
+"108
+[; ;ir_servo.c: 108:     itemWeight = ADC_ChannelSelectAndConvert(ADC_CHANNEL_ANA0);
+[e = _itemWeight ( _ADC_ChannelSelectAndConvert (1 . `E17730 5 ]
+"109
+[; ;ir_servo.c: 109:     (void) printf("itemWeight %d\r\n", itemWeight);
+[e ( _printf , (. :s 2C -> _itemWeight `i ]
+"112
+[; ;ir_servo.c: 112:     if (itemWeight >= weightMin && itemWeight <= weightMax)
+[e $ ! && >= -> _itemWeight `ui -> _weightMin `ui <= -> _itemWeight `ui -> _weightMax `ui 2424  ]
+"113
+[; ;ir_servo.c: 113:     {
+{
+"115
+[; ;ir_servo.c: 115:         memset(bufferTX, 0, sizeof(bufferTX));
+[e ( _memset (3 , , -> &U _bufferTX `*v -> 0 `i -> # _bufferTX `ui ]
+"116
+[; ;ir_servo.c: 116:         sprintf((char*)bufferTX, "%d,%d,%s", itemNbr, itemWeight, "ACC");
+[e ( _sprintf (1 , , , (. , -> &U _bufferTX `*uc :s 3C -> _itemNbr `i -> _itemWeight `i :s 4C ]
+"117
+[; ;ir_servo.c: 117:         nrf24_send_rf_data(bufferTX);
+[e ( _nrf24_send_rf_data (1 &U _bufferTX ]
+"118
+[; ;ir_servo.c: 118:         printf("[Send] Data: %d,%d,%s\n", itemNbr, itemWeight, "ACC");
+[e ( _printf , , , (. :s 5C -> _itemNbr `i -> _itemWeight `i :s 6C ]
+"120
+[; ;ir_servo.c: 120:         (void) printf("itemWeight is ACCEPTED\n");
+[e ( _printf :s 7C ]
 "121
-[; ;mcc_generated_files/timer/src/tmr0.c: 121: void TMR0_TMRInterruptDisable(void)
-[v _TMR0_TMRInterruptDisable `(v ~T0 @X0 1 ef ]
-"122
-[; ;mcc_generated_files/timer/src/tmr0.c: 122: {
-{
-[e :U _TMR0_TMRInterruptDisable ]
-[f ]
-"123
-[; ;mcc_generated_files/timer/src/tmr0.c: 123:     PIE3bits.TMR0IE = 0;
-[e = . . _PIE3bits 0 7 -> -> 0 `i `uc ]
+[; ;ir_servo.c: 121:         (void) printf("\n");
+[e ( _printf :s 8C ]
 "124
-[; ;mcc_generated_files/timer/src/tmr0.c: 124: }
-[e :UE 2423 ]
-}
-"126
-[; ;mcc_generated_files/timer/src/tmr0.c: 126: void TMR0_ISR(void)
-[v _TMR0_ISR `(v ~T0 @X0 1 ef ]
+[; ;ir_servo.c: 124:         irServoState = IR_STATE_IDLE;
+[e = _irServoState . `E36 0 ]
 "127
-[; ;mcc_generated_files/timer/src/tmr0.c: 127: {
-{
-[e :U _TMR0_ISR ]
-[f ]
+[; ;ir_servo.c: 127:         (PIR6bits.INT1IF = 0);
+[e = . . _PIR6bits 0 0 -> -> 0 `i `uc ]
 "128
-[; ;mcc_generated_files/timer/src/tmr0.c: 128:     if(((void*)0) != TMR0_PeriodMatchCallback)
-[e $ ! != -> -> -> 0 `i `*v `*F17153 _TMR0_PeriodMatchCallback 2425  ]
+[; ;ir_servo.c: 128:     }
+}
+[e $U 2425  ]
 "129
-[; ;mcc_generated_files/timer/src/tmr0.c: 129:     {
-{
+[; ;ir_servo.c: 129:     else
+[e :U 2424 ]
 "130
-[; ;mcc_generated_files/timer/src/tmr0.c: 130:         TMR0_PeriodMatchCallback();
-[e ( *U _TMR0_PeriodMatchCallback ..  ]
-"131
-[; ;mcc_generated_files/timer/src/tmr0.c: 131:     }
+[; ;ir_servo.c: 130:     {
+{
+"132
+[; ;ir_servo.c: 132:         (void) printf("itemWeight is REJECTED\n");
+[e ( _printf :s 9C ]
+"135
+[; ;ir_servo.c: 135:         memset(bufferTX, 0, sizeof(bufferTX));
+[e ( _memset (3 , , -> &U _bufferTX `*v -> 0 `i -> # _bufferTX `ui ]
+"136
+[; ;ir_servo.c: 136:         sprintf((char*)bufferTX, "%d,%d,%s", itemNbr, itemWeight, "REJ");
+[e ( _sprintf (1 , , , (. , -> &U _bufferTX `*uc :s 10C -> _itemNbr `i -> _itemWeight `i :s 11C ]
+"137
+[; ;ir_servo.c: 137:         nrf24_send_rf_data(bufferTX);
+[e ( _nrf24_send_rf_data (1 &U _bufferTX ]
+"138
+[; ;ir_servo.c: 138:         printf("[Send] Data: %d,%d,%s\n", itemNbr, itemWeight, "REJ");
+[e ( _printf , , , (. :s 12C -> _itemNbr `i -> _itemWeight `i :s 13C ]
+"141
+[; ;ir_servo.c: 141:         reload_PWM1_dutyCycle(0.08, 0);
+[e ( _reload_PWM1_dutyCycle (2 , .0.08 -> -> 0 `i `d ]
+"144
+[; ;ir_servo.c: 144:         irServoState = IR_STATE_REJECT_STEP1;
+[e = _irServoState . `E36 2 ]
+"145
+[; ;ir_servo.c: 145:         TMR0_ConfigureAndStart(0x3C, 4, 15, 4);
+[e ( _TMR0_ConfigureAndStart (4 , , , -> -> 60 `i `uc -> -> 4 `i `uc -> -> 15 `i `uc -> -> 4 `i `uc ]
+"147
+[; ;ir_servo.c: 147:     }
 }
 [e :U 2425 ]
-"132
-[; ;mcc_generated_files/timer/src/tmr0.c: 132:     PIR3bits.TMR0IF = 0;
-[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
-"133
-[; ;mcc_generated_files/timer/src/tmr0.c: 133: }
-[e :UE 2424 ]
+"148
+[; ;ir_servo.c: 148: }
+[e :UE 2423 ]
 }
-"135
-[; ;mcc_generated_files/timer/src/tmr0.c: 135: void TMR0_PeriodMatchCallbackRegister(void (* callbackHandler)(void))
-[v _TMR0_PeriodMatchCallbackRegister `(v ~T0 @X0 1 ef1`*F17155 ]
-"136
-[; ;mcc_generated_files/timer/src/tmr0.c: 136: {
+"153
+[; ;ir_servo.c: 153: static void ir_servo_reject_step1(void)
+[v _ir_servo_reject_step1 `(v ~T0 @X0 1 sf ]
+"154
+[; ;ir_servo.c: 154: {
 {
-[e :U _TMR0_PeriodMatchCallbackRegister ]
-"135
-[; ;mcc_generated_files/timer/src/tmr0.c: 135: void TMR0_PeriodMatchCallbackRegister(void (* callbackHandler)(void))
-[v _callbackHandler `*F17157 ~T0 @X0 1 r1 ]
-"136
-[; ;mcc_generated_files/timer/src/tmr0.c: 136: {
+[e :U _ir_servo_reject_step1 ]
 [f ]
-"137
-[; ;mcc_generated_files/timer/src/tmr0.c: 137:     TMR0_PeriodMatchCallback = callbackHandler;
-[e = _TMR0_PeriodMatchCallback _callbackHandler ]
-"138
-[; ;mcc_generated_files/timer/src/tmr0.c: 138: }
+"156
+[; ;ir_servo.c: 156:     reload_PWM1_dutyCycle(0.023, 0);
+[e ( _reload_PWM1_dutyCycle (2 , .0.023 -> -> 0 `i `d ]
+"159
+[; ;ir_servo.c: 159:     irServoState = IR_STATE_REJECT_STEP2;
+[e = _irServoState . `E36 3 ]
+"160
+[; ;ir_servo.c: 160:     TMR0_ConfigureAndStart(0xF2, 4, 15, 4);
+[e ( _TMR0_ConfigureAndStart (4 , , , -> -> 242 `i `uc -> -> 4 `i `uc -> -> 15 `i `uc -> -> 4 `i `uc ]
+"162
+[; ;ir_servo.c: 162: }
 [e :UE 2426 ]
 }
-"140
-[; ;mcc_generated_files/timer/src/tmr0.c: 140: static void TMR0_DefaultCallback(void)
-[v _TMR0_DefaultCallback `(v ~T0 @X0 1 sf ]
-"141
-[; ;mcc_generated_files/timer/src/tmr0.c: 141: {
+"167
+[; ;ir_servo.c: 167: static void ir_servo_reject_step2_3(void)
+[v _ir_servo_reject_step2_3 `(v ~T0 @X0 1 sf ]
+"168
+[; ;ir_servo.c: 168: {
 {
-[e :U _TMR0_DefaultCallback ]
+[e :U _ir_servo_reject_step2_3 ]
 [f ]
-"143
-[; ;mcc_generated_files/timer/src/tmr0.c: 143: }
+"169
+[; ;ir_servo.c: 169:     if (irServoState == IR_STATE_REJECT_STEP2) {
+[e $ ! == -> _irServoState `ui -> . `E36 3 `ui 2428  ]
+{
+"171
+[; ;ir_servo.c: 171:         TMR0_ConfigureAndStart(0x79, 4, 15, 4);
+[e ( _TMR0_ConfigureAndStart (4 , , , -> -> 121 `i `uc -> -> 4 `i `uc -> -> 15 `i `uc -> -> 4 `i `uc ]
+"173
+[; ;ir_servo.c: 173:         irServoState = IR_STATE_REJECT_STEP3;
+[e = _irServoState . `E36 4 ]
+"174
+[; ;ir_servo.c: 174:     } else {
+}
+[e $U 2429  ]
+[e :U 2428 ]
+{
+"176
+[; ;ir_servo.c: 176:         reload_PWM1_dutyCycle(0.08, 0.75);
+[e ( _reload_PWM1_dutyCycle (2 , .0.08 .0.75 ]
+"179
+[; ;ir_servo.c: 179:         irServoState = IR_STATE_COMPLETE;
+[e = _irServoState . `E36 5 ]
+"180
+[; ;ir_servo.c: 180:         TMR0_ConfigureAndStart(0xFE, 0, 0, 4);
+[e ( _TMR0_ConfigureAndStart (4 , , , -> -> 254 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 4 `i `uc ]
+"182
+[; ;ir_servo.c: 182:     }
+}
+[e :U 2429 ]
+"183
+[; ;ir_servo.c: 183: }
 [e :UE 2427 ]
 }
+"188
+[; ;ir_servo.c: 188: static void ir_servo_complete(void)
+[v _ir_servo_complete `(v ~T0 @X0 1 sf ]
+"189
+[; ;ir_servo.c: 189: {
+{
+[e :U _ir_servo_complete ]
+[f ]
+"193
+[; ;ir_servo.c: 193:     (PIR6bits.INT1IF = 0);
+[e = . . _PIR6bits 0 0 -> -> 0 `i `uc ]
+"194
+[; ;ir_servo.c: 194:     (void) printf("\n");
+[e ( _printf :s 14C ]
+"197
+[; ;ir_servo.c: 197:     irServoState = IR_STATE_IDLE;
+[e = _irServoState . `E36 0 ]
+"198
+[; ;ir_servo.c: 198: }
+[e :UE 2430 ]
+}
+"203
+[; ;ir_servo.c: 203: static void TMR0_IRQHandler(void)
+[v _TMR0_IRQHandler `(v ~T0 @X0 1 sf ]
+"204
+[; ;ir_servo.c: 204: {
+{
+[e :U _TMR0_IRQHandler ]
+[f ]
+"206
+[; ;ir_servo.c: 206:     PIR3bits.TMR0IF = 0;
+[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
+"209
+[; ;ir_servo.c: 209:     switch (irServoState)
+[e $U 2433  ]
+"210
+[; ;ir_servo.c: 210:     {
+{
+"211
+[; ;ir_servo.c: 211:         case IR_STATE_WEIGHT_READ:
+[e :U 2434 ]
+"212
+[; ;ir_servo.c: 212:             ir_servo_weight_read();
+[e ( _ir_servo_weight_read ..  ]
+"213
+[; ;ir_servo.c: 213:             break;
+[e $U 2432  ]
+"215
+[; ;ir_servo.c: 215:         case IR_STATE_REJECT_STEP1:
+[e :U 2435 ]
+"216
+[; ;ir_servo.c: 216:             ir_servo_reject_step1();
+[e ( _ir_servo_reject_step1 ..  ]
+"217
+[; ;ir_servo.c: 217:             break;
+[e $U 2432  ]
+"219
+[; ;ir_servo.c: 219:         case IR_STATE_REJECT_STEP2:
+[e :U 2436 ]
+"220
+[; ;ir_servo.c: 220:         case IR_STATE_REJECT_STEP3:
+[e :U 2437 ]
+"221
+[; ;ir_servo.c: 221:             ir_servo_reject_step2_3();
+[e ( _ir_servo_reject_step2_3 ..  ]
+"222
+[; ;ir_servo.c: 222:             break;
+[e $U 2432  ]
+"224
+[; ;ir_servo.c: 224:         case IR_STATE_COMPLETE:
+[e :U 2438 ]
+"225
+[; ;ir_servo.c: 225:             ir_servo_complete();
+[e ( _ir_servo_complete ..  ]
+"226
+[; ;ir_servo.c: 226:             break;
+[e $U 2432  ]
+"228
+[; ;ir_servo.c: 228:         case IR_STATE_IDLE:
+[e :U 2439 ]
+"229
+[; ;ir_servo.c: 229:         default:
+[e :U 2440 ]
+"231
+[; ;ir_servo.c: 231:             break;
+[e $U 2432  ]
+"232
+[; ;ir_servo.c: 232:     }
+}
+[e $U 2432  ]
+[e :U 2433 ]
+[e [\ -> _irServoState `ui , $ -> . `E36 1 `ui 2434
+ , $ -> . `E36 2 `ui 2435
+ , $ -> . `E36 3 `ui 2436
+ , $ -> . `E36 4 `ui 2437
+ , $ -> . `E36 5 `ui 2438
+ , $ -> . `E36 0 `ui 2439
+ 2440 ]
+[e :U 2432 ]
+"233
+[; ;ir_servo.c: 233: }
+[e :UE 2431 ]
+}
+"238
+[; ;ir_servo.c: 238: void ir_servo_initialize(void)
+[v _ir_servo_initialize `(v ~T0 @X0 1 ef ]
+"239
+[; ;ir_servo.c: 239: {
+{
+[e :U _ir_servo_initialize ]
+[f ]
+"241
+[; ;ir_servo.c: 241:     totalPeriod = ((uint16_t)PWM1PRH << 8) | PWM1PRL;
+[e = _totalPeriod -> | << -> -> _PWM1PRH `us `ui -> 8 `i -> _PWM1PRL `ui `us ]
+"244
+[; ;ir_servo.c: 244:     irServoState = IR_STATE_IDLE;
+[e = _irServoState . `E36 0 ]
+"245
+[; ;ir_servo.c: 245:     itemNbr = 0;
+[e = _itemNbr -> -> 0 `i `uc ]
+"248
+[; ;ir_servo.c: 248:     INT1_SetInterruptHandler(ir_servo_start);
+[e ( _INT1_SetInterruptHandler (1 &U _ir_servo_start ]
+"251
+[; ;ir_servo.c: 251:     TMR0_PeriodMatchCallbackRegister(TMR0_IRQHandler);
+[e ( _TMR0_PeriodMatchCallbackRegister (1 &U _TMR0_IRQHandler ]
+"252
+[; ;ir_servo.c: 252: }
+[e :UE 2441 ]
+}
+"257
+[; ;ir_servo.c: 257: _Bool ir_servo_is_busy(void)
+[v _ir_servo_is_busy `(a ~T0 @X0 1 ef ]
+"258
+[; ;ir_servo.c: 258: {
+{
+[e :U _ir_servo_is_busy ]
+[f ]
+"259
+[; ;ir_servo.c: 259:     return (irServoState != IR_STATE_IDLE);
+[e ) -> -> != -> _irServoState `ui -> . `E36 0 `ui `i `a ]
+[e $UE 2442  ]
+"260
+[; ;ir_servo.c: 260: }
+[e :UE 2442 ]
+}
+"265
+[; ;ir_servo.c: 265: uint8_t ir_servo_get_item_count(void)
+[v _ir_servo_get_item_count `(uc ~T0 @X0 1 ef ]
+"266
+[; ;ir_servo.c: 266: {
+{
+[e :U _ir_servo_get_item_count ]
+[f ]
+"267
+[; ;ir_servo.c: 267:     return itemNbr;
+[e ) _itemNbr ]
+[e $UE 2443  ]
+"268
+[; ;ir_servo.c: 268: }
+[e :UE 2443 ]
+}
+"273
+[; ;ir_servo.c: 273: uint16_t ir_servo_get_last_weight(void)
+[v _ir_servo_get_last_weight `(us ~T0 @X0 1 ef ]
+"274
+[; ;ir_servo.c: 274: {
+{
+[e :U _ir_servo_get_last_weight ]
+[f ]
+"275
+[; ;ir_servo.c: 275:     return itemWeight;
+[e ) -> _itemWeight `us ]
+[e $UE 2444  ]
+"276
+[; ;ir_servo.c: 276: }
+[e :UE 2444 ]
+}
+"281
+[; ;ir_servo.c: 281: uint16_t ir_servo_get_min_weight(void)
+[v _ir_servo_get_min_weight `(us ~T0 @X0 1 ef ]
+"282
+[; ;ir_servo.c: 282: {
+{
+[e :U _ir_servo_get_min_weight ]
+[f ]
+"283
+[; ;ir_servo.c: 283:     return weightMin;
+[e ) _weightMin ]
+[e $UE 2445  ]
+"284
+[; ;ir_servo.c: 284: }
+[e :UE 2445 ]
+}
+"289
+[; ;ir_servo.c: 289: uint16_t ir_servo_get_max_weight(void)
+[v _ir_servo_get_max_weight `(us ~T0 @X0 1 ef ]
+"290
+[; ;ir_servo.c: 290: {
+{
+[e :U _ir_servo_get_max_weight ]
+[f ]
+"291
+[; ;ir_servo.c: 291:     return weightMax;
+[e ) _weightMax ]
+[e $UE 2446  ]
+"292
+[; ;ir_servo.c: 292: }
+[e :UE 2446 ]
+}
+"297
+[; ;ir_servo.c: 297: void ir_servo_set_min_weight(uint16_t min_weight)
+[v _ir_servo_set_min_weight `(v ~T0 @X0 1 ef1`us ]
+"298
+[; ;ir_servo.c: 298: {
+{
+[e :U _ir_servo_set_min_weight ]
+"297
+[; ;ir_servo.c: 297: void ir_servo_set_min_weight(uint16_t min_weight)
+[v _min_weight `us ~T0 @X0 1 r1 ]
+"298
+[; ;ir_servo.c: 298: {
+[f ]
+"299
+[; ;ir_servo.c: 299:     weightMin = min_weight;
+[e = _weightMin _min_weight ]
+"300
+[; ;ir_servo.c: 300: }
+[e :UE 2447 ]
+}
+"305
+[; ;ir_servo.c: 305: void ir_servo_set_max_weight(uint16_t max_weight)
+[v _ir_servo_set_max_weight `(v ~T0 @X0 1 ef1`us ]
+"306
+[; ;ir_servo.c: 306: {
+{
+[e :U _ir_servo_set_max_weight ]
+"305
+[; ;ir_servo.c: 305: void ir_servo_set_max_weight(uint16_t max_weight)
+[v _max_weight `us ~T0 @X0 1 r1 ]
+"306
+[; ;ir_servo.c: 306: {
+[f ]
+"307
+[; ;ir_servo.c: 307:     weightMax = max_weight;
+[e = _weightMax _max_weight ]
+"308
+[; ;ir_servo.c: 308: }
+[e :UE 2448 ]
+}
+[p f _printf 8650880 ]
+[p f _sprintf 8650880 ]
+[a 3C 37 100 44 37 100 44 37 115 0 ]
+[a 10C 37 100 44 37 100 44 37 115 0 ]
+[a 11C 82 69 74 0 ]
+[a 13C 82 69 74 0 ]
+[a 4C 65 67 67 0 ]
+[a 6C 65 67 67 0 ]
+[a 5C 91 83 101 110 100 93 32 68 97 116 97 58 32 37 100 44 37 100 44 37 115 10 0 ]
+[a 12C 91 83 101 110 100 93 32 68 97 116 97 58 32 37 100 44 37 100 44 37 115 10 0 ]
+[a 7C 105 116 101 109 87 101 105 103 104 116 32 105 115 32 65 67 67 69 80 84 69 68 10 0 ]
+[a 9C 105 116 101 109 87 101 105 103 104 116 32 105 115 32 82 69 74 69 67 84 69 68 10 0 ]
+[a 2C 105 116 101 109 87 101 105 103 104 116 32 37 100 13 10 0 ]
+[a 1C 105 116 101 109 78 117 109 98 101 114 58 32 37 100 13 10 0 ]
+[a 8C 10 0 ]
+[a 14C 10 0 ]

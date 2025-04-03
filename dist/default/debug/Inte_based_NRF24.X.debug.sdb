@@ -89,21 +89,12 @@ ADC_ACTUAL_RESULT_VS_FILTERED_VALUE 2
 ADC_FIRST_DERIVATIVE_OF_FILTERED_VALUE 4
 ADC_FILTERED_VALUE_VS_SETPOINT 5
 ]
-"36 D:\PracticeProject\MPLab\Inte_based_NRF24.X\main.c
+"22 D:\PracticeProject\MPLab\Inte_based_NRF24.X\main.c
 [e E17910 . `uc
 NRF24_INIT_OK 0
 NRF24_INIT_FAILED 1
 ]
-"76
-[e E17707 . `uc
-ADC_CHANNEL_VSS 59
-ADC_CHANNEL_TEMP 60
-ADC_CHANNEL_DAC1 61
-ADC_CHANNEL_FVR_BUFFER1 62
-ADC_CHANNEL_FVR_BUFFER2 63
-ADC_CHANNEL_ANA0 0
-]
-"158
+"42
 [e E17914 . `uc
 RX_MODE 1
 TX_MODE 2
@@ -117,6 +108,24 @@ NRF24_INIT_FAILED 1
 [e E17914 . `uc
 RX_MODE 1
 TX_MODE 2
+]
+"18 D:\PracticeProject\MPLab\Inte_based_NRF24.X\ir_servo.c
+[e E36 . `uc
+IR_STATE_IDLE 0
+IR_STATE_WEIGHT_READ 1
+IR_STATE_REJECT_STEP1 2
+IR_STATE_REJECT_STEP2 3
+IR_STATE_REJECT_STEP3 4
+IR_STATE_COMPLETE 5
+]
+"108
+[e E17730 . `uc
+ADC_CHANNEL_VSS 59
+ADC_CHANNEL_TEMP 60
+ADC_CHANNEL_DAC1 61
+ADC_CHANNEL_FVR_BUFFER1 62
+ADC_CHANNEL_FVR_BUFFER2 63
+ADC_CHANNEL_ANA0 0
 ]
 "1 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
@@ -204,12 +213,28 @@ TX_MODE 2
 "10 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 [v i2___xxtofl __xxtofl `(d  1 e 4 0 ]
-"54 D:\PracticeProject\MPLab\Inte_based_NRF24.X\main.c
+"38 D:\PracticeProject\MPLab\Inte_based_NRF24.X\ir_servo.c
 [v _reload_PWM1_dutyCycle reload_PWM1_dutyCycle `(v  1 e 1 0 ]
 [v i2_reload_PWM1_dutyCycle reload_PWM1_dutyCycle `(v  1 e 1 0 ]
-"65
-[v _ir_servo ir_servo `(v  1 e 1 0 ]
-"140
+"48
+[v _TMR0_ConfigureAndStart TMR0_ConfigureAndStart `(v  1 s 1 TMR0_ConfigureAndStart ]
+"81
+[v _ir_servo_start ir_servo_start `(v  1 e 1 0 ]
+"99
+[v _ir_servo_weight_read ir_servo_weight_read `(v  1 s 1 ir_servo_weight_read ]
+"153
+[v _ir_servo_reject_step1 ir_servo_reject_step1 `(v  1 s 1 ir_servo_reject_step1 ]
+"167
+[v _ir_servo_reject_step2_3 ir_servo_reject_step2_3 `(v  1 s 1 ir_servo_reject_step2_3 ]
+"188
+[v _ir_servo_complete ir_servo_complete `(v  1 s 1 ir_servo_complete ]
+"203
+[v _TMR0_IRQHandler TMR0_IRQHandler `(v  1 s 1 TMR0_IRQHandler ]
+"238
+[v _ir_servo_initialize ir_servo_initialize `(v  1 e 1 0 ]
+"257
+[v _ir_servo_is_busy ir_servo_is_busy `(a  1 e 1 0 ]
+"27 D:\PracticeProject\MPLab\Inte_based_NRF24.X\main.c
 [v _main main `(i  1 e 2 0 ]
 "47 D:\PracticeProject\MPLab\Inte_based_NRF24.X\mcc_generated_files/adc/src/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -303,8 +328,14 @@ TX_MODE 2
 [v _WWDT_Initialize WWDT_Initialize `(v  1 e 1 0 ]
 "45 D:\PracticeProject\MPLab\Inte_based_NRF24.X\mcc_generated_files/timer/src/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+"77
+[v _TMR0_Start TMR0_Start `(v  1 e 1 0 ]
+"82
+[v _TMR0_Stop TMR0_Stop `(v  1 e 1 0 ]
 "126
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+"135
+[v _TMR0_PeriodMatchCallbackRegister TMR0_PeriodMatchCallbackRegister `(v  1 e 1 0 ]
 "140
 [v _TMR0_DefaultCallback TMR0_DefaultCallback `(v  1 s 1 TMR0_DefaultCallback ]
 "49 D:\PracticeProject\MPLab\Inte_based_NRF24.X\mcc_generated_files/timer/src/tmr1.c
@@ -383,6 +414,8 @@ TX_MODE 2
 [v _nrf24_printf_rf_config nrf24_printf_rf_config `(v  1 e 1 0 ]
 "384
 [v _nrf24_printf_rf_status nrf24_printf_rf_status `(v  1 e 1 0 ]
+"30 D:\PracticeProject\MPLab\Inte_based_NRF24.X/ir_servo.h
+[v _totalPeriod@ir_servo$F2969 totalPeriod `us  1 s 2 totalPeriod ]
 "32 D:\PracticeProject\MPLab\Inte_based_NRF24.X/nrf24_lib.h
 [v _ADDRESS_DATA_RXPIPE0 ADDRESS_DATA_RXPIPE0 `[5]uc  1 e 5 0 ]
 "33
@@ -1296,7 +1329,7 @@ TX_MODE 2
 [v _LATC LATC `VEuc  1 e 1 @1216 ]
 "49047
 [v _LATD LATD `VEuc  1 e 1 @1217 ]
-[s S2694 . 1 `uc 1 LATD0 1 0 :1:0 
+[s S2622 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -1306,10 +1339,10 @@ TX_MODE 2
 `uc 1 LATD7 1 0 :1:7 
 ]
 "49064
-[u S2703 . 1 `S2694 1 . 1 0 ]
+[u S2631 . 1 `S2622 1 . 1 0 ]
 "49064
 "49064
-[v _LATDbits LATDbits `VES2703  1 e 1 @1217 ]
+[v _LATDbits LATDbits `VES2631  1 e 1 @1217 ]
 "49109
 [v _LATE LATE `VEuc  1 e 1 @1218 ]
 "49141
@@ -1336,7 +1369,7 @@ TX_MODE 2
 [v _TRISCbits TRISCbits `VES1073  1 e 1 @1224 ]
 "49389
 [v _TRISD TRISD `VEuc  1 e 1 @1225 ]
-[s S2722 . 1 `uc 1 TRISD0 1 0 :1:0 
+[s S2650 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -1346,10 +1379,10 @@ TX_MODE 2
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "49406
-[u S2731 . 1 `S2722 1 . 1 0 ]
+[u S2659 . 1 `S2650 1 . 1 0 ]
 "49406
 "49406
-[v _TRISDbits TRISDbits `VES2731  1 e 1 @1225 ]
+[v _TRISDbits TRISDbits `VES2659  1 e 1 @1225 ]
 "49451
 [v _TRISE TRISE `VEuc  1 e 1 @1226 ]
 "49483
@@ -1380,16 +1413,20 @@ TX_MODE 2
 [v _flags flags `uc  1 s 1 flags ]
 "185
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
-"18 D:\PracticeProject\MPLab\Inte_based_NRF24.X\main.c
-[v _itemNbr itemNbr `uc  1 e 1 0 ]
-"20
-[v _itemWeight itemWeight `s  1 e 2 0 ]
-"26
-[v _totalPeriod totalPeriod `us  1 e 2 0 ]
-"36
+"18 D:\PracticeProject\MPLab\Inte_based_NRF24.X\ir_servo.c
+[v _irServoState irServoState `VEE36  1 s 1 irServoState ]
+"21
+[v _itemNbr itemNbr `VEuc  1 s 1 itemNbr ]
+"24
+[v _itemWeight itemWeight `VEs  1 s 2 itemWeight ]
+"27
+[v _weightMin weightMin `us  1 s 2 weightMin ]
+"28
+[v _weightMax weightMax `us  1 s 2 weightMax ]
+"31
+[v _bufferTX bufferTX `[32]uc  1 s 32 bufferTX ]
+"22 D:\PracticeProject\MPLab\Inte_based_NRF24.X\main.c
 [v _ret ret `E17910  1 e 1 0 ]
-"39
-[v _bufferTX bufferTX `[32]uc  1 e 32 0 ]
 "43 D:\PracticeProject\MPLab\Inte_based_NRF24.X\mcc_generated_files/adc/src/adc.c
 [v _ADC_ConversionDoneCallback ADC_ConversionDoneCallback `*.38(v  1 s 3 ADC_ConversionDoneCallback ]
 "44
@@ -1433,17 +1470,17 @@ TX_MODE 2
 [v _UART1_OverrunErrorHandler UART1_OverrunErrorHandler `*.38(v  1 e 3 0 ]
 "85
 [v _UART1_ParityErrorHandler UART1_ParityErrorHandler `*.38(v  1 e 3 0 ]
-"140 D:\PracticeProject\MPLab\Inte_based_NRF24.X\main.c
+"27 D:\PracticeProject\MPLab\Inte_based_NRF24.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"206
+"74
 } 0
-"54
+"38 D:\PracticeProject\MPLab\Inte_based_NRF24.X\ir_servo.c
 [v _reload_PWM1_dutyCycle reload_PWM1_dutyCycle `(v  1 e 1 0 ]
 {
 [v reload_PWM1_dutyCycle@slice1 slice1 `d  1 p 4 61 ]
 [v reload_PWM1_dutyCycle@slice2 slice2 `d  1 p 4 65 ]
-"59
+"43
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -1473,17 +1510,17 @@ TX_MODE 2
 "8 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S3261 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S3332 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S3266 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S3269 . 4 `l 1 i 4 0 `d 1 f 4 0 `S3261 1 fAsBytes 4 0 `S3266 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S3269  1 a 4 43 ]
+[s S3337 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S3340 . 4 `l 1 i 4 0 `d 1 f 4 0 `S3332 1 fAsBytes 4 0 `S3337 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S3340  1 a 4 43 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 37 ]
-[s S3337 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S3408 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S3340 . 2 `s 1 i 2 0 `us 1 n 2 0 `S3337 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S3340  1 a 2 47 ]
+[u S3411 . 2 `s 1 i 2 0 `us 1 n 2 0 `S3408 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S3411  1 a 2 47 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 42 ]
 "11
@@ -1607,9 +1644,9 @@ TX_MODE 2
 {
 "1820
 [v vfprintf@cfmt cfmt `*.32uc  1 a 2 73 ]
-[s S3436 _IO_FILE 0 ]
+[s S3507 _IO_FILE 0 ]
 "1817
-[v vfprintf@fp fp `*.39S3436  1 p 2 67 ]
+[v vfprintf@fp fp `*.39S3507  1 p 2 67 ]
 [v vfprintf@fmt fmt `*.32Cuc  1 p 2 69 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 71 ]
 "1840
@@ -1617,18 +1654,18 @@ TX_MODE 2
 "1177
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 {
-[u S3460 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+[u S3531 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
 "1188
-[v vfpfcnvrt@convarg convarg `S3460  1 a 4 60 ]
+[v vfpfcnvrt@convarg convarg `S3531  1 a 4 60 ]
 "1179
 [v vfpfcnvrt@cp cp `*.32uc  1 a 2 65 ]
 "1180
 [v vfpfcnvrt@done done `a  1 a 1 64 ]
 "1179
 [v vfpfcnvrt@c c `uc  1 a 1 59 ]
-[s S3436 _IO_FILE 0 ]
+[s S3507 _IO_FILE 0 ]
 "1177
-[v vfpfcnvrt@fp fp `*.39S3436  1 p 2 51 ]
+[v vfpfcnvrt@fp fp `*.39S3507  1 p 2 51 ]
 [v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 53 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 55 ]
 "1814
@@ -1643,9 +1680,9 @@ TX_MODE 2
 [v xtoa@p p `i  1 a 2 44 ]
 "1059
 [v xtoa@c c `uc  1 a 1 48 ]
-[s S3436 _IO_FILE 0 ]
+[s S3507 _IO_FILE 0 ]
 "1055
-[v xtoa@fp fp `*.39S3436  1 p 2 37 ]
+[v xtoa@fp fp `*.39S3507  1 p 2 37 ]
 [v xtoa@d d `ui  1 p 2 39 ]
 "1153
 } 0
@@ -1657,9 +1694,9 @@ TX_MODE 2
 [v utoa@w w `i  1 a 2 43 ]
 "1005
 [v utoa@p p `i  1 a 2 41 ]
-[s S3436 _IO_FILE 0 ]
+[s S3507 _IO_FILE 0 ]
 "1001
-[v utoa@fp fp `*.39S3436  1 p 2 37 ]
+[v utoa@fp fp `*.39S3507  1 p 2 37 ]
 [v utoa@d d `ui  1 p 2 39 ]
 "1047
 } 0
@@ -1696,9 +1733,9 @@ TX_MODE 2
 [v stoa@w w `i  1 a 2 29 ]
 "945
 [v stoa@p p `i  1 a 2 27 ]
-[s S3436 _IO_FILE 0 ]
+[s S3507 _IO_FILE 0 ]
 "942
-[v stoa@fp fp `*.39S3436  1 p 2 21 ]
+[v stoa@fp fp `*.39S3507  1 p 2 21 ]
 [v stoa@s s `*.34uc  1 p 2 23 ]
 "997
 } 0
@@ -1724,9 +1761,9 @@ TX_MODE 2
 [v dtoa@p p `i  1 a 2 43 ]
 "515
 [v dtoa@s s `uc  1 a 1 47 ]
-[s S3436 _IO_FILE 0 ]
+[s S3507 _IO_FILE 0 ]
 "513
-[v dtoa@fp fp `*.39S3436  1 p 2 37 ]
+[v dtoa@fp fp `*.39S3507  1 p 2 37 ]
 [v dtoa@d d `i  1 p 2 39 ]
 "583
 } 0
@@ -1735,9 +1772,9 @@ TX_MODE 2
 {
 "195
 [v pad@i i `i  1 a 2 35 ]
-[s S3436 _IO_FILE 0 ]
+[s S3507 _IO_FILE 0 ]
 "193
-[v pad@fp fp `*.39S3436  1 p 2 28 ]
+[v pad@fp fp `*.39S3507  1 p 2 28 ]
 [v pad@buf buf `*.39uc  1 p 2 30 ]
 [v pad@p p `i  1 p 2 32 ]
 "226
@@ -1751,9 +1788,9 @@ TX_MODE 2
 [v fputs@c c `uc  1 a 1 25 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 21 ]
-[u S3401 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
-[s S3404 _IO_FILE 11 `S3401 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputs@fp fp `*.39S3404  1 p 2 23 ]
+[u S3472 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
+[s S3475 _IO_FILE 11 `S3472 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputs@fp fp `*.39S3475  1 p 2 23 ]
 "19
 } 0
 "1 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\abs.c
@@ -1792,9 +1829,9 @@ TX_MODE 2
 "478
 [v ctoa@w w `i  1 a 2 27 ]
 [v ctoa@l l `i  1 a 2 25 ]
-[s S3436 _IO_FILE 0 ]
+[s S3507 _IO_FILE 0 ]
 "476
-[v ctoa@fp fp `*.39S3436  1 p 2 21 ]
+[v ctoa@fp fp `*.39S3507  1 p 2 21 ]
 [v ctoa@c c `uc  1 p 1 23 ]
 "509
 } 0
@@ -1802,9 +1839,9 @@ TX_MODE 2
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 12 ]
-[u S3401 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
-[s S3404 _IO_FILE 11 `S3401 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputc@fp fp `*.39S3404  1 p 2 14 ]
+[u S3472 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
+[s S3475 _IO_FILE 11 `S3472 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.39S3475  1 p 2 14 ]
 "24
 } 0
 "299 D:\PracticeProject\MPLab\Inte_based_NRF24.X\mcc_generated_files/uart/src/uart1.c
@@ -1866,6 +1903,22 @@ TX_MODE 2
 "213
 [v SPI1_ByteExchange@byteData byteData `uc  1 p 1 10 ]
 "230
+} 0
+"257 D:\PracticeProject\MPLab\Inte_based_NRF24.X\ir_servo.c
+[v _ir_servo_is_busy ir_servo_is_busy `(a  1 e 1 0 ]
+{
+"260
+} 0
+"238
+[v _ir_servo_initialize ir_servo_initialize `(v  1 e 1 0 ]
+{
+"252
+} 0
+"135 D:\PracticeProject\MPLab\Inte_based_NRF24.X\mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_PeriodMatchCallbackRegister TMR0_PeriodMatchCallbackRegister `(v  1 e 1 0 ]
+{
+[v TMR0_PeriodMatchCallbackRegister@callbackHandler callbackHandler `*.38(v  1 p 3 10 ]
+"138
 } 0
 "38 D:\PracticeProject\MPLab\Inte_based_NRF24.X\mcc_generated_files/system/src/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -1991,107 +2044,23 @@ TX_MODE 2
 {
 "143
 } 0
-"131 D:\PracticeProject\MPLab\Inte_based_NRF24.X\mcc_generated_files/system/src/interrupt.c
-[v _INT1_ISR INT1_ISR `(v  1 e 1 0 ]
+"203 D:\PracticeProject\MPLab\Inte_based_NRF24.X\ir_servo.c
+[v _TMR0_IRQHandler TMR0_IRQHandler `(v  1 s 1 TMR0_IRQHandler ]
 {
-"137
+"233
 } 0
-"140
-[v _INT1_CallBack INT1_CallBack `(v  1 e 1 0 ]
+"99
+[v _ir_servo_weight_read ir_servo_weight_read `(v  1 s 1 ir_servo_weight_read ]
 {
-"147
-} 0
-"153
-[v _INT1_DefaultInterruptHandler INT1_DefaultInterruptHandler `(v  1 e 1 0 ]
-{
-"156
-} 0
-"65 D:\PracticeProject\MPLab\Inte_based_NRF24.X\main.c
-[v _ir_servo ir_servo `(v  1 e 1 0 ]
-{
-"138
-} 0
-"54
-[v i2_reload_PWM1_dutyCycle reload_PWM1_dutyCycle `(v  1 e 1 0 ]
-{
-[v i2reload_PWM1_dutyCycle@slice1 slice1 `d  1 p 4 51 ]
-[v i2reload_PWM1_dutyCycle@slice2 slice2 `d  1 p 4 55 ]
-"59
-} 0
-"10 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\xxtofl.c
-[v i2___xxtofl __xxtofl `(d  1 e 4 0 ]
-{
-[v i2___xxtofl@sign sign `uc  1 p 1 wreg ]
-"13
-[v i2___xxtofl@arg arg `ul  1 a 4 10 ]
-"12
-[v i2___xxtofl@exp exp `uc  1 a 1 9 ]
-"10
-[v i2___xxtofl@sign sign `uc  1 p 1 wreg ]
-[v i2___xxtofl@val val `l  1 p 4 0 ]
-"15
-[v i2___xxtofl@sign sign `uc  1 p 1 8 ]
-"44
-} 0
-"43 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\fltol.c
-[v i2___fltol __fltol `(l  1 e 4 0 ]
-{
-"45
-[v i2___fltol@exp1 exp1 `uc  1 a 1 48 ]
-[v i2___fltol@sign1 sign1 `uc  1 a 1 47 ]
-"43
-[v i2___fltol@f1 f1 `d  1 p 4 39 ]
-"70
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sprcmul.c
-[v i2___flmul __flmul `(d  1 e 4 0 ]
-{
-[s S3261 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
-"13
-[s S3266 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S3269 . 4 `l 1 i 4 0 `d 1 f 4 0 `S3261 1 fAsBytes 4 0 `S3266 1 fAsWords 4 0 ]
-[v i2___flmul@prod prod `S3269  1 a 4 33 ]
-"12
-[v i2___flmul@grs grs `ul  1 a 4 27 ]
-[s S3337 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
-"14
-[u S3340 . 2 `s 1 i 2 0 `us 1 n 2 0 `S3337 1 nAsBytes 2 0 ]
-[v i2___flmul@temp temp `S3340  1 a 2 37 ]
-"10
-[v i2___flmul@bexp bexp `uc  1 a 1 32 ]
-"11
-[v i2___flmul@aexp aexp `uc  1 a 1 31 ]
-"9
-[v i2___flmul@sign sign `uc  1 a 1 26 ]
-"8
-[v i2___flmul@b b `d  1 p 4 14 ]
-[v i2___flmul@a a `d  1 p 4 18 ]
-"205
-} 0
-"143 D:\PracticeProject\MPLab\Inte_based_NRF24.X\mcc_generated_files/pwm/src/pwm1_16bit.c
-[v i2_PWM1_16BIT_SetSlice1Output2DutyCycleRegister PWM1_16BIT_SetSlice1Output2DutyCycleRegister `(v  1 e 1 0 ]
-{
-[v i2PWM1_16BIT_SetSlice1Output2DutyCycleRegister@registerValue registerValue `us  1 p 2 49 ]
-"147
-} 0
-"137
-[v i2_PWM1_16BIT_SetSlice1Output1DutyCycleRegister PWM1_16BIT_SetSlice1Output1DutyCycleRegister `(v  1 e 1 0 ]
-{
-[v i2PWM1_16BIT_SetSlice1Output1DutyCycleRegister@registerValue registerValue `us  1 p 2 49 ]
-"141
-} 0
-"149
-[v i2_PWM1_16BIT_LoadBufferRegisters PWM1_16BIT_LoadBufferRegisters `(v  1 e 1 0 ]
-{
-"153
+"148
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[u S3401 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
+[u S3472 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
 "13
-[s S3404 _IO_FILE 11 `S3401 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v sprintf@f f `S3404  1 a 11 77 ]
+[s S3475 _IO_FILE 11 `S3472 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v sprintf@f f `S3475  1 a 11 77 ]
 "12
 [v sprintf@ap ap `[1]*.39v  1 a 2 75 ]
 "9
@@ -2149,243 +2118,7 @@ TX_MODE 2
 [v nrf24_printf_rf_status@i i `uc  1 a 1 93 ]
 "407
 } 0
-"5 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\printf.c
-[v i2_printf printf `(i  1 e 2 0 ]
-{
-"8
-[v i2printf@ap ap `[1]*.39v  1 a 2 79 ]
-"5
-[v i2printf@fmt fmt `*.32Cuc  1 p 2 65 ]
-"13
-} 0
-"1817 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\doprnt.c
-[v i2_vfprintf vfprintf `(i  1 e 2 0 ]
-{
-"1820
-[v i2vfprintf@cfmt cfmt `*.32uc  1 a 2 63 ]
-[s S3436 _IO_FILE 0 ]
-"1817
-[v i2vfprintf@fp fp `*.39S3436  1 p 2 57 ]
-[v i2vfprintf@fmt fmt `*.32Cuc  1 p 2 59 ]
-[v i2vfprintf@ap ap `*.39*.39v  1 p 2 61 ]
-"1840
-} 0
-"1177
-[v i2_vfpfcnvrt vfpfcnvrt `(v  1 s 1 i2_vfpfcnvrt ]
-{
-[u S3460 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
-"1188
-[v i2vfpfcnvrt@convarg convarg `S3460  1 a 4 50 ]
-"1179
-[v i2vfpfcnvrt@cp cp `*.32uc  1 a 2 55 ]
-"1180
-[v i2vfpfcnvrt@done done `a  1 a 1 54 ]
-"1179
-[v i2vfpfcnvrt@c c `uc  1 a 1 49 ]
-[s S3436 _IO_FILE 0 ]
-"1177
-[v i2vfpfcnvrt@fp fp `*.39S3436  1 p 2 41 ]
-[v i2vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 43 ]
-[v i2vfpfcnvrt@ap ap `*.39*.39v  1 p 2 45 ]
-"1814
-} 0
-"1055
-[v i2_xtoa xtoa `(v  1 s 1 i2_xtoa ]
-{
-"1063
-[v i2xtoa@i i `i  1 a 2 39 ]
-[v i2xtoa@w w `i  1 a 2 36 ]
-"1065
-[v i2xtoa@p p `i  1 a 2 34 ]
-"1059
-[v i2xtoa@c c `uc  1 a 1 38 ]
-[s S3436 _IO_FILE 0 ]
-"1055
-[v i2xtoa@fp fp `*.39S3436  1 p 2 27 ]
-[v i2xtoa@d d `ui  1 p 2 29 ]
-"1153
-} 0
-"1001
-[v i2_utoa utoa `(v  1 s 1 i2_utoa ]
-{
-"1003
-[v i2utoa@i i `i  1 a 2 35 ]
-[v i2utoa@w w `i  1 a 2 33 ]
-"1005
-[v i2utoa@p p `i  1 a 2 31 ]
-[s S3436 _IO_FILE 0 ]
-"1001
-[v i2utoa@fp fp `*.39S3436  1 p 2 27 ]
-[v i2utoa@d d `ui  1 p 2 29 ]
-"1047
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\lwmod.c
-[v i2___lwmod __lwmod `(ui  1 e 2 0 ]
-{
-"10
-[v i2___lwmod@counter counter `uc  1 a 1 4 ]
-"7
-[v i2___lwmod@dividend dividend `ui  1 p 2 0 ]
-[v i2___lwmod@divisor divisor `ui  1 p 2 2 ]
-"25
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\lwdiv.c
-[v i2___lwdiv __lwdiv `(ui  1 e 2 0 ]
-{
-"10
-[v i2___lwdiv@quotient quotient `ui  1 a 2 4 ]
-"11
-[v i2___lwdiv@counter counter `uc  1 a 1 6 ]
-"7
-[v i2___lwdiv@dividend dividend `ui  1 p 2 0 ]
-[v i2___lwdiv@divisor divisor `ui  1 p 2 2 ]
-"30
-} 0
-"942 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\doprnt.c
-[v i2_stoa stoa `(v  1 s 1 i2_stoa ]
-{
-"945
-[v i2stoa@l l `i  1 a 2 23 ]
-"944
-[v i2stoa@cp cp `*.34uc  1 a 2 21 ]
-"947
-[v i2stoa@w w `i  1 a 2 19 ]
-"945
-[v i2stoa@p p `i  1 a 2 17 ]
-[s S3436 _IO_FILE 0 ]
-"942
-[v i2stoa@fp fp `*.39S3436  1 p 2 11 ]
-[v i2stoa@s s `*.34uc  1 p 2 13 ]
-"997
-} 0
-"1158
-[v i2_read_prec_or_width read_prec_or_width `(i  1 s 2 i2_read_prec_or_width ]
-{
-"1159
-[v i2read_prec_or_width@n n `i  1 a 2 7 ]
-"1164
-[v i2read_prec_or_width@c c `uc  1 a 1 6 ]
-"1158
-[v i2read_prec_or_width@fmt fmt `*.39*.32Cuc  1 p 2 0 ]
-[v i2read_prec_or_width@ap ap `*.39[1]*.39v  1 p 2 2 ]
-"1171
-} 0
-"513
-[v i2_dtoa dtoa `(v  1 s 1 i2_dtoa ]
-{
-"516
-[v i2dtoa@i i `i  1 a 2 38 ]
-[v i2dtoa@w w `i  1 a 2 35 ]
-"518
-[v i2dtoa@p p `i  1 a 2 33 ]
-"515
-[v i2dtoa@s s `uc  1 a 1 37 ]
-[s S3436 _IO_FILE 0 ]
-"513
-[v i2dtoa@fp fp `*.39S3436  1 p 2 27 ]
-[v i2dtoa@d d `i  1 p 2 29 ]
-"583
-} 0
-"193
-[v i2_pad pad `(v  1 s 1 i2_pad ]
-{
-"195
-[v i2pad@i i `i  1 a 2 25 ]
-[s S3436 _IO_FILE 0 ]
-"193
-[v i2pad@fp fp `*.39S3436  1 p 2 18 ]
-[v i2pad@buf buf `*.39uc  1 p 2 20 ]
-[v i2pad@p p `i  1 p 2 22 ]
-"226
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\nf_fputs.c
-[v i2_fputs fputs `(i  1 e 2 0 ]
-{
-"11
-[v i2fputs@i i `i  1 a 2 16 ]
-"10
-[v i2fputs@c c `uc  1 a 1 15 ]
-"8
-[v i2fputs@s s `*.39Cuc  1 p 2 11 ]
-[u S3401 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
-[s S3404 _IO_FILE 11 `S3401 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v i2fputs@fp fp `*.39S3404  1 p 2 13 ]
-"19
-} 0
-"1 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\abs.c
-[v i2_abs abs `(i  1 e 2 0 ]
-{
-[v i2abs@a a `i  1 p 2 6 ]
-"4
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
-[v i2___awmod __awmod `(i  1 e 2 0 ]
-{
-"10
-[v i2___awmod@sign sign `uc  1 a 1 5 ]
-[v i2___awmod@counter counter `uc  1 a 1 4 ]
-"7
-[v i2___awmod@dividend dividend `i  1 p 2 0 ]
-[v i2___awmod@divisor divisor `i  1 p 2 2 ]
-"34
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awdiv.c
-[v i2___awdiv __awdiv `(i  1 e 2 0 ]
-{
-"10
-[v i2___awdiv@quotient quotient `i  1 a 2 6 ]
-"11
-[v i2___awdiv@sign sign `uc  1 a 1 5 ]
-[v i2___awdiv@counter counter `uc  1 a 1 4 ]
-"7
-[v i2___awdiv@dividend dividend `i  1 p 2 0 ]
-[v i2___awdiv@divisor divisor `i  1 p 2 2 ]
-"41
-} 0
-"476 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\doprnt.c
-[v i2_ctoa ctoa `(v  1 s 1 i2_ctoa ]
-{
-"478
-[v i2ctoa@w w `i  1 a 2 17 ]
-[v i2ctoa@l l `i  1 a 2 15 ]
-[s S3436 _IO_FILE 0 ]
-"476
-[v i2ctoa@fp fp `*.39S3436  1 p 2 11 ]
-[v i2ctoa@c c `uc  1 p 1 13 ]
-"509
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\nf_fputc.c
-[v i2_fputc fputc `(i  1 e 2 0 ]
-{
-[v i2fputc@c c `i  1 p 2 2 ]
-[u S3401 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
-[s S3404 _IO_FILE 11 `S3401 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v i2fputc@fp fp `*.39S3404  1 p 2 4 ]
-"24
-} 0
-"299 D:\PracticeProject\MPLab\Inte_based_NRF24.X\mcc_generated_files/uart/src/uart1.c
-[v i2_putch putch `(v  1 e 1 0 ]
-{
-[v i2putch@txData txData `uc  1 p 1 wreg ]
-[v i2putch@txData txData `uc  1 p 1 wreg ]
-[v i2putch@txData txData `uc  1 p 1 1 ]
-"303
-} 0
-"287
-[v i2_UART1_Write UART1_Write `(v  1 e 1 0 ]
-{
-[v i2UART1_Write@txData txData `uc  1 p 1 wreg ]
-[v i2UART1_Write@txData txData `uc  1 p 1 wreg ]
-"289
-[v i2UART1_Write@txData txData `uc  1 p 1 0 ]
-"290
-} 0
-"247
-[v i2_UART1_IsTxReady UART1_IsTxReady `(a  1 e 1 0 ]
-{
-"250
-} 0
-"31 D:\PracticeProject\MPLab\Inte_based_NRF24.X\nrf24_lib.c
+"31
 [v i2_nrf24_read_register nrf24_read_register `(uc  1 e 1 0 ]
 {
 [v i2nrf24_read_register@mnemonic_addr mnemonic_addr `uc  1 p 1 wreg ]
@@ -2434,7 +2167,374 @@ TX_MODE 2
 [v ADC_ChannelSelectAndConvert@channel channel `E17119  1 p 1 4 ]
 "208
 } 0
-"422
+"167 D:\PracticeProject\MPLab\Inte_based_NRF24.X\ir_servo.c
+[v _ir_servo_reject_step2_3 ir_servo_reject_step2_3 `(v  1 s 1 ir_servo_reject_step2_3 ]
+{
+"183
+} 0
+"153
+[v _ir_servo_reject_step1 ir_servo_reject_step1 `(v  1 s 1 ir_servo_reject_step1 ]
+{
+"162
+} 0
+"38
+[v i2_reload_PWM1_dutyCycle reload_PWM1_dutyCycle `(v  1 e 1 0 ]
+{
+[v i2reload_PWM1_dutyCycle@slice1 slice1 `d  1 p 4 51 ]
+[v i2reload_PWM1_dutyCycle@slice2 slice2 `d  1 p 4 55 ]
+"43
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\xxtofl.c
+[v i2___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v i2___xxtofl@sign sign `uc  1 p 1 wreg ]
+"13
+[v i2___xxtofl@arg arg `ul  1 a 4 10 ]
+"12
+[v i2___xxtofl@exp exp `uc  1 a 1 9 ]
+"10
+[v i2___xxtofl@sign sign `uc  1 p 1 wreg ]
+[v i2___xxtofl@val val `l  1 p 4 0 ]
+"15
+[v i2___xxtofl@sign sign `uc  1 p 1 8 ]
+"44
+} 0
+"43 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\fltol.c
+[v i2___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v i2___fltol@exp1 exp1 `uc  1 a 1 48 ]
+[v i2___fltol@sign1 sign1 `uc  1 a 1 47 ]
+"43
+[v i2___fltol@f1 f1 `d  1 p 4 39 ]
+"70
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sprcmul.c
+[v i2___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S3332 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S3337 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S3340 . 4 `l 1 i 4 0 `d 1 f 4 0 `S3332 1 fAsBytes 4 0 `S3337 1 fAsWords 4 0 ]
+[v i2___flmul@prod prod `S3340  1 a 4 33 ]
+"12
+[v i2___flmul@grs grs `ul  1 a 4 27 ]
+[s S3408 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S3411 . 2 `s 1 i 2 0 `us 1 n 2 0 `S3408 1 nAsBytes 2 0 ]
+[v i2___flmul@temp temp `S3411  1 a 2 37 ]
+"10
+[v i2___flmul@bexp bexp `uc  1 a 1 32 ]
+"11
+[v i2___flmul@aexp aexp `uc  1 a 1 31 ]
+"9
+[v i2___flmul@sign sign `uc  1 a 1 26 ]
+"8
+[v i2___flmul@b b `d  1 p 4 14 ]
+[v i2___flmul@a a `d  1 p 4 18 ]
+"205
+} 0
+"143 D:\PracticeProject\MPLab\Inte_based_NRF24.X\mcc_generated_files/pwm/src/pwm1_16bit.c
+[v i2_PWM1_16BIT_SetSlice1Output2DutyCycleRegister PWM1_16BIT_SetSlice1Output2DutyCycleRegister `(v  1 e 1 0 ]
+{
+[v i2PWM1_16BIT_SetSlice1Output2DutyCycleRegister@registerValue registerValue `us  1 p 2 49 ]
+"147
+} 0
+"137
+[v i2_PWM1_16BIT_SetSlice1Output1DutyCycleRegister PWM1_16BIT_SetSlice1Output1DutyCycleRegister `(v  1 e 1 0 ]
+{
+[v i2PWM1_16BIT_SetSlice1Output1DutyCycleRegister@registerValue registerValue `us  1 p 2 49 ]
+"141
+} 0
+"149
+[v i2_PWM1_16BIT_LoadBufferRegisters PWM1_16BIT_LoadBufferRegisters `(v  1 e 1 0 ]
+{
+"153
+} 0
+"188 D:\PracticeProject\MPLab\Inte_based_NRF24.X\ir_servo.c
+[v _ir_servo_complete ir_servo_complete `(v  1 s 1 ir_servo_complete ]
+{
+"198
+} 0
+"131 D:\PracticeProject\MPLab\Inte_based_NRF24.X\mcc_generated_files/system/src/interrupt.c
+[v _INT1_ISR INT1_ISR `(v  1 e 1 0 ]
+{
+"137
+} 0
+"140
+[v _INT1_CallBack INT1_CallBack `(v  1 e 1 0 ]
+{
+"147
+} 0
+"153
+[v _INT1_DefaultInterruptHandler INT1_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"156
+} 0
+"81 D:\PracticeProject\MPLab\Inte_based_NRF24.X\ir_servo.c
+[v _ir_servo_start ir_servo_start `(v  1 e 1 0 ]
+{
+"94
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\printf.c
+[v i2_printf printf `(i  1 e 2 0 ]
+{
+"8
+[v i2printf@ap ap `[1]*.39v  1 a 2 79 ]
+"5
+[v i2printf@fmt fmt `*.32Cuc  1 p 2 65 ]
+"13
+} 0
+"1817 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\doprnt.c
+[v i2_vfprintf vfprintf `(i  1 e 2 0 ]
+{
+"1820
+[v i2vfprintf@cfmt cfmt `*.32uc  1 a 2 63 ]
+[s S3507 _IO_FILE 0 ]
+"1817
+[v i2vfprintf@fp fp `*.39S3507  1 p 2 57 ]
+[v i2vfprintf@fmt fmt `*.32Cuc  1 p 2 59 ]
+[v i2vfprintf@ap ap `*.39*.39v  1 p 2 61 ]
+"1840
+} 0
+"1177
+[v i2_vfpfcnvrt vfpfcnvrt `(v  1 s 1 i2_vfpfcnvrt ]
+{
+[u S3531 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+"1188
+[v i2vfpfcnvrt@convarg convarg `S3531  1 a 4 50 ]
+"1179
+[v i2vfpfcnvrt@cp cp `*.32uc  1 a 2 55 ]
+"1180
+[v i2vfpfcnvrt@done done `a  1 a 1 54 ]
+"1179
+[v i2vfpfcnvrt@c c `uc  1 a 1 49 ]
+[s S3507 _IO_FILE 0 ]
+"1177
+[v i2vfpfcnvrt@fp fp `*.39S3507  1 p 2 41 ]
+[v i2vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 43 ]
+[v i2vfpfcnvrt@ap ap `*.39*.39v  1 p 2 45 ]
+"1814
+} 0
+"1055
+[v i2_xtoa xtoa `(v  1 s 1 i2_xtoa ]
+{
+"1063
+[v i2xtoa@i i `i  1 a 2 39 ]
+[v i2xtoa@w w `i  1 a 2 36 ]
+"1065
+[v i2xtoa@p p `i  1 a 2 34 ]
+"1059
+[v i2xtoa@c c `uc  1 a 1 38 ]
+[s S3507 _IO_FILE 0 ]
+"1055
+[v i2xtoa@fp fp `*.39S3507  1 p 2 27 ]
+[v i2xtoa@d d `ui  1 p 2 29 ]
+"1153
+} 0
+"1001
+[v i2_utoa utoa `(v  1 s 1 i2_utoa ]
+{
+"1003
+[v i2utoa@i i `i  1 a 2 35 ]
+[v i2utoa@w w `i  1 a 2 33 ]
+"1005
+[v i2utoa@p p `i  1 a 2 31 ]
+[s S3507 _IO_FILE 0 ]
+"1001
+[v i2utoa@fp fp `*.39S3507  1 p 2 27 ]
+[v i2utoa@d d `ui  1 p 2 29 ]
+"1047
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\lwmod.c
+[v i2___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v i2___lwmod@counter counter `uc  1 a 1 4 ]
+"7
+[v i2___lwmod@dividend dividend `ui  1 p 2 0 ]
+[v i2___lwmod@divisor divisor `ui  1 p 2 2 ]
+"25
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\lwdiv.c
+[v i2___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v i2___lwdiv@quotient quotient `ui  1 a 2 4 ]
+"11
+[v i2___lwdiv@counter counter `uc  1 a 1 6 ]
+"7
+[v i2___lwdiv@dividend dividend `ui  1 p 2 0 ]
+[v i2___lwdiv@divisor divisor `ui  1 p 2 2 ]
+"30
+} 0
+"942 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\doprnt.c
+[v i2_stoa stoa `(v  1 s 1 i2_stoa ]
+{
+"945
+[v i2stoa@l l `i  1 a 2 23 ]
+"944
+[v i2stoa@cp cp `*.34uc  1 a 2 21 ]
+"947
+[v i2stoa@w w `i  1 a 2 19 ]
+"945
+[v i2stoa@p p `i  1 a 2 17 ]
+[s S3507 _IO_FILE 0 ]
+"942
+[v i2stoa@fp fp `*.39S3507  1 p 2 11 ]
+[v i2stoa@s s `*.34uc  1 p 2 13 ]
+"997
+} 0
+"1158
+[v i2_read_prec_or_width read_prec_or_width `(i  1 s 2 i2_read_prec_or_width ]
+{
+"1159
+[v i2read_prec_or_width@n n `i  1 a 2 7 ]
+"1164
+[v i2read_prec_or_width@c c `uc  1 a 1 6 ]
+"1158
+[v i2read_prec_or_width@fmt fmt `*.39*.32Cuc  1 p 2 0 ]
+[v i2read_prec_or_width@ap ap `*.39[1]*.39v  1 p 2 2 ]
+"1171
+} 0
+"513
+[v i2_dtoa dtoa `(v  1 s 1 i2_dtoa ]
+{
+"516
+[v i2dtoa@i i `i  1 a 2 38 ]
+[v i2dtoa@w w `i  1 a 2 35 ]
+"518
+[v i2dtoa@p p `i  1 a 2 33 ]
+"515
+[v i2dtoa@s s `uc  1 a 1 37 ]
+[s S3507 _IO_FILE 0 ]
+"513
+[v i2dtoa@fp fp `*.39S3507  1 p 2 27 ]
+[v i2dtoa@d d `i  1 p 2 29 ]
+"583
+} 0
+"193
+[v i2_pad pad `(v  1 s 1 i2_pad ]
+{
+"195
+[v i2pad@i i `i  1 a 2 25 ]
+[s S3507 _IO_FILE 0 ]
+"193
+[v i2pad@fp fp `*.39S3507  1 p 2 18 ]
+[v i2pad@buf buf `*.39uc  1 p 2 20 ]
+[v i2pad@p p `i  1 p 2 22 ]
+"226
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\nf_fputs.c
+[v i2_fputs fputs `(i  1 e 2 0 ]
+{
+"11
+[v i2fputs@i i `i  1 a 2 16 ]
+"10
+[v i2fputs@c c `uc  1 a 1 15 ]
+"8
+[v i2fputs@s s `*.39Cuc  1 p 2 11 ]
+[u S3472 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
+[s S3475 _IO_FILE 11 `S3472 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v i2fputs@fp fp `*.39S3475  1 p 2 13 ]
+"19
+} 0
+"1 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\abs.c
+[v i2_abs abs `(i  1 e 2 0 ]
+{
+[v i2abs@a a `i  1 p 2 6 ]
+"4
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+[v i2___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v i2___awmod@sign sign `uc  1 a 1 5 ]
+[v i2___awmod@counter counter `uc  1 a 1 4 ]
+"7
+[v i2___awmod@dividend dividend `i  1 p 2 0 ]
+[v i2___awmod@divisor divisor `i  1 p 2 2 ]
+"34
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awdiv.c
+[v i2___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v i2___awdiv@quotient quotient `i  1 a 2 6 ]
+"11
+[v i2___awdiv@sign sign `uc  1 a 1 5 ]
+[v i2___awdiv@counter counter `uc  1 a 1 4 ]
+"7
+[v i2___awdiv@dividend dividend `i  1 p 2 0 ]
+[v i2___awdiv@divisor divisor `i  1 p 2 2 ]
+"41
+} 0
+"476 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\doprnt.c
+[v i2_ctoa ctoa `(v  1 s 1 i2_ctoa ]
+{
+"478
+[v i2ctoa@w w `i  1 a 2 17 ]
+[v i2ctoa@l l `i  1 a 2 15 ]
+[s S3507 _IO_FILE 0 ]
+"476
+[v i2ctoa@fp fp `*.39S3507  1 p 2 11 ]
+[v i2ctoa@c c `uc  1 p 1 13 ]
+"509
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\nf_fputc.c
+[v i2_fputc fputc `(i  1 e 2 0 ]
+{
+[v i2fputc@c c `i  1 p 2 2 ]
+[u S3472 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
+[s S3475 _IO_FILE 11 `S3472 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v i2fputc@fp fp `*.39S3475  1 p 2 4 ]
+"24
+} 0
+"299 D:\PracticeProject\MPLab\Inte_based_NRF24.X\mcc_generated_files/uart/src/uart1.c
+[v i2_putch putch `(v  1 e 1 0 ]
+{
+[v i2putch@txData txData `uc  1 p 1 wreg ]
+[v i2putch@txData txData `uc  1 p 1 wreg ]
+[v i2putch@txData txData `uc  1 p 1 1 ]
+"303
+} 0
+"287
+[v i2_UART1_Write UART1_Write `(v  1 e 1 0 ]
+{
+[v i2UART1_Write@txData txData `uc  1 p 1 wreg ]
+[v i2UART1_Write@txData txData `uc  1 p 1 wreg ]
+"289
+[v i2UART1_Write@txData txData `uc  1 p 1 0 ]
+"290
+} 0
+"247
+[v i2_UART1_IsTxReady UART1_IsTxReady `(a  1 e 1 0 ]
+{
+"250
+} 0
+"48 D:\PracticeProject\MPLab\Inte_based_NRF24.X\ir_servo.c
+[v _TMR0_ConfigureAndStart TMR0_ConfigureAndStart `(v  1 s 1 TMR0_ConfigureAndStart ]
+{
+[v TMR0_ConfigureAndStart@period period `uc  1 p 1 wreg ]
+[v TMR0_ConfigureAndStart@period period `uc  1 p 1 wreg ]
+[v TMR0_ConfigureAndStart@prescale prescale `uc  1 p 1 0 ]
+[v TMR0_ConfigureAndStart@postscale postscale `uc  1 p 1 1 ]
+[v TMR0_ConfigureAndStart@clockSource clockSource `uc  1 p 1 2 ]
+"51
+[v TMR0_ConfigureAndStart@period period `uc  1 p 1 3 ]
+"76
+} 0
+"82 D:\PracticeProject\MPLab\Inte_based_NRF24.X\mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_Stop TMR0_Stop `(v  1 e 1 0 ]
+{
+"85
+} 0
+"77
+[v _TMR0_Start TMR0_Start `(v  1 e 1 0 ]
+{
+"80
+} 0
+"422 D:\PracticeProject\MPLab\Inte_based_NRF24.X\mcc_generated_files/adc/src/adc.c
 [v _ADC_ThresholdISR ADC_ThresholdISR `(v  1 e 1 0 ]
 {
 "434

@@ -7,7 +7,7 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 13 "main.c"
+# 15 "main.c"
 # 1 "./mcc_generated_files/system/system.h" 1
 # 39 "./mcc_generated_files/system/system.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 1 3
@@ -30555,7 +30555,7 @@ void TMR1_Tasks(void);
 # 52 "./mcc_generated_files/system/../uart/../system/system.h" 2
 # 61 "./mcc_generated_files/system/../uart/../system/system.h"
 void SYSTEM_Initialize(void);
-# 13 "main.c" 2
+# 15 "main.c" 2
 
 # 1 "./nrf24_lib.h" 1
 # 32 "./nrf24_lib.h"
@@ -30638,7 +30638,87 @@ void nrf24_printf_rf_config(void);
 
 
 void nrf24_printf_rf_status(void);
-# 14 "main.c" 2
+# 16 "main.c" 2
+
+# 1 "./ir_servo.h" 1
+# 16 "./ir_servo.h"
+typedef enum {
+    IR_STATE_IDLE,
+    IR_STATE_WEIGHT_READ,
+    IR_STATE_REJECT_STEP1,
+    IR_STATE_REJECT_STEP2,
+    IR_STATE_REJECT_STEP3,
+    IR_STATE_COMPLETE
+} ir_servo_state_t;
+
+
+
+
+
+
+static uint16_t totalPeriod;
+# 43 "./ir_servo.h"
+void ir_servo_initialize(void);
+
+
+
+
+
+
+
+void ir_servo_start(void);
+
+
+
+
+
+
+_Bool ir_servo_is_busy(void);
+
+
+
+
+
+
+uint8_t ir_servo_get_item_count(void);
+
+
+
+
+
+
+uint16_t ir_servo_get_last_weight(void);
+
+
+
+
+
+
+uint16_t ir_servo_get_min_weight(void);
+
+
+
+
+
+
+uint16_t ir_servo_get_max_weight(void);
+
+
+
+
+
+
+void ir_servo_set_min_weight(uint16_t min_weight);
+
+
+
+
+
+
+void ir_servo_set_max_weight(uint16_t max_weight);
+# 111 "./ir_servo.h"
+void reload_PWM1_dutyCycle(double slice1, double slice2);
+# 17 "main.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 3
@@ -30697,127 +30777,37 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 15 "main.c" 2
-
-
-
-uint8_t itemNbr;
-
-adc_result_t itemWeight;
+# 18 "main.c" 2
 
 
 
 
-
-uint16_t totalPeriod;
-# 36 "main.c"
 NRF24_INIT_STATUS ret;
-
-char buffer1[20];
-unsigned char bufferTX[32];
 unsigned char bufferRX[32];
-# 54 "main.c"
-void reload_PWM1_dutyCycle(double slice1, double slice2)
-{
-    PWM1_16BIT_LoadBufferRegisters();
-    PWM1_16BIT_SetSlice1Output1DutyCycleRegister((uint16_t)((double)(slice1)*totalPeriod));
-    PWM1_16BIT_SetSlice1Output2DutyCycleRegister((uint16_t)((double)(slice2)*totalPeriod));
-}
 
 
-
-
-
-void ir_servo()
-{
-    (PIE6bits.INT1IE = 0);
-    _delay((unsigned long)((1000)*(64000000U/4000.0)));
-
-    itemNbr++;
-    (void) printf("itemNumber: %d\r\n", itemNbr);
-    _delay((unsigned long)((1000)*(64000000U/4000.0)));
-
-
-    ADC_SampleCapacitorDischarge();
-    itemWeight = ADC_ChannelSelectAndConvert(ADC_CHANNEL_ANA0);
-    (void) printf("itemWeight %d\r\n", itemWeight);
-
-
-    if (itemWeight>=10 && itemWeight<=2600)
-    {
-
-        sprintf((char*)bufferTX, "%d", itemNbr);
-        nrf24_send_rf_data(bufferTX);
-
-        sprintf((char*)bufferTX, "%d", itemWeight);
-        nrf24_send_rf_data(bufferTX);
-
-        sprintf((char*)bufferTX, " ACC");
-        nrf24_send_rf_data(bufferTX);
-
-        (void) printf("itemWeight is ACCEPTED\n");
-        (void) printf("\n");
-        return;
-    }
-
-    else
-    {
-        (void) printf("itemWeight is REJECTED\n");
-
-
-        memset(bufferTX, 0, sizeof(bufferTX));
-        bufferTX[0] = '1';
-
-
-
-        bufferTX[1] = '2';
-        bufferTX[2] = '3';
-        bufferTX[3] = 'R';
-        bufferTX[4] = 'E';
-        bufferTX[5] = 'J';
-        nrf24_send_rf_data(bufferTX);
-        printf("[Send] Data: %d,%d,%s\n", itemNbr, itemWeight, "REJ");
-# 132 "main.c"
-        reload_PWM1_dutyCycle(0.08, 0);
-        _delay((unsigned long)((500)*(64000000U/4000.0)));
-
-
-
-        reload_PWM1_dutyCycle(0.023, 0);
-        _delay((unsigned long)((2000)*(64000000U/4000.0)));
-
-
-
-        reload_PWM1_dutyCycle(0.08, 0.75);
-    }
-
-    (void) printf("\n");
-}
 
 int main(void)
 {
 
     SYSTEM_Initialize();
-    totalPeriod = ((uint16_t)PWM1PRH << 8) | PWM1PRL;
 
 
     (INTCON0bits.GIE = 1);
-    INT1_SetInterruptHandler(ir_servo);
 
 
-    itemNbr=0;
+    ir_servo_initialize();
 
 
     SPI1_Open(0);
 
 
-
-        ret = nrf24_rf_init(TX_MODE, 97);
-
+        ret = nrf24_rf_init(TX_MODE, 103);
 
 
-   if (ret == NRF24_INIT_OK) {
 
+
+    if (ret == NRF24_INIT_OK) {
         printf("###############################################################\r\n");
         printf("NRF24L01 Initialize successful\r\n");
         nrf24_printf_rf_config();
@@ -30830,17 +30820,11 @@ int main(void)
     }
 
 
-        while(1)
-        {
-# 204 "main.c"
-            if (!PIE6bits.INT1IE)
-            {
-                (PIR6bits.INT1IF = 0);
-                _delay((unsigned long)((1000)*(64000000U/4000.0)));
-                (PIE6bits.INT1IE = 1);
-            }
-             reload_PWM1_dutyCycle(0.08, 0.75);
+    while(1)
+    {
 
-        }
-
+        if (!ir_servo_is_busy())
+            reload_PWM1_dutyCycle(0.08, 0.75);
+# 73 "main.c"
+    }
 }

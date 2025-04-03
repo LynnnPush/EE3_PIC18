@@ -1,5 +1,6 @@
-build/default/production/main.p1:  \
-main.c  \
+build/default/debug/ir_servo.p1:  \
+ir_servo.c  \
+ir_servo.h  \
 mcc_generated_files/system/system.h  \
 mcc_generated_files/system/../system/config_bits.h  \
 mcc_generated_files/system/../system/clock.h  \
@@ -19,5 +20,4 @@ mcc_generated_files/system/../timer/tmr0.h  \
 mcc_generated_files/system/../timer/tmr0_deprecated.h  \
 mcc_generated_files/system/../timer/tmr1.h  \
 mcc_generated_files/system/../timer/tmr1_deprecated.h  \
-nrf24_lib.h  \
-ir_servo.h 
+nrf24_lib.h 

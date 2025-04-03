@@ -19,4 +19,5 @@ mcc_generated_files/system/../timer/tmr0.h  \
 mcc_generated_files/system/../timer/tmr0_deprecated.h  \
 mcc_generated_files/system/../timer/tmr1.h  \
 mcc_generated_files/system/../timer/tmr1_deprecated.h  \
-nrf24_lib.h 
+nrf24_lib.h  \
+ir_servo.h 

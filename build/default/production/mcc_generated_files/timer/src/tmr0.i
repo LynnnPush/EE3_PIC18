@@ -29341,11 +29341,11 @@ static void TMR0_DefaultCallback(void);
 
 void TMR0_Initialize(void)
 {
-    TMR0H = 0xFE;
+    TMR0H = 0xE;
     TMR0L = 0x0;
 
     T0CON1 = (4 << 0x5)
-        | (0 << 0x0)
+        | (4 << 0x0)
         | (1 << 0x4);
 
     TMR0_PeriodMatchCallback = TMR0_DefaultCallback;

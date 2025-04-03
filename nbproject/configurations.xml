@@ -103,6 +103,8 @@
       <itemPath>main.c</itemPath>
       <itemPath>nrf24_lib.c</itemPath>
       <itemPath>nrf24_lib.h</itemPath>
+      <itemPath>ir_servo.c</itemPath>
+      <itemPath>ir_servo.h</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>

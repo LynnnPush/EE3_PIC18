@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "ir_servo.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,197 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 15 "main.c"
+# 1 "ir_servo.c" 2
+# 11 "ir_servo.c"
+# 1 "./ir_servo.h" 1
+# 12 "./ir_servo.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdint.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdint.h" 2 3
+# 26 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 133 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned __int24 uintptr_t;
+# 148 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __int24 intptr_t;
+# 164 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+
+
+
+
+typedef __int24 int24_t;
+
+
+
+
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 194 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 235 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 27 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdint.h" 2 3
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+typedef int24_t int_fast24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+typedef uint24_t uint_fast24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 148 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int16_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint16_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 149 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdint.h" 2 3
+# 13 "./ir_servo.h" 2
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdbool.h" 1 3
+# 14 "./ir_servo.h" 2
+
+
+typedef enum {
+    IR_STATE_IDLE,
+    IR_STATE_WEIGHT_READ,
+    IR_STATE_REJECT_STEP1,
+    IR_STATE_REJECT_STEP2,
+    IR_STATE_REJECT_STEP3,
+    IR_STATE_COMPLETE
+} ir_servo_state_t;
+
+
+
+
+
+
+static uint16_t totalPeriod;
+# 43 "./ir_servo.h"
+void ir_servo_initialize(void);
+
+
+
+
+
+
+
+void ir_servo_start(void);
+
+
+
+
+
+
+_Bool ir_servo_is_busy(void);
+
+
+
+
+
+
+uint8_t ir_servo_get_item_count(void);
+
+
+
+
+
+
+uint16_t ir_servo_get_last_weight(void);
+
+
+
+
+
+
+uint16_t ir_servo_get_min_weight(void);
+
+
+
+
+
+
+uint16_t ir_servo_get_max_weight(void);
+
+
+
+
+
+
+void ir_servo_set_min_weight(uint16_t min_weight);
+
+
+
+
+
+
+void ir_servo_set_max_weight(uint16_t max_weight);
+# 111 "./ir_servo.h"
+void reload_PWM1_dutyCycle(double slice1, double slice2);
+# 12 "ir_servo.c" 2
 # 1 "./mcc_generated_files/system/system.h" 1
 # 39 "./mcc_generated_files/system/system.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 1 3
@@ -23,16 +212,7 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdlib.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdlib.h" 2 3
-
-
-
-
-
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\features.h" 1 3
 # 11 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdlib.h" 2 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdlib.h" 3
@@ -41,10 +221,6 @@ extern double __fpnormalize(double);
 typedef long int wchar_t;
 # 128 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned size_t;
-# 174 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 210 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __uint24 uint24_t;
 # 22 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdlib.h" 2 3
 
 int atoi (const char *);
@@ -133,91 +309,6 @@ extern void __builtin_software_breakpoint(void);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdint.h" 1 3
-# 26 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 133 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned __int24 uintptr_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 intptr_t;
-# 164 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
-
-
-
-
-typedef short int16_t;
-# 179 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 194 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 215 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 235 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 27 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdint.h" 2 3
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 149 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdint.h" 2 3
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\builtins.h" 2 3
 
 
 
@@ -29263,8 +29354,6 @@ unsigned char __t3rd16on(void);
 # 39 "./mcc_generated_files/system/system.h" 2
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdbool.h" 1 3
-# 41 "./mcc_generated_files/system/system.h" 2
 
 # 1 "./mcc_generated_files/system/../system/config_bits.h" 1
 # 39 "./mcc_generated_files/system/../system/config_bits.h"
@@ -30555,8 +30644,7 @@ void TMR1_Tasks(void);
 # 52 "./mcc_generated_files/system/../uart/../system/system.h" 2
 # 61 "./mcc_generated_files/system/../uart/../system/system.h"
 void SYSTEM_Initialize(void);
-# 15 "main.c" 2
-
+# 13 "ir_servo.c" 2
 # 1 "./nrf24_lib.h" 1
 # 32 "./nrf24_lib.h"
 unsigned char ADDRESS_DATA_RXPIPE0[5] = {0x00,0x00,0x00,0x00,0x01};
@@ -30638,88 +30726,7 @@ void nrf24_printf_rf_config(void);
 
 
 void nrf24_printf_rf_status(void);
-# 16 "main.c" 2
-
-# 1 "./ir_servo.h" 1
-# 16 "./ir_servo.h"
-typedef enum {
-    IR_STATE_IDLE,
-    IR_STATE_WEIGHT_READ,
-    IR_STATE_REJECT_STEP1,
-    IR_STATE_REJECT_STEP2,
-    IR_STATE_REJECT_STEP3,
-    IR_STATE_COMPLETE
-} ir_servo_state_t;
-
-
-
-
-
-
-static uint16_t totalPeriod;
-# 43 "./ir_servo.h"
-void ir_servo_initialize(void);
-
-
-
-
-
-
-
-void ir_servo_start(void);
-
-
-
-
-
-
-_Bool ir_servo_is_busy(void);
-
-
-
-
-
-
-uint8_t ir_servo_get_item_count(void);
-
-
-
-
-
-
-uint16_t ir_servo_get_last_weight(void);
-
-
-
-
-
-
-uint16_t ir_servo_get_min_weight(void);
-
-
-
-
-
-
-uint16_t ir_servo_get_max_weight(void);
-
-
-
-
-
-
-void ir_servo_set_min_weight(uint16_t min_weight);
-
-
-
-
-
-
-void ir_servo_set_max_weight(uint16_t max_weight);
-# 111 "./ir_servo.h"
-void reload_PWM1_dutyCycle(double slice1, double slice2);
-# 17 "main.c" 2
-
+# 14 "ir_servo.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -30777,54 +30784,304 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 18 "main.c" 2
+# 15 "ir_servo.c" 2
+
+
+
+static volatile ir_servo_state_t irServoState = IR_STATE_IDLE;
+
+
+static volatile uint8_t itemNbr = 0;
+
+
+static volatile int16_t itemWeight = 0;
+
+
+static uint16_t weightMin = 10;
+static uint16_t weightMax = 2600;
+
+
+static unsigned char bufferTX[32];
 
 
 
 
-NRF24_INIT_STATUS ret;
-unsigned char bufferRX[32];
+
+
+void reload_PWM1_dutyCycle(double slice1, double slice2)
+{
+    PWM1_16BIT_LoadBufferRegisters();
+    PWM1_16BIT_SetSlice1Output1DutyCycleRegister((uint16_t)((double)(slice1)*totalPeriod));
+    PWM1_16BIT_SetSlice1Output2DutyCycleRegister((uint16_t)((double)(slice2)*totalPeriod));
+}
 
 
 
-int main(void)
+
+static void TMR0_ConfigureAndStart(uint8_t period, uint8_t prescale, uint8_t postscale, uint8_t clockSource)
 {
 
-    SYSTEM_Initialize();
+    TMR0_Stop();
 
 
-    (INTCON0bits.GIE = 1);
+    TMR0H = period;
 
 
-    ir_servo_initialize();
+    TMR0L = 0;
 
 
-    SPI1_Open(0);
+    T0CON1 = (clockSource << 0x5) |
+             (prescale << 0x0) |
+             (1 << 0x4);
 
 
-        ret = nrf24_rf_init(TX_MODE, 103);
+    T0CON0 = (postscale << 0x0) |
+             (0 << 0x4);
+
+
+    PIR3bits.TMR0IF = 0;
+
+
+    PIE3bits.TMR0IE = 1;
+
+
+    TMR0_Start();
+}
 
 
 
 
-    if (ret == NRF24_INIT_OK) {
-        printf("###############################################################\r\n");
-        printf("NRF24L01 Initialize successful\r\n");
-        nrf24_printf_rf_config();
-        _delay((unsigned long)((10)*(64000000U/4000.0)));
-        printf("###############################################################\r\n");
-    } else {
-        printf("###############################################################\r\n");
-        printf("Failed Initialize NRF24L01\r\n");
-        printf("###############################################################\r\n");
+void ir_servo_start(void)
+{
+
+    if (irServoState != IR_STATE_IDLE) {
+
+        (PIR6bits.INT1IF = 0);
+        return;
     }
 
 
-    while(1)
+    TMR0_Stop();
+
+    itemNbr++;
+    (void) printf("itemNumber: %d\r\n", itemNbr);
+
+
+    irServoState = IR_STATE_WEIGHT_READ;
+    TMR0_ConfigureAndStart(0x79, 4, 15, 4);
+
+}
+
+
+
+
+static void ir_servo_weight_read(void)
+{
+
+
+
+
+
+
+    ADC_SampleCapacitorDischarge();
+    itemWeight = ADC_ChannelSelectAndConvert(ADC_CHANNEL_ANA0);
+    (void) printf("itemWeight %d\r\n", itemWeight);
+
+
+    if (itemWeight >= weightMin && itemWeight <= weightMax)
     {
 
-        if (!ir_servo_is_busy())
-            reload_PWM1_dutyCycle(0.08, 0.75);
-# 73 "main.c"
+        memset(bufferTX, 0, sizeof(bufferTX));
+        sprintf((char*)bufferTX, "%d,%d,%s", itemNbr, itemWeight, "ACC");
+        nrf24_send_rf_data(bufferTX);
+        printf("[Send] Data: %d,%d,%s\n", itemNbr, itemWeight, "ACC");
+
+        (void) printf("itemWeight is ACCEPTED\n");
+        (void) printf("\n");
+
+
+        irServoState = IR_STATE_IDLE;
+
+
+        (PIR6bits.INT1IF = 0);
     }
+    else
+    {
+
+        (void) printf("itemWeight is REJECTED\n");
+
+
+        memset(bufferTX, 0, sizeof(bufferTX));
+        sprintf((char*)bufferTX, "%d,%d,%s", itemNbr, itemWeight, "REJ");
+        nrf24_send_rf_data(bufferTX);
+        printf("[Send] Data: %d,%d,%s\n", itemNbr, itemWeight, "REJ");
+
+
+        reload_PWM1_dutyCycle(0.08, 0);
+
+
+        irServoState = IR_STATE_REJECT_STEP1;
+        TMR0_ConfigureAndStart(0x3C, 4, 15, 4);
+
+    }
+}
+
+
+
+
+static void ir_servo_reject_step1(void)
+{
+
+    reload_PWM1_dutyCycle(0.023, 0);
+
+
+    irServoState = IR_STATE_REJECT_STEP2;
+    TMR0_ConfigureAndStart(0xF2, 4, 15, 4);
+
+}
+
+
+
+
+static void ir_servo_reject_step2_3(void)
+{
+    if (irServoState == IR_STATE_REJECT_STEP2) {
+
+        TMR0_ConfigureAndStart(0x79, 4, 15, 4);
+
+        irServoState = IR_STATE_REJECT_STEP3;
+    } else {
+
+        reload_PWM1_dutyCycle(0.08, 0.75);
+
+
+        irServoState = IR_STATE_COMPLETE;
+        TMR0_ConfigureAndStart(0xFE, 0, 0, 4);
+
+    }
+}
+
+
+
+
+static void ir_servo_complete(void)
+{
+
+
+
+    (PIR6bits.INT1IF = 0);
+    (void) printf("\n");
+
+
+    irServoState = IR_STATE_IDLE;
+}
+
+
+
+
+static void TMR0_IRQHandler(void)
+{
+
+    PIR3bits.TMR0IF = 0;
+
+
+    switch (irServoState)
+    {
+        case IR_STATE_WEIGHT_READ:
+            ir_servo_weight_read();
+            break;
+
+        case IR_STATE_REJECT_STEP1:
+            ir_servo_reject_step1();
+            break;
+
+        case IR_STATE_REJECT_STEP2:
+        case IR_STATE_REJECT_STEP3:
+            ir_servo_reject_step2_3();
+            break;
+
+        case IR_STATE_COMPLETE:
+            ir_servo_complete();
+            break;
+
+        case IR_STATE_IDLE:
+        default:
+
+            break;
+    }
+}
+
+
+
+
+void ir_servo_initialize(void)
+{
+
+    totalPeriod = ((uint16_t)PWM1PRH << 8) | PWM1PRL;
+
+
+    irServoState = IR_STATE_IDLE;
+    itemNbr = 0;
+
+
+    INT1_SetInterruptHandler(ir_servo_start);
+
+
+    TMR0_PeriodMatchCallbackRegister(TMR0_IRQHandler);
+}
+
+
+
+
+_Bool ir_servo_is_busy(void)
+{
+    return (irServoState != IR_STATE_IDLE);
+}
+
+
+
+
+uint8_t ir_servo_get_item_count(void)
+{
+    return itemNbr;
+}
+
+
+
+
+uint16_t ir_servo_get_last_weight(void)
+{
+    return itemWeight;
+}
+
+
+
+
+uint16_t ir_servo_get_min_weight(void)
+{
+    return weightMin;
+}
+
+
+
+
+uint16_t ir_servo_get_max_weight(void)
+{
+    return weightMax;
+}
+
+
+
+
+void ir_servo_set_min_weight(uint16_t min_weight)
+{
+    weightMin = min_weight;
+}
+
+
+
+
+void ir_servo_set_max_weight(uint16_t max_weight)
+{
+    weightMax = max_weight;
 }

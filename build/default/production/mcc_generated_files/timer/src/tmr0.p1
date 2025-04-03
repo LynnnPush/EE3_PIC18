@@ -2646,14 +2646,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _TMR0_Initialize ]
 [f ]
 "47
-[; ;mcc_generated_files/timer/src/tmr0.c: 47:     TMR0H = 0xFE;
-[e = _TMR0H -> -> 254 `i `uc ]
+[; ;mcc_generated_files/timer/src/tmr0.c: 47:     TMR0H = 0xE;
+[e = _TMR0H -> -> 14 `i `uc ]
 "48
 [; ;mcc_generated_files/timer/src/tmr0.c: 48:     TMR0L = 0x0;
 [e = _TMR0L -> -> 0 `i `uc ]
 "50
 [; ;mcc_generated_files/timer/src/tmr0.c: 50:     T0CON1 = (4 << 0x5)
-[e = _T0CON1 -> | | << -> 4 `i -> 5 `i << -> 0 `i -> 0 `i << -> 1 `i -> 4 `i `uc ]
+[e = _T0CON1 -> | | << -> 4 `i -> 5 `i << -> 4 `i -> 0 `i << -> 1 `i -> 4 `i `uc ]
 "54
 [; ;mcc_generated_files/timer/src/tmr0.c: 54:     TMR0_PeriodMatchCallback = TMR0_DefaultCallback;
 [e = _TMR0_PeriodMatchCallback &U _TMR0_DefaultCallback ]

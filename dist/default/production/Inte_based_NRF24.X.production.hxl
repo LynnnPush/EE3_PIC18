@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\HUAWEI\AppData\Local\Temp\xcAstuc.\driver_tmp_3.o
+ C:\Users\HUAWEI\AppData\Local\Temp\xcAsd6g.\driver_tmp_3.o
  -Odist/default/production\Inte_based_NRF24.X.production.hex
  -logfile=dist/default/production\Inte_based_NRF24.X.production.hxl
  -addressing=1
@@ -9,30 +9,32 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\HUAWEI\AppData\Local\Temp\xcAstuc.\driver_tmp_3.o)
-  8h - Bh		(C:\Users\HUAWEI\AppData\Local\Temp\xcAstuc.\driver_tmp_3.o)
-  18h - 1Dh		(C:\Users\HUAWEI\AppData\Local\Temp\xcAstuc.\driver_tmp_3.o)
-  FAFAh - 14E15h		(C:\Users\HUAWEI\AppData\Local\Temp\xcAstuc.\driver_tmp_3.o)
-  300000h - 300007h		(C:\Users\HUAWEI\AppData\Local\Temp\xcAstuc.\driver_tmp_3.o)
-  300009h - 300009h		(C:\Users\HUAWEI\AppData\Local\Temp\xcAstuc.\driver_tmp_3.o)
+  0h - 3h		(C:\Users\HUAWEI\AppData\Local\Temp\xcAsd6g.\driver_tmp_3.o)
+  8h - Bh		(C:\Users\HUAWEI\AppData\Local\Temp\xcAsd6g.\driver_tmp_3.o)
+  18h - 1Dh		(C:\Users\HUAWEI\AppData\Local\Temp\xcAsd6g.\driver_tmp_3.o)
+  FAF4h - FFFEh		(C:\Users\HUAWEI\AppData\Local\Temp\xcAsd6g.\driver_tmp_3.o)
+  10000h - 14F63h		(C:\Users\HUAWEI\AppData\Local\Temp\xcAsd6g.\driver_tmp_3.o)
+  300000h - 300007h		(C:\Users\HUAWEI\AppData\Local\Temp\xcAsd6g.\driver_tmp_3.o)
+  300009h - 300009h		(C:\Users\HUAWEI\AppData\Local\Temp\xcAsd6g.\driver_tmp_3.o)
  Unused ranges:
   4h - 7h
   Ch - 17h
-  1Eh - FAF9h
-  14E16h - 2FFFFFh
+  1Eh - FAF3h
+  FFFFh - FFFFh
+  14F64h - 2FFFFFh
   300008h - 300008h
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\HUAWEI\AppData\Local\Temp\xcAstuc.\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\HUAWEI\AppData\Local\Temp\xcAsd6g.\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
 00000000 | H1 H1 H1 H1 -- -- -- -- H1 H1 H1 H1 -- -- -- --
 00000010 | -- -- -- -- -- -- -- -- H1 H1 H1 H1 H1 H1 -- --
 ----------------------------------------------------------
-0000FAF0 | -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1 H1 H1
+0000FAF0 | -- -- -- -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000FB00 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000FB10 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000FB20 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
@@ -112,7 +114,7 @@
 0000FFC0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000FFD0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000FFE0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-0000FFF0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000FFF0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 --
 00010000 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00010010 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00010020 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
@@ -1362,7 +1364,28 @@
 00014DE0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00014DF0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00014E00 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00014E10 | H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- --
+00014E10 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014E20 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014E30 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014E40 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014E50 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014E60 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014E70 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014E80 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014E90 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014EA0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014EB0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014EC0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014ED0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014EE0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014EF0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014F00 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014F10 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014F20 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014F30 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014F40 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014F50 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00014F60 | H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 00300000 | H1 H1 H1 H1 H1 H1 H1 H1 -- H1 -- -- -- -- -- --
 00300010 | --

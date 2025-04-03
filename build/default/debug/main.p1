@@ -1,65 +1,13 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"36 main.c
-[; ;main.c: 36: NRF24_INIT_STATUS ret;
+"22 main.c
+[; ;main.c: 22: NRF24_INIT_STATUS ret;
 [c E17910 0 1 .. ]
 [n E17910 . NRF24_INIT_OK NRF24_INIT_FAILED  ]
-"101 ./mcc_generated_files/system/../pwm/pwm1_16bit.h
-[; ;./mcc_generated_files/system/../pwm/pwm1_16bit.h: 101: void PWM1_16BIT_LoadBufferRegisters(void);
-[v _PWM1_16BIT_LoadBufferRegisters `(v ~T0 @X0 0 ef ]
-"83
-[; ;./mcc_generated_files/system/../pwm/pwm1_16bit.h: 83: void PWM1_16BIT_SetSlice1Output1DutyCycleRegister(uint16_t value);
-[v _PWM1_16BIT_SetSlice1Output1DutyCycleRegister `(v ~T0 @X0 0 ef1`us ]
-"91
-[; ;./mcc_generated_files/system/../pwm/pwm1_16bit.h: 91: void PWM1_16BIT_SetSlice1Output2DutyCycleRegister(uint16_t value);
-[v _PWM1_16BIT_SetSlice1Output2DutyCycleRegister `(v ~T0 @X0 0 ef1`us ]
-"47448 C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h
-[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 47448:     struct {
-[s S2230 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2230 . INT1IE CLC2IE CWG1IE NCO1IE DMA2SCNTIE DMA2DCNTIE DMA2ORIE DMA2AIE ]
-"47447
-[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 47447: typedef union {
-[u S2229 `S2230 1 ]
-[n S2229 . . ]
-"47459
-[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 47459: extern volatile PIE6bits_t PIE6bits __attribute__((address(0x4A4)));
-[v _PIE6bits `VS2229 ~T0 @X0 0 e@1188 ]
-[v F205 `(v ~T0 @X0 1 tf1`ul ]
-"20 C:\Program Files\Microchip\xc8\v2.50\pic\include\builtins.h
-[v __delay `JF205 ~T0 @X0 0 e ]
-[p i __delay ]
-"117 C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\stdio.h
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\stdio.h: 117: int printf(const char *restrict, ...);
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"206 ./mcc_generated_files/system/../adc/adc.h
-[; ;./mcc_generated_files/system/../adc/adc.h: 206: void ADC_SampleCapacitorDischarge(void);
-[v _ADC_SampleCapacitorDischarge `(v ~T0 @X0 0 ef ]
-"76 main.c
-[; ;main.c: 76:     itemWeight = ADC_ChannelSelectAndConvert(ADC_CHANNEL_ANA0);
-[c E17707 59 60 61 62 63 0 .. ]
-[n E17707 . ADC_CHANNEL_VSS ADC_CHANNEL_TEMP ADC_CHANNEL_DAC1 ADC_CHANNEL_FVR_BUFFER1 ADC_CHANNEL_FVR_BUFFER2 ADC_CHANNEL_ANA0  ]
-"181 ./mcc_generated_files/system/../adc/adc.h
-[; ;./mcc_generated_files/system/../adc/adc.h: 181: adc_result_t ADC_ChannelSelectAndConvert(adc_channel_t channel);
-[v _ADC_ChannelSelectAndConvert `(s ~T0 @X0 0 ef1`E17707 ]
-"121 C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\stdio.h
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"162 ./nrf24_lib.h
-[; ;./nrf24_lib.h: 162: void nrf24_send_rf_data(unsigned char *buffer);
-[v _nrf24_send_rf_data `(v ~T0 @X0 0 ef1`*uc ]
-"29 C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\string.h
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\string.h: 29: void *memset (void *, int, size_t);
-[v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
 [p mainexit ]
 "61 ./mcc_generated_files/system/../uart/../system/system.h
 [; ;./mcc_generated_files/system/../uart/../system/system.h: 61: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"45663 C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h
-[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 45663: extern volatile unsigned char PWM1PRH __attribute__((address(0x464)));
-[v _PWM1PRH `Vuc ~T0 @X0 0 e@1124 ]
-"45643
-[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 45643: extern volatile unsigned char PWM1PRL __attribute__((address(0x463)));
-[v _PWM1PRL `Vuc ~T0 @X0 0 e@1123 ]
-"49899
+"49899 C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h
 [; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 49899:     struct {
 [s S2318 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S2318 . INT0EDG INT1EDG INT2EDG . IPEN GIEL GIE ]
@@ -74,35 +22,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 "49913
 [; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 49913: extern volatile INTCON0bits_t INTCON0bits __attribute__((address(0x4D6)));
 [v _INTCON0bits `VS2317 ~T0 @X0 0 e@1238 ]
-[v F17688 `(v ~T0 @X0 0 tf ]
-"282 ./mcc_generated_files/system/../system/interrupt.h
-[; ;./mcc_generated_files/system/../system/interrupt.h: 282: void INT1_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _INT1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F17688 ]
-[v F18127 `(v ~T0 @X0 0 tf ]
+"43 ./ir_servo.h
+[; ;./ir_servo.h: 43: void ir_servo_initialize(void);
+[v _ir_servo_initialize `(v ~T0 @X0 0 ef ]
 "150 ./mcc_generated_files/system/../spi/spi1.h
 [; ;./mcc_generated_files/system/../spi/spi1.h: 150: _Bool SPI1_Open(uint8_t spiConfigIndex);
 [v _SPI1_Open `(a ~T0 @X0 0 ef1`uc ]
 "146 ./nrf24_lib.h
 [; ;./nrf24_lib.h: 146: NRF24_INIT_STATUS nrf24_rf_init(unsigned char mode, unsigned char rf_channel);
 [v _nrf24_rf_init `(E17910 ~T0 @X0 0 ef2`uc`uc ]
-"158 main.c
-[; ;main.c: 158:         ret = nrf24_rf_init(TX_MODE, 97);
+"42 main.c
+[; ;main.c: 42:         ret = nrf24_rf_init(TX_MODE, 103);
 [c E17914 1 2 .. ]
 [n E17914 . RX_MODE TX_MODE  ]
+"117 C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\stdio.h: 117: int printf(const char *restrict, ...);
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 "217 ./nrf24_lib.h
 [; ;./nrf24_lib.h: 217: void nrf24_printf_rf_config(void);
 [v _nrf24_printf_rf_config `(v ~T0 @X0 0 ef ]
-"48322 C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h
-[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 48322:     struct {
-[s S2262 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2262 . INT1IF CLC2IF CWG1IF NCO1IF DMA2SCNTIF DMA2DCNTIF DMA2ORIF DMA2AIF ]
-"48321
-[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 48321: typedef union {
-[u S2261 `S2262 1 ]
-[n S2261 . . ]
-"48333
-[; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 48333: extern volatile PIR6bits_t PIR6bits __attribute__((address(0x4B4)));
-[v _PIR6bits `VS2261 ~T0 @X0 0 e@1204 ]
+[v F205 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v2.50\pic\include\builtins.h
+[v __delay `JF205 ~T0 @X0 0 e ]
+[p i __delay ]
+"58 ./ir_servo.h
+[; ;./ir_servo.h: 58: _Bool ir_servo_is_busy(void);
+[v _ir_servo_is_busy `(a ~T0 @X0 0 ef ]
+"111
+[; ;./ir_servo.h: 111: void reload_PWM1_dutyCycle(double slice1, double slice2);
+[v _reload_PWM1_dutyCycle `(v ~T0 @X0 0 ef2`d`d ]
 "328 C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h
 [; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 328: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2698,294 +2646,104 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 1 `i `uc
 ..
 ]
-"18 main.c
-[; ;main.c: 18: uint8_t itemNbr;
-[v _itemNbr `uc ~T0 @X0 1 e ]
-"20
-[; ;main.c: 20: adc_result_t itemWeight;
-[v _itemWeight `s ~T0 @X0 1 e ]
-"26
-[; ;main.c: 26: uint16_t totalPeriod;
-[v _totalPeriod `us ~T0 @X0 1 e ]
-"36
-[; ;main.c: 36: NRF24_INIT_STATUS ret;
+"30 ./ir_servo.h
+[; ;./ir_servo.h: 30: static uint16_t totalPeriod;
+[v _totalPeriod `us ~T0 @X0 1 s ]
+"22 main.c
+[; ;main.c: 22: NRF24_INIT_STATUS ret;
 [v _ret `E17910 ~T0 @X0 1 e ]
-"38
-[; ;main.c: 38: char buffer1[20];
-[v _buffer1 `uc ~T0 @X0 -> 20 `i e ]
-"39
-[; ;main.c: 39: unsigned char bufferTX[32];
-[v _bufferTX `uc ~T0 @X0 -> 32 `i e ]
-"40
-[; ;main.c: 40: unsigned char bufferRX[32];
+"23
+[; ;main.c: 23: unsigned char bufferRX[32];
 [v _bufferRX `uc ~T0 @X0 -> 32 `i e ]
-"54
-[; ;main.c: 54: void reload_PWM1_dutyCycle(double slice1, double slice2)
-[v _reload_PWM1_dutyCycle `(v ~T0 @X0 1 ef2`d`d ]
-"55
-[; ;main.c: 55: {
-{
-[e :U _reload_PWM1_dutyCycle ]
-"54
-[; ;main.c: 54: void reload_PWM1_dutyCycle(double slice1, double slice2)
-[v _slice1 `d ~T0 @X0 1 r1 ]
-[v _slice2 `d ~T0 @X0 1 r2 ]
-"55
-[; ;main.c: 55: {
-[f ]
-"56
-[; ;main.c: 56:     PWM1_16BIT_LoadBufferRegisters();
-[e ( _PWM1_16BIT_LoadBufferRegisters ..  ]
-"57
-[; ;main.c: 57:     PWM1_16BIT_SetSlice1Output1DutyCycleRegister((uint16_t)((double)(slice1)*totalPeriod));
-[e ( _PWM1_16BIT_SetSlice1Output1DutyCycleRegister (1 -> * _slice1 -> -> _totalPeriod `ui `d `us ]
-"58
-[; ;main.c: 58:     PWM1_16BIT_SetSlice1Output2DutyCycleRegister((uint16_t)((double)(slice2)*totalPeriod));
-[e ( _PWM1_16BIT_SetSlice1Output2DutyCycleRegister (1 -> * _slice2 -> -> _totalPeriod `ui `d `us ]
-"59
-[; ;main.c: 59: }
-[e :UE 2420 ]
-}
-"65
-[; ;main.c: 65: void ir_servo()
-[v _ir_servo `(v ~T0 @X0 1 ef ]
-"66
-[; ;main.c: 66: {
-{
-[e :U _ir_servo ]
-[f ]
-"67
-[; ;main.c: 67:     (PIE6bits.INT1IE = 0);
-[e = . . _PIE6bits 0 0 -> -> 0 `i `uc ]
-"68
-[; ;main.c: 68:     _delay((unsigned long)((1000)*(64000000U/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"70
-[; ;main.c: 70:     itemNbr++;
-[e ++ _itemNbr -> -> 1 `i `uc ]
-"71
-[; ;main.c: 71:     (void) printf("itemNumber: %d\r\n", itemNbr);
-[e ( _printf , (. :s 1C -> _itemNbr `i ]
-"72
-[; ;main.c: 72:     _delay((unsigned long)((1000)*(64000000U/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"75
-[; ;main.c: 75:     ADC_SampleCapacitorDischarge();
-[e ( _ADC_SampleCapacitorDischarge ..  ]
-"76
-[; ;main.c: 76:     itemWeight = ADC_ChannelSelectAndConvert(ADC_CHANNEL_ANA0);
-[e = _itemWeight ( _ADC_ChannelSelectAndConvert (1 . `E17707 5 ]
-"77
-[; ;main.c: 77:     (void) printf("itemWeight %d\r\n", itemWeight);
-[e ( _printf , (. :s 2C -> _itemWeight `i ]
-"80
-[; ;main.c: 80:     if (itemWeight>=10 && itemWeight<=2600)
-[e $ ! && >= -> _itemWeight `i -> 10 `i <= -> _itemWeight `i -> 2600 `i 2422  ]
-"81
-[; ;main.c: 81:     {
-{
-"83
-[; ;main.c: 83:         sprintf((char*)bufferTX, "%d", itemNbr);
-[e ( _sprintf (1 , (. , -> &U _bufferTX `*uc :s 3C -> _itemNbr `i ]
-"84
-[; ;main.c: 84:         nrf24_send_rf_data(bufferTX);
-[e ( _nrf24_send_rf_data (1 &U _bufferTX ]
-"86
-[; ;main.c: 86:         sprintf((char*)bufferTX, "%d", itemWeight);
-[e ( _sprintf (1 , (. , -> &U _bufferTX `*uc :s 4C -> _itemWeight `i ]
-"87
-[; ;main.c: 87:         nrf24_send_rf_data(bufferTX);
-[e ( _nrf24_send_rf_data (1 &U _bufferTX ]
-"89
-[; ;main.c: 89:         sprintf((char*)bufferTX, " ACC");
-[e ( _sprintf (1 , -> &U _bufferTX `*uc :s 5C ]
-"90
-[; ;main.c: 90:         nrf24_send_rf_data(bufferTX);
-[e ( _nrf24_send_rf_data (1 &U _bufferTX ]
-"92
-[; ;main.c: 92:         (void) printf("itemWeight is ACCEPTED\n");
-[e ( _printf :s 6C ]
-"93
-[; ;main.c: 93:         (void) printf("\n");
-[e ( _printf :s 7C ]
-"94
-[; ;main.c: 94:         return;
-[e $UE 2421  ]
-"95
-[; ;main.c: 95:     }
-}
-[e $U 2423  ]
-"97
-[; ;main.c: 97:     else
-[e :U 2422 ]
-"98
-[; ;main.c: 98:     {
-{
-"99
-[; ;main.c: 99:         (void) printf("itemWeight is REJECTED\n");
-[e ( _printf :s 8C ]
-"102
-[; ;main.c: 102:         memset(bufferTX, 0, sizeof(bufferTX));
-[e ( _memset (3 , , -> &U _bufferTX `*v -> 0 `i -> # _bufferTX `ui ]
-"103
-[; ;main.c: 103:         sprintf((char*)bufferTX, "%d,%d,%s", itemNbr, itemWeight, "REJ");
-[e ( _sprintf (1 , , , (. , -> &U _bufferTX `*uc :s 9C -> _itemNbr `i -> _itemWeight `i :s 10C ]
-"104
-[; ;main.c: 104:         nrf24_send_rf_data(bufferTX);
-[e ( _nrf24_send_rf_data (1 &U _bufferTX ]
-"105
-[; ;main.c: 105:         printf("[Send] Data: %d,%d,%s\n", itemNbr, itemWeight, "REJ");
-[e ( _printf , , , (. :s 11C -> _itemNbr `i -> _itemWeight `i :s 12C ]
-"124
-[; ;main.c: 124:         reload_PWM1_dutyCycle(0.08, 0);
-[e ( _reload_PWM1_dutyCycle (2 , .0.08 -> -> 0 `i `d ]
-"125
-[; ;main.c: 125:         _delay((unsigned long)((500)*(64000000U/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"129
-[; ;main.c: 129:         reload_PWM1_dutyCycle(0.023, 0);
-[e ( _reload_PWM1_dutyCycle (2 , .0.023 -> -> 0 `i `d ]
-"130
-[; ;main.c: 130:         _delay((unsigned long)((2000)*(64000000U/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"134
-[; ;main.c: 134:         reload_PWM1_dutyCycle(0.08, 0.75);
-[e ( _reload_PWM1_dutyCycle (2 , .0.08 .0.75 ]
-"135
-[; ;main.c: 135:     }
-}
-[e :U 2423 ]
-"137
-[; ;main.c: 137:     (void) printf("\n");
-[e ( _printf :s 13C ]
-"138
-[; ;main.c: 138: }
-[e :UE 2421 ]
-}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"140
-[; ;main.c: 140: int main(void)
+"27
+[; ;main.c: 27: int main(void)
 [v _main `(i ~T0 @X0 1 ef ]
-"141
-[; ;main.c: 141: {
+"28
+[; ;main.c: 28: {
 {
 [e :U _main ]
 [f ]
-"143
-[; ;main.c: 143:     SYSTEM_Initialize();
+"30
+[; ;main.c: 30:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"144
-[; ;main.c: 144:     totalPeriod = ((uint16_t)PWM1PRH << 8) | PWM1PRL;
-[e = _totalPeriod -> | << -> -> _PWM1PRH `us `ui -> 8 `i -> _PWM1PRL `ui `us ]
-"147
-[; ;main.c: 147:     (INTCON0bits.GIE = 1);
+"33
+[; ;main.c: 33:     (INTCON0bits.GIE = 1);
 [e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
-"148
-[; ;main.c: 148:     INT1_SetInterruptHandler(ir_servo);
-[e ( _INT1_SetInterruptHandler (1 -> &U _ir_servo `*F18127 ]
-"151
-[; ;main.c: 151:     itemNbr=0;
-[e = _itemNbr -> -> 0 `i `uc ]
-"154
-[; ;main.c: 154:     SPI1_Open(0);
+"36
+[; ;main.c: 36:     ir_servo_initialize();
+[e ( _ir_servo_initialize ..  ]
+"39
+[; ;main.c: 39:     SPI1_Open(0);
 [e ( _SPI1_Open (1 -> -> 0 `i `uc ]
-"158
-[; ;main.c: 158:         ret = nrf24_rf_init(TX_MODE, 97);
-[e = _ret ( _nrf24_rf_init (2 , -> . `E17914 1 `uc -> -> 97 `i `uc ]
-"162
-[; ;main.c: 162:    if (ret == NRF24_INIT_OK) {
-[e $ ! == -> _ret `ui -> . `E17910 0 `ui 2425  ]
+"42
+[; ;main.c: 42:         ret = nrf24_rf_init(TX_MODE, 103);
+[e = _ret ( _nrf24_rf_init (2 , -> . `E17914 1 `uc -> -> 103 `i `uc ]
+"47
+[; ;main.c: 47:     if (ret == NRF24_INIT_OK) {
+[e $ ! == -> _ret `ui -> . `E17910 0 `ui 2421  ]
 {
-"164
-[; ;main.c: 164:         printf("###############################################################\r\n");
-[e ( _printf :s 14C ]
-"165
-[; ;main.c: 165:         printf("NRF24L01 Initialize successful\r\n");
-[e ( _printf :s 15C ]
-"166
-[; ;main.c: 166:         nrf24_printf_rf_config();
+"48
+[; ;main.c: 48:         printf("###############################################################\r\n");
+[e ( _printf :s 1C ]
+"49
+[; ;main.c: 49:         printf("NRF24L01 Initialize successful\r\n");
+[e ( _printf :s 2C ]
+"50
+[; ;main.c: 50:         nrf24_printf_rf_config();
 [e ( _nrf24_printf_rf_config ..  ]
-"167
-[; ;main.c: 167:         _delay((unsigned long)((10)*(64000000U/4000.0)));
+"51
+[; ;main.c: 51:         _delay((unsigned long)((10)*(64000000U/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"168
-[; ;main.c: 168:         printf("###############################################################\r\n");
-[e ( _printf :s 16C ]
-"169
-[; ;main.c: 169:     } else {
+"52
+[; ;main.c: 52:         printf("###############################################################\r\n");
+[e ( _printf :s 3C ]
+"53
+[; ;main.c: 53:     } else {
 }
-[e $U 2426  ]
-[e :U 2425 ]
+[e $U 2422  ]
+[e :U 2421 ]
 {
-"170
-[; ;main.c: 170:         printf("###############################################################\r\n");
-[e ( _printf :s 17C ]
-"171
-[; ;main.c: 171:         printf("Failed Initialize NRF24L01\r\n");
-[e ( _printf :s 18C ]
-"172
-[; ;main.c: 172:         printf("###############################################################\r\n");
-[e ( _printf :s 19C ]
-"173
-[; ;main.c: 173:     }
+"54
+[; ;main.c: 54:         printf("###############################################################\r\n");
+[e ( _printf :s 4C ]
+"55
+[; ;main.c: 55:         printf("Failed Initialize NRF24L01\r\n");
+[e ( _printf :s 5C ]
+"56
+[; ;main.c: 56:         printf("###############################################################\r\n");
+[e ( _printf :s 6C ]
+"57
+[; ;main.c: 57:     }
 }
-[e :U 2426 ]
-"176
-[; ;main.c: 176:         while(1)
-[e :U 2428 ]
-"177
-[; ;main.c: 177:         {
+[e :U 2422 ]
+"60
+[; ;main.c: 60:     while(1)
+[e :U 2424 ]
+"61
+[; ;main.c: 61:     {
 {
-"196
-[; ;main.c: 196:             if (!PIE6bits.INT1IE)
-[e $ ! ! != -> . . _PIE6bits 0 0 `i -> 0 `i 2430  ]
-"197
-[; ;main.c: 197:             {
-{
-"198
-[; ;main.c: 198:                 (PIR6bits.INT1IF = 0);
-[e = . . _PIR6bits 0 0 -> -> 0 `i `uc ]
-"199
-[; ;main.c: 199:                 _delay((unsigned long)((1000)*(64000000U/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"200
-[; ;main.c: 200:                 (PIE6bits.INT1IE = 1);
-[e = . . _PIE6bits 0 0 -> -> 1 `i `uc ]
-"201
-[; ;main.c: 201:             }
-}
-[e :U 2430 ]
-"202
-[; ;main.c: 202:              reload_PWM1_dutyCycle(0.08, 0.75);
+"63
+[; ;main.c: 63:         if (!ir_servo_is_busy())
+[e $ ! ! != -> ( _ir_servo_is_busy ..  `i -> 0 `i 2426  ]
+"64
+[; ;main.c: 64:             reload_PWM1_dutyCycle(0.08, 0.75);
 [e ( _reload_PWM1_dutyCycle (2 , .0.08 .0.75 ]
-"204
-[; ;main.c: 204:         }
+[e :U 2426 ]
+"73
+[; ;main.c: 73:     }
 }
-[e :U 2427 ]
-[e $U 2428  ]
-[e :U 2429 ]
-"206
-[; ;main.c: 206: }
-[e :UE 2424 ]
+[e :U 2423 ]
+[e $U 2424  ]
+[e :U 2425 ]
+"74
+[; ;main.c: 74: }
+[e :UE 2420 ]
 }
-[p f _printf 8650880 ]
-[p f _sprintf 8650880 ]
-[a 9C 37 100 44 37 100 44 37 115 0 ]
-[a 3C 37 100 0 ]
-[a 4C 37 100 0 ]
-[a 10C 82 69 74 0 ]
-[a 12C 82 69 74 0 ]
-[a 5C 32 65 67 67 0 ]
-[a 11C 91 83 101 110 100 93 32 68 97 116 97 58 32 37 100 44 37 100 44 37 115 10 0 ]
-[a 6C 105 116 101 109 87 101 105 103 104 116 32 105 115 32 65 67 67 69 80 84 69 68 10 0 ]
-[a 8C 105 116 101 109 87 101 105 103 104 116 32 105 115 32 82 69 74 69 67 84 69 68 10 0 ]
-[a 15C 78 82 70 50 52 76 48 49 32 73 110 105 116 105 97 108 105 122 101 32 115 117 99 99 101 115 115 102 117 108 13 10 0 ]
-[a 2C 105 116 101 109 87 101 105 103 104 116 32 37 100 13 10 0 ]
-[a 1C 105 116 101 109 78 117 109 98 101 114 58 32 37 100 13 10 0 ]
-[a 18C 70 97 105 108 101 100 32 73 110 105 116 105 97 108 105 122 101 32 78 82 70 50 52 76 48 49 13 10 0 ]
-[a 14C 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 13 10 0 ]
-[a 16C 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 13 10 0 ]
-[a 17C 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 13 10 0 ]
-[a 19C 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 13 10 0 ]
-[a 7C 10 0 ]
-[a 13C 10 0 ]
+[p f _printf 8388608 ]
+[a 2C 78 82 70 50 52 76 48 49 32 73 110 105 116 105 97 108 105 122 101 32 115 117 99 99 101 115 115 102 117 108 13 10 0 ]
+[a 5C 70 97 105 108 101 100 32 73 110 105 116 105 97 108 105 122 101 32 78 82 70 50 52 76 48 49 13 10 0 ]
+[a 1C 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 13 10 0 ]
+[a 3C 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 13 10 0 ]
+[a 4C 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 13 10 0 ]
+[a 6C 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 13 10 0 ]
