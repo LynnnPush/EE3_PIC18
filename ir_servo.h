@@ -28,11 +28,15 @@ typedef enum {
 
 // PWM period and duty cycle ratios
 static uint16_t totalPeriod;
-#define SERVO_PUSH 0.023
-#define SERVO_IDLE 0.08
+#define SERVO_PUSH 0.11
+#define SERVO_IDLE 0.023
 #define MOTOR_FAST 0.75
 #define MOTOR_SLOW 0.25
 #define DUTYCYCLE_RATIO_CONVERT(P)  (uint16_t)((double)(P)*totalPeriod)
+
+// Status code of the item
+#define REJECTED 0
+#define ACCEPTED 1
 
 /**
  * @brief Initialize the IR servo system

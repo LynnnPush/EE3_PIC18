@@ -22,8 +22,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "49913
 [; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 49913: extern volatile INTCON0bits_t INTCON0bits __attribute__((address(0x4D6)));
 [v _INTCON0bits `VS2317 ~T0 @X0 0 e@1238 ]
-"43 ./ir_servo.h
-[; ;./ir_servo.h: 43: void ir_servo_initialize(void);
+"47 ./ir_servo.h
+[; ;./ir_servo.h: 47: void ir_servo_initialize(void);
 [v _ir_servo_initialize `(v ~T0 @X0 0 ef ]
 "150 ./mcc_generated_files/system/../spi/spi1.h
 [; ;./mcc_generated_files/system/../spi/spi1.h: 150: _Bool SPI1_Open(uint8_t spiConfigIndex);
@@ -45,11 +45,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20 C:\Program Files\Microchip\xc8\v2.50\pic\include\builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
-"58 ./ir_servo.h
-[; ;./ir_servo.h: 58: _Bool ir_servo_is_busy(void);
+"62 ./ir_servo.h
+[; ;./ir_servo.h: 62: _Bool ir_servo_is_busy(void);
 [v _ir_servo_is_busy `(a ~T0 @X0 0 ef ]
-"111
-[; ;./ir_servo.h: 111: void reload_PWM1_dutyCycle(double slice1, double slice2);
+"115
+[; ;./ir_servo.h: 115: void reload_PWM1_dutyCycle(double slice1, double slice2);
 [v _reload_PWM1_dutyCycle `(v ~T0 @X0 0 ef2`d`d ]
 "328 C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h
 [; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 328: __asm("CLKRCON equ 039h");
@@ -2717,27 +2717,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 57:     }
 }
 [e :U 2422 ]
-"60
-[; ;main.c: 60:     while(1)
-[e :U 2424 ]
-"61
-[; ;main.c: 61:     {
-{
 "63
-[; ;main.c: 63:         if (!ir_servo_is_busy())
-[e $ ! ! != -> ( _ir_servo_is_busy ..  `i -> 0 `i 2426  ]
+[; ;main.c: 63:     while(1)
+[e :U 2424 ]
 "64
-[; ;main.c: 64:             reload_PWM1_dutyCycle(0.08, 0.75);
-[e ( _reload_PWM1_dutyCycle (2 , .0.08 .0.75 ]
+[; ;main.c: 64:     {
+{
+"66
+[; ;main.c: 66:         if (!ir_servo_is_busy())
+[e $ ! ! != -> ( _ir_servo_is_busy ..  `i -> 0 `i 2426  ]
+"67
+[; ;main.c: 67:             reload_PWM1_dutyCycle(0.023, 0.75);
+[e ( _reload_PWM1_dutyCycle (2 , .0.023 .0.75 ]
 [e :U 2426 ]
-"73
-[; ;main.c: 73:     }
+"76
+[; ;main.c: 76:     }
 }
 [e :U 2423 ]
 [e $U 2424  ]
 [e :U 2425 ]
-"74
-[; ;main.c: 74: }
+"77
+[; ;main.c: 77: }
 [e :UE 2420 ]
 }
 [p f _printf 8388608 ]

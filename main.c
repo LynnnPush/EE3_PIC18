@@ -56,6 +56,9 @@ int main(void)
         printf("###############################################################\r\n");
     }
     
+    // Disable IR sensor interrrupt for test:
+//        EXT_INT1_InterruptDisable();
+        
     // Main loop
     while(1)
     {

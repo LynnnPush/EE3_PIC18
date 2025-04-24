@@ -7,10 +7,10 @@ Linker command line:
   -pivt0x8=08h -cn \
   -h+dist/default/production\Inte_based_NRF24.X.production.sym \
   --cmf=dist/default/production\Inte_based_NRF24.X.production.cmf -z \
-  -Q18F57Q43 -oC:\Users\HUAWEI\AppData\Local\Temp\xcAsd6g.\driver_tmp_3.o \
+  -Q18F57Q43 -oC:\Users\HUAWEI\AppData\Local\Temp\xcAs11gs.\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/production/Inte_based_NRF24.X.production.map \
-  --md=C:\Users\HUAWEI\AppData\Local\Temp\xcAsd6g.\driver_tmp_0.dat -E1 \
+  --md=C:\Users\HUAWEI\AppData\Local\Temp\xcAs11gs.\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-01FFFFh -ACONST=00h-01FFFFh \
   -ASMALLCONST=02600h-026FFhx474 \
   -AMEDIUMCONST=02600h-0FFFFh,012600h-01FFFFh -ACOMRAM=0501h-055Fh \
@@ -36,7 +36,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\HUAWEI\AppData\Local\Temp\xcAsd6g.\driver_tmp_14.o \
+  C:\Users\HUAWEI\AppData\Local\Temp\xcAs11gs.\driver_tmp_14.o \
   dist/default/production\Inte_based_NRF24.X.production.o 
 
 Object code version is 3.11
@@ -46,13 +46,13 @@ Machine type is 18F57Q43
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\HUAWEI\AppData\Local\Temp\xcAsd6g.\driver_tmp_14.o
+C:\Users\HUAWEI\AppData\Local\Temp\xcAs11gs.\driver_tmp_14.o
                 config                           300000   300000        A        0       4
                 init                                 1A       1A        4        4       0
                 reset_vec                             0        0        4        0       0
 dist/default/production\Inte_based_NRF24.X.production.o
                 config                           300000   300000        A        0       4
-                mediumconst                        FAF4     FAF4      50C     7D7A       0
+                mediumconst                        FAFC     FAFC      504     7D7E       0
                 ivt0x8                                8        8       12        4       0
                 text117                           14F5A    14F5A        4     8000       0
                 text116                           14F56    14F56        4     8000       0
@@ -316,7 +316,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   SMALLCONST     
 
         CLASS   MEDIUMCONST    
-                mediumconst                        FAF4     FAF4      50C         0
+                mediumconst                        FAFC     FAFC      504         0
 
         CLASS   COMRAM         
                 cstackCOMRAM                        501      501       5F         1
@@ -424,7 +424,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 cstackCOMRAM                   000501  00005F  000560       501       1  COMRAM  
                 cstackBANK5                    000560  00007C  0005DC       560       1  BANK5   
                 bssBANK6                       000600  0000B5  0006B5       600       1  BANK6   
-                mediumconst                    00FAF4  00050C  010000      7D7A       0  MEDIUMCO
+                mediumconst                    00FAFC  000504  010000      7D7E       0  MEDIUMCO
                 text15                         010000  004F64  014F64      8000       0  CODE    
 
 
@@ -468,21 +468,21 @@ UNUSED ADDRESS RANGES
         BIGSFR           000000-0004FF              500
                          002500-0025FF              100
         CODE             000004-000007                4
-                         00001E-00FAF3             FAD6
+                         00001E-00FAFB             FADE
                          014F64-01FFFF             B09C
         CONFIG           30000A-300011                8
         CONST            000004-000007                4
-                         00001E-00FAF3             FAD6
+                         00001E-00FAFB             FADE
                          014F64-01FFFF             B09C
         EEDATA           380000-3803FF              400
         IDLOC            200000-20003F               40
-        MEDIUMCONST      002600-00FAF3             D4F4
+        MEDIUMCONST      002600-00FAFB             D4FC
                          014F64-01FFFF             B09C
         RAM              0005DC-0005FF               24
                          0006B5-0024FF              100
         SFR              000000-0004FF              100
                          002500-0025FF              100
-        SMALLCONST       002600-00FAF3              100
+        SMALLCONST       002600-00FAFB              100
                          014F64-01FFFF              100
 
                                   Symbol Table
@@ -726,7 +726,7 @@ _SPI1_ByteRead                                                (abs)        00000
 _SPI1_ByteWrite                                               (abs)        000000
 _SPI1_Close                                                   (abs)        000000
 _SPI1_Deinitialize                                            (abs)        000000
-_SPI1_Host                                                    mediumconst  00FB3D
+_SPI1_Host                                                    mediumconst  00FB45
 _SPI1_Initialize                                              text50       014E20
 _SPI1_IsRxReady                                               (abs)        000000
 _SPI1_IsTxReady                                               (abs)        000000
@@ -792,7 +792,7 @@ _U1TXB                                                        (abs)        0002A
 _U1TXCHK                                                      (abs)        0002A4
 _U1UIR                                                        (abs)        0002B1
 _U1UIRbits                                                    (abs)        0002B1
-_UART1                                                        mediumconst  00FAF5
+_UART1                                                        mediumconst  00FAFD
 _UART1_AutoBaudQuery                                          (abs)        000000
 _UART1_AutoBaudSet                                            (abs)        000000
 _UART1_DefaultFramingErrorCallback                            (abs)        000000
@@ -1102,7 +1102,7 @@ __Linit                                                       init         00001
 __Lintsave_regs                                               intsave_regs 000000
 __Lirdata                                                     irdata       000000
 __Livt0x8                                                     ivt0x8       000008
-__Lmediumconst                                                mediumconst  00FAF4
+__Lmediumconst                                                mediumconst  00FAFC
 __LnvBANK6                                                    nvBANK6      000000
 __LnvFARRAM                                                   nvFARRAM     000000
 __Lnvbit                                                      nvbit        000000
@@ -1324,7 +1324,7 @@ __end_of_PWM1_16BIT_SetSlice1Output2DutyCycleRegister         text5        014EF
 __end_of_PWM1_16BIT_Slice1Output1_SetInterruptHandler         text53       014EAE
 __end_of_PWM1_16BIT_Slice1Output2_SetInterruptHandler         text52       014EA0
 __end_of_SPI1_ByteExchange                                    text38       014A64
-__end_of_SPI1_Host                                            mediumconst  00FB67
+__end_of_SPI1_Host                                            mediumconst  00FB6F
 __end_of_SPI1_Initialize                                      text50       014E38
 __end_of_SPI1_Open                                            text14       01338C
 __end_of_SYSTEM_Initialize                                    text42       014C5E
@@ -1337,7 +1337,7 @@ __end_of_TMR0_PeriodMatchCallbackRegister                     text41       014E9
 __end_of_TMR0_Start                                           text115      014F4E
 __end_of_TMR0_Stop                                            text114      014F48
 __end_of_TMR1_Initialize                                      text48       01483C
-__end_of_UART1                                                mediumconst  00FB3D
+__end_of_UART1                                                mediumconst  00FB45
 __end_of_UART1_FramingErrorCallbackRegister                   text47       014D8E
 __end_of_UART1_Initialize                                     text44       014188
 __end_of_UART1_IsTxReady                                      text35       014A9C
@@ -1383,7 +1383,7 @@ __end_of_printf                                               text16       014C8
 __end_of_putch                                                text33       014DB0
 __end_of_read_prec_or_width                                   text24       01345A
 __end_of_reload_PWM1_dutyCycle                                text1        013C0E
-__end_of_spi1_configuration                                   mediumconst  00FB76
+__end_of_spi1_configuration                                   mediumconst  00FB7E
 __end_of_sprintf                                              text67       014888
 __end_of_stoa                                                 text23       012720
 __end_of_utoa                                                 text20       012DB4
@@ -1424,7 +1424,7 @@ __end_ofi2_vfpfcnvrt                                          text95       01149
 __end_ofi2_vfprintf                                           text94       014706
 __end_ofi2_xtoa                                               text96       012B4A
 __initialization                                              cinit        014492
-__mediumconst                                                 mediumconst  00FAF4
+__mediumconst                                                 mediumconst  00FAFC
 __pbssBANK5                                                   bssBANK5     0005C2
 __pbssBANK6                                                   bssBANK6     000600
 __pcinit                                                      cinit        014492
@@ -1436,7 +1436,7 @@ __pdataBANK6                                                  dataBANK6    0006A
 __pidataBANK5                                                 idataBANK5   014F5E
 __pidataBANK6                                                 idataBANK6   014EE6
 __pivt0x8                                                     ivt0x8       000008
-__pmediumconst                                                mediumconst  00FAF4
+__pmediumconst                                                mediumconst  00FAFC
 __pnvBANK6                                                    nvBANK6      000697
 __ptext0                                                      text0        0131DC
 __ptext1                                                      text1        013B58
@@ -1565,7 +1565,7 @@ _bufferTX                                                     bssBANK6     00065
 _ctoa                                                         text31       01345A
 _dbuf                                                         bssBANK6     000633
 _dtoa                                                         text25       011EA0
-_dtoa$3556                                                    cstackBANK5  000589
+_dtoa$3552                                                    cstackBANK5  000589
 _flags                                                        bssBANK5     0005D5
 _fputc                                                        text32       013528
 _fputs                                                        text27       0148D4
@@ -1618,7 +1618,7 @@ _putch                                                        text33       014D8
 _read_prec_or_width                                           text24       01338C
 _reload_PWM1_dutyCycle                                        text1        013B58
 _ret                                                          bssBANK5     0005D8
-_spi1_configuration                                           mediumconst  00FB67
+_spi1_configuration                                           mediumconst  00FB6F
 _sprintf                                                      text67       01483C
 _stoa                                                         text23       012574
 _timer1ReloadVal                                              bssBANK5     0005D3
@@ -1702,7 +1702,7 @@ i2___xxtofl@val                                               cstackCOMRAM 00050
 i2_abs                                                        text105      014B74
 i2_ctoa                                                       text108      0136C0
 i2_dtoa                                                       text102      012058
-i2_dtoa$3556                                                  cstackCOMRAM 000520
+i2_dtoa$3552                                                  cstackCOMRAM 000520
 i2_fputc                                                      text109      01378C
 i2_fputs                                                      text104      0149A8
 i2_nrf24_flush_tx_rx                                          text71       0147A2
@@ -2034,8 +2034,8 @@ shared
 		i2___lwmod     		CODE           	144F6	0000	100
 		i2___fltol     		CODE           	12FE6	0000	262
 		__initialization		CODE           	14492	0000	94
-		_SPI1_Host     		MEDIUMCONST    	FB3D	0000	42
-		_UART1         		MEDIUMCONST    	FAF5	0000	72
+		_SPI1_Host     		MEDIUMCONST    	FB45	0000	42
+		_UART1         		MEDIUMCONST    	FAFD	0000	72
 		i2_nrf24_set_rf_mode		CODE           	14662	0000	82
 		i2___awmod     		CODE           	13D70	0000	174
 		i2_nrf24_flush_tx_rx		CODE           	147A2	0000	78
@@ -2050,7 +2050,7 @@ shared
 		i2_UART1_Write 		CODE           	14F3A	0000	8
 		i2_fputc       		CODE           	1378C	0000	202
 		i2_fputs       		CODE           	149A8	0000	68
-		_spi1_configuration		MEDIUMCONST    	FB67	0000	15
+		_spi1_configuration		MEDIUMCONST    	FB6F	0000	15
 
 shared estimated size: 6941
 

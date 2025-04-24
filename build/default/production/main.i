@@ -30657,7 +30657,7 @@ typedef enum {
 
 
 static uint16_t totalPeriod;
-# 43 "./ir_servo.h"
+# 47 "./ir_servo.h"
 void ir_servo_initialize(void);
 
 
@@ -30716,7 +30716,7 @@ void ir_servo_set_min_weight(uint16_t min_weight);
 
 
 void ir_servo_set_max_weight(uint16_t max_weight);
-# 111 "./ir_servo.h"
+# 115 "./ir_servo.h"
 void reload_PWM1_dutyCycle(double slice1, double slice2);
 # 17 "main.c" 2
 
@@ -30820,11 +30820,14 @@ int main(void)
     }
 
 
+
+
+
     while(1)
     {
 
         if (!ir_servo_is_busy())
-            reload_PWM1_dutyCycle(0.08, 0.75);
-# 73 "main.c"
+            reload_PWM1_dutyCycle(0.023, 0.75);
+# 76 "main.c"
     }
 }

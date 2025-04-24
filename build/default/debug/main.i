@@ -30820,11 +30820,14 @@ int main(void)
     }
 
 
+
+
+
     while(1)
     {
 
         if (!ir_servo_is_busy())
-            reload_PWM1_dutyCycle(0.08, 0.75);
-# 73 "main.c"
+            reload_PWM1_dutyCycle(0.023, 0.75);
+# 76 "main.c"
     }
 }

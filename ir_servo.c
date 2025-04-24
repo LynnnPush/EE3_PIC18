@@ -95,8 +95,8 @@ void ir_servo_start(void)
     
     // Change state and start timer for 1000ms (wait for object to reach detection zone)
     irServoState = IR_STATE_WEIGHT_READ;
-    TMR0_ConfigureAndStart(0x79, 4, 15, 4); 
-    // Period: 1000ms = ~(1/31k)*16*16*121, with prescale = postscale = 1:16
+    TMR0_ConfigureAndStart(0x3C, 4, 15, 4); 
+    // Period: 500ms = ~(1/31k)*16*16*60, with prescale = postscale = 1:16
 }
 
 /**
@@ -119,9 +119,9 @@ static void ir_servo_weight_read(void)
     {
         // Item is accepted - send data and return to idle state
         memset(bufferTX, 0, sizeof(bufferTX));
-        sprintf((char*)bufferTX, "%d,%d,%s", itemNbr, itemWeight, "ACC");
+        sprintf((char*)bufferTX, "%d,%d,%d", itemNbr, itemWeight, ACCEPTED);
         nrf24_send_rf_data(bufferTX);
-        printf("[Send] Data: %d,%d,%s\n", itemNbr, itemWeight, "ACC");
+        printf("[Send] Data: %d,%d,%d\n", itemNbr, itemWeight, ACCEPTED);
         
         (void) printf("itemWeight is ACCEPTED\n");
         (void) printf("\n");
@@ -139,9 +139,9 @@ static void ir_servo_weight_read(void)
         
         // Send rejection data
         memset(bufferTX, 0, sizeof(bufferTX));
-        sprintf((char*)bufferTX, "%d,%d,%s", itemNbr, itemWeight, "REJ");
+        sprintf((char*)bufferTX, "%d,%d,%d", itemNbr, itemWeight, REJECTED);
         nrf24_send_rf_data(bufferTX);
-        printf("[Send] Data: %d,%d,%s\n", itemNbr, itemWeight, "REJ");
+        printf("[Send] Data: %d,%d,%d\n", itemNbr, itemWeight, REJECTED);
         
         // STEP1: Servo:IDLE, Motor:STOP
         reload_PWM1_dutyCycle(SERVO_IDLE, 0);
@@ -183,8 +183,10 @@ static void ir_servo_reject_step2_3(void)
         
         // Process complete
         irServoState = IR_STATE_COMPLETE;
-        TMR0_ConfigureAndStart(0xFE, 0, 0, 4); // Minimal delay
-        // Period: 8ms = ~(1/31k)*1*1*254, with prescale = postscale = 1:1
+//        TMR0_ConfigureAndStart(0xFE, 0, 0, 4); // Minimal delay
+//        // Period: 8ms = ~(1/31k)*1*1*254, with prescale = postscale = 1:1
+        TMR0_ConfigureAndStart(0x3C, 4, 15, 4); 
+        // Period: 500ms = ~(1/31k)*16*16*60, with prescale = postscale = 1:16
     }
 }
 

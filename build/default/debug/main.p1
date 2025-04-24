@@ -2717,27 +2717,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 57:     }
 }
 [e :U 2422 ]
-"60
-[; ;main.c: 60:     while(1)
-[e :U 2424 ]
-"61
-[; ;main.c: 61:     {
-{
 "63
-[; ;main.c: 63:         if (!ir_servo_is_busy())
-[e $ ! ! != -> ( _ir_servo_is_busy ..  `i -> 0 `i 2426  ]
+[; ;main.c: 63:     while(1)
+[e :U 2424 ]
 "64
-[; ;main.c: 64:             reload_PWM1_dutyCycle(0.08, 0.75);
-[e ( _reload_PWM1_dutyCycle (2 , .0.08 .0.75 ]
+[; ;main.c: 64:     {
+{
+"66
+[; ;main.c: 66:         if (!ir_servo_is_busy())
+[e $ ! ! != -> ( _ir_servo_is_busy ..  `i -> 0 `i 2426  ]
+"67
+[; ;main.c: 67:             reload_PWM1_dutyCycle(0.023, 0.75);
+[e ( _reload_PWM1_dutyCycle (2 , .0.023 .0.75 ]
 [e :U 2426 ]
-"73
-[; ;main.c: 73:     }
+"76
+[; ;main.c: 76:     }
 }
 [e :U 2423 ]
 [e $U 2424  ]
 [e :U 2425 ]
-"74
-[; ;main.c: 74: }
+"77
+[; ;main.c: 77: }
 [e :UE 2420 ]
 }
 [p f _printf 8388608 ]

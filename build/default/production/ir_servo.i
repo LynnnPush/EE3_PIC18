@@ -115,9 +115,11 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 149 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdint.h" 2 3
-# 13 "./ir_servo.h" 2
+# 12 "./ir_servo.h" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdbool.h" 1 3
-# 14 "./ir_servo.h" 2
+# 13 "./ir_servo.h" 2
+
 
 
 typedef enum {
@@ -135,7 +137,7 @@ typedef enum {
 
 
 static uint16_t totalPeriod;
-# 43 "./ir_servo.h"
+# 47 "./ir_servo.h"
 void ir_servo_initialize(void);
 
 
@@ -194,9 +196,10 @@ void ir_servo_set_min_weight(uint16_t min_weight);
 
 
 void ir_servo_set_max_weight(uint16_t max_weight);
-# 111 "./ir_servo.h"
+# 115 "./ir_servo.h"
 void reload_PWM1_dutyCycle(double slice1, double slice2);
-# 12 "ir_servo.c" 2
+# 11 "ir_servo.c" 2
+
 # 1 "./mcc_generated_files/system/system.h" 1
 # 39 "./mcc_generated_files/system/system.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 1 3
@@ -30644,7 +30647,8 @@ void TMR1_Tasks(void);
 # 52 "./mcc_generated_files/system/../uart/../system/system.h" 2
 # 61 "./mcc_generated_files/system/../uart/../system/system.h"
 void SYSTEM_Initialize(void);
-# 13 "ir_servo.c" 2
+# 12 "ir_servo.c" 2
+
 # 1 "./nrf24_lib.h" 1
 # 32 "./nrf24_lib.h"
 unsigned char ADDRESS_DATA_RXPIPE0[5] = {0x00,0x00,0x00,0x00,0x01};
@@ -30726,7 +30730,8 @@ void nrf24_printf_rf_config(void);
 
 
 void nrf24_printf_rf_status(void);
-# 14 "ir_servo.c" 2
+# 13 "ir_servo.c" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -30784,7 +30789,8 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 15 "ir_servo.c" 2
+# 14 "ir_servo.c" 2
+
 
 
 
@@ -30868,7 +30874,7 @@ void ir_servo_start(void)
 
 
     irServoState = IR_STATE_WEIGHT_READ;
-    TMR0_ConfigureAndStart(0x79, 4, 15, 4);
+    TMR0_ConfigureAndStart(0x3C, 4, 15, 4);
 
 }
 
@@ -30892,9 +30898,9 @@ static void ir_servo_weight_read(void)
     {
 
         memset(bufferTX, 0, sizeof(bufferTX));
-        sprintf((char*)bufferTX, "%d,%d,%s", itemNbr, itemWeight, "ACC");
+        sprintf((char*)bufferTX, "%d,%d,%d", itemNbr, itemWeight, 1);
         nrf24_send_rf_data(bufferTX);
-        printf("[Send] Data: %d,%d,%s\n", itemNbr, itemWeight, "ACC");
+        printf("[Send] Data: %d,%d,%d\n", itemNbr, itemWeight, 1);
 
         (void) printf("itemWeight is ACCEPTED\n");
         (void) printf("\n");
@@ -30912,12 +30918,12 @@ static void ir_servo_weight_read(void)
 
 
         memset(bufferTX, 0, sizeof(bufferTX));
-        sprintf((char*)bufferTX, "%d,%d,%s", itemNbr, itemWeight, "REJ");
+        sprintf((char*)bufferTX, "%d,%d,%d", itemNbr, itemWeight, 0);
         nrf24_send_rf_data(bufferTX);
-        printf("[Send] Data: %d,%d,%s\n", itemNbr, itemWeight, "REJ");
+        printf("[Send] Data: %d,%d,%d\n", itemNbr, itemWeight, 0);
 
 
-        reload_PWM1_dutyCycle(0.08, 0);
+        reload_PWM1_dutyCycle(0.023, 0);
 
 
         irServoState = IR_STATE_REJECT_STEP1;
@@ -30932,7 +30938,7 @@ static void ir_servo_weight_read(void)
 static void ir_servo_reject_step1(void)
 {
 
-    reload_PWM1_dutyCycle(0.023, 0);
+    reload_PWM1_dutyCycle(0.11, 0);
 
 
     irServoState = IR_STATE_REJECT_STEP2;
@@ -30952,11 +30958,13 @@ static void ir_servo_reject_step2_3(void)
         irServoState = IR_STATE_REJECT_STEP3;
     } else {
 
-        reload_PWM1_dutyCycle(0.08, 0.75);
+        reload_PWM1_dutyCycle(0.023, 0.75);
 
 
         irServoState = IR_STATE_COMPLETE;
-        TMR0_ConfigureAndStart(0xFE, 0, 0, 4);
+
+
+        TMR0_ConfigureAndStart(0x3C, 4, 15, 4);
 
     }
 }
