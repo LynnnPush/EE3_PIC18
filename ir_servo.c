@@ -95,7 +95,7 @@ void ir_servo_start(void)
     
     // Change state and start timer for 1000ms (wait for object to reach detection zone)
     irServoState = IR_STATE_WEIGHT_READ;
-    TMR0_ConfigureAndStart(0x3C, 4, 15, 4); 
+    TMR0_ConfigureAndStart(0x72, 4, 15, 4); 
     // Period: 500ms = ~(1/31k)*16*16*60, with prescale = postscale = 1:16
 }
 
@@ -107,8 +107,12 @@ static void ir_servo_weight_read(void)
     // Note that when the object moves to the detection zone,
     // the motor won't stop, assume that the system can read the weight
     // while the object is moving.
-    // Stop the motor here if necessary.
     
+    // Stop the motor here if necessary.    
+    // Servo:IDLE, Motor:STOP
+        reload_PWM1_dutyCycle(SERVO_IDLE, 0);
+        __delay_ms(300);
+        
     // Read the weight sensor value
     ADC_SampleCapacitorDischarge();
     itemWeight = ADC_ChannelSelectAndConvert(ADC_CHANNEL_ANA0);
@@ -128,6 +132,13 @@ static void ir_servo_weight_read(void)
         
         // Process complete, return to idle state
         irServoState = IR_STATE_IDLE;
+ 
+        // Free the accepted item
+        __delay_ms(100);
+        reload_PWM1_dutyCycle(SERVO_FREE, MOTOR_FAST);
+        __delay_ms(1000);
+        __delay_ms(1000);
+        __delay_ms(1000);
         // Clear the interrupt flag that may be set by the unstable signal transition
         // from low to high of the IR-Sensor.
         EXT_INT1_InterruptFlagClear();

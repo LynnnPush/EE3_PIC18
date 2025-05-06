@@ -66,11 +66,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "117 C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\stdio.h
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\stdio.h: 117: int printf(const char *restrict, ...);
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+[v F228 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v2.50\pic\include\builtins.h
+[v __delay `JF228 ~T0 @X0 0 e ]
+[p i __delay ]
 "206 ./mcc_generated_files/system/../adc/adc.h
 [; ;./mcc_generated_files/system/../adc/adc.h: 206: void ADC_SampleCapacitorDischarge(void);
 [v _ADC_SampleCapacitorDischarge `(v ~T0 @X0 0 ef ]
-"114 ir_servo.c
-[; ;ir_servo.c: 114:     itemWeight = ADC_ChannelSelectAndConvert(ADC_CHANNEL_ANA0);
+"118 ir_servo.c
+[; ;ir_servo.c: 118:     itemWeight = ADC_ChannelSelectAndConvert(ADC_CHANNEL_ANA0);
 [c E17730 59 60 61 62 63 0 .. ]
 [n E17730 . ADC_CHANNEL_VSS ADC_CHANNEL_TEMP ADC_CHANNEL_DAC1 ADC_CHANNEL_FVR_BUFFER1 ADC_CHANNEL_FVR_BUFFER2 ADC_CHANNEL_ANA0  ]
 "181 ./mcc_generated_files/system/../adc/adc.h
@@ -99,8 +103,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "264 ./mcc_generated_files/system/../timer/tmr0.h
 [; ;./mcc_generated_files/system/../timer/tmr0.h: 264: void TMR0_PeriodMatchCallbackRegister(void (* CallbackHandler)(void));
 [v _TMR0_PeriodMatchCallbackRegister `(v ~T0 @X0 0 ef1`*F17902 ]
-"30 ./ir_servo.h
-[; ;./ir_servo.h: 30: static uint16_t totalPeriod;
+"32 ./ir_servo.h
+[; ;./ir_servo.h: 32: static uint16_t totalPeriod;
 [v _totalPeriod `us ~T0 @X0 1 s ]
 "328 C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h
 [; ;C:/Users/HUAWEI/.mchp_packs/Microchip/PIC18F-Q_DFP/1.26.442/xc8\pic\include\proc\pic18f57q43.h: 328: __asm("CLKRCON equ 039h");
@@ -2836,8 +2840,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ir_servo.c: 97:     irServoState = IR_STATE_WEIGHT_READ;
 [e = _irServoState . `E36 1 ]
 "98
-[; ;ir_servo.c: 98:     TMR0_ConfigureAndStart(0x3C, 4, 15, 4);
-[e ( _TMR0_ConfigureAndStart (4 , , , -> -> 60 `i `uc -> -> 4 `i `uc -> -> 15 `i `uc -> -> 4 `i `uc ]
+[; ;ir_servo.c: 98:     TMR0_ConfigureAndStart(0x72, 4, 15, 4);
+[e ( _TMR0_ConfigureAndStart (4 , , , -> -> 114 `i `uc -> -> 4 `i `uc -> -> 15 `i `uc -> -> 4 `i `uc ]
 "100
 [; ;ir_servo.c: 100: }
 [e :UE 2422 ]
@@ -2851,236 +2855,257 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _ir_servo_weight_read ]
 [f ]
 "113
-[; ;ir_servo.c: 113:     ADC_SampleCapacitorDischarge();
-[e ( _ADC_SampleCapacitorDischarge ..  ]
+[; ;ir_servo.c: 113:         reload_PWM1_dutyCycle(0.10, 0);
+[e ( _reload_PWM1_dutyCycle (2 , .0.10 -> -> 0 `i `d ]
 "114
-[; ;ir_servo.c: 114:     itemWeight = ADC_ChannelSelectAndConvert(ADC_CHANNEL_ANA0);
-[e = _itemWeight ( _ADC_ChannelSelectAndConvert (1 . `E17730 5 ]
-"115
-[; ;ir_servo.c: 115:     (void) printf("itemWeight %d\r\n", itemWeight);
-[e ( _printf , (. :s 2C -> _itemWeight `i ]
+[; ;ir_servo.c: 114:         _delay((unsigned long)((300)*(64000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"117
+[; ;ir_servo.c: 117:     ADC_SampleCapacitorDischarge();
+[e ( _ADC_SampleCapacitorDischarge ..  ]
 "118
-[; ;ir_servo.c: 118:     if (itemWeight >= weightMin && itemWeight <= weightMax)
-[e $ ! && >= -> _itemWeight `ui -> _weightMin `ui <= -> _itemWeight `ui -> _weightMax `ui 2425  ]
+[; ;ir_servo.c: 118:     itemWeight = ADC_ChannelSelectAndConvert(ADC_CHANNEL_ANA0);
+[e = _itemWeight ( _ADC_ChannelSelectAndConvert (1 . `E17730 5 ]
 "119
-[; ;ir_servo.c: 119:     {
-{
-"121
-[; ;ir_servo.c: 121:         memset(bufferTX, 0, sizeof(bufferTX));
-[e ( _memset (3 , , -> &U _bufferTX `*v -> 0 `i -> # _bufferTX `ui ]
+[; ;ir_servo.c: 119:     (void) printf("itemWeight %d\r\n", itemWeight);
+[e ( _printf , (. :s 2C -> _itemWeight `i ]
 "122
-[; ;ir_servo.c: 122:         sprintf((char*)bufferTX, "%d,%d,%d", itemNbr, itemWeight, 1);
-[e ( _sprintf (1 , , , (. , -> &U _bufferTX `*uc :s 3C -> _itemNbr `i -> _itemWeight `i -> 1 `i ]
+[; ;ir_servo.c: 122:     if (itemWeight >= weightMin && itemWeight <= weightMax)
+[e $ ! && >= -> _itemWeight `ui -> _weightMin `ui <= -> _itemWeight `ui -> _weightMax `ui 2425  ]
 "123
-[; ;ir_servo.c: 123:         nrf24_send_rf_data(bufferTX);
-[e ( _nrf24_send_rf_data (1 &U _bufferTX ]
-"124
-[; ;ir_servo.c: 124:         printf("[Send] Data: %d,%d,%d\n", itemNbr, itemWeight, 1);
-[e ( _printf , , , (. :s 4C -> _itemNbr `i -> _itemWeight `i -> 1 `i ]
+[; ;ir_servo.c: 123:     {
+{
+"125
+[; ;ir_servo.c: 125:         memset(bufferTX, 0, sizeof(bufferTX));
+[e ( _memset (3 , , -> &U _bufferTX `*v -> 0 `i -> # _bufferTX `ui ]
 "126
-[; ;ir_servo.c: 126:         (void) printf("itemWeight is ACCEPTED\n");
-[e ( _printf :s 5C ]
+[; ;ir_servo.c: 126:         sprintf((char*)bufferTX, "%d,%d,%d", itemNbr, itemWeight, 1);
+[e ( _sprintf (1 , , , (. , -> &U _bufferTX `*uc :s 3C -> _itemNbr `i -> _itemWeight `i -> 1 `i ]
 "127
-[; ;ir_servo.c: 127:         (void) printf("\n");
-[e ( _printf :s 6C ]
+[; ;ir_servo.c: 127:         nrf24_send_rf_data(bufferTX);
+[e ( _nrf24_send_rf_data (1 &U _bufferTX ]
+"128
+[; ;ir_servo.c: 128:         printf("[Send] Data: %d,%d,%d\n", itemNbr, itemWeight, 1);
+[e ( _printf , , , (. :s 4C -> _itemNbr `i -> _itemWeight `i -> 1 `i ]
 "130
-[; ;ir_servo.c: 130:         irServoState = IR_STATE_IDLE;
-[e = _irServoState . `E36 0 ]
-"133
-[; ;ir_servo.c: 133:         (PIR6bits.INT1IF = 0);
-[e = . . _PIR6bits 0 0 -> -> 0 `i `uc ]
+[; ;ir_servo.c: 130:         (void) printf("itemWeight is ACCEPTED\n");
+[e ( _printf :s 5C ]
+"131
+[; ;ir_servo.c: 131:         (void) printf("\n");
+[e ( _printf :s 6C ]
 "134
-[; ;ir_servo.c: 134:     }
+[; ;ir_servo.c: 134:         irServoState = IR_STATE_IDLE;
+[e = _irServoState . `E36 0 ]
+"137
+[; ;ir_servo.c: 137:         _delay((unsigned long)((100)*(64000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"138
+[; ;ir_servo.c: 138:         reload_PWM1_dutyCycle(0.13, 0.65);
+[e ( _reload_PWM1_dutyCycle (2 , .0.13 .0.65 ]
+"139
+[; ;ir_servo.c: 139:         _delay((unsigned long)((1000)*(64000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"140
+[; ;ir_servo.c: 140:         _delay((unsigned long)((1000)*(64000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"141
+[; ;ir_servo.c: 141:         _delay((unsigned long)((1000)*(64000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"144
+[; ;ir_servo.c: 144:         (PIR6bits.INT1IF = 0);
+[e = . . _PIR6bits 0 0 -> -> 0 `i `uc ]
+"145
+[; ;ir_servo.c: 145:     }
 }
 [e $U 2426  ]
-"135
-[; ;ir_servo.c: 135:     else
+"146
+[; ;ir_servo.c: 146:     else
 [e :U 2425 ]
-"136
-[; ;ir_servo.c: 136:     {
-{
-"138
-[; ;ir_servo.c: 138:         (void) printf("itemWeight is REJECTED\n");
-[e ( _printf :s 7C ]
-"141
-[; ;ir_servo.c: 141:         memset(bufferTX, 0, sizeof(bufferTX));
-[e ( _memset (3 , , -> &U _bufferTX `*v -> 0 `i -> # _bufferTX `ui ]
-"142
-[; ;ir_servo.c: 142:         sprintf((char*)bufferTX, "%d,%d,%d", itemNbr, itemWeight, 0);
-[e ( _sprintf (1 , , , (. , -> &U _bufferTX `*uc :s 8C -> _itemNbr `i -> _itemWeight `i -> 0 `i ]
-"143
-[; ;ir_servo.c: 143:         nrf24_send_rf_data(bufferTX);
-[e ( _nrf24_send_rf_data (1 &U _bufferTX ]
-"144
-[; ;ir_servo.c: 144:         printf("[Send] Data: %d,%d,%d\n", itemNbr, itemWeight, 0);
-[e ( _printf , , , (. :s 9C -> _itemNbr `i -> _itemWeight `i -> 0 `i ]
 "147
-[; ;ir_servo.c: 147:         reload_PWM1_dutyCycle(0.023, 0);
-[e ( _reload_PWM1_dutyCycle (2 , .0.023 -> -> 0 `i `d ]
-"150
-[; ;ir_servo.c: 150:         irServoState = IR_STATE_REJECT_STEP1;
-[e = _irServoState . `E36 2 ]
-"151
-[; ;ir_servo.c: 151:         TMR0_ConfigureAndStart(0x3C, 4, 15, 4);
-[e ( _TMR0_ConfigureAndStart (4 , , , -> -> 60 `i `uc -> -> 4 `i `uc -> -> 15 `i `uc -> -> 4 `i `uc ]
+[; ;ir_servo.c: 147:     {
+{
+"149
+[; ;ir_servo.c: 149:         (void) printf("itemWeight is REJECTED\n");
+[e ( _printf :s 7C ]
+"152
+[; ;ir_servo.c: 152:         memset(bufferTX, 0, sizeof(bufferTX));
+[e ( _memset (3 , , -> &U _bufferTX `*v -> 0 `i -> # _bufferTX `ui ]
 "153
-[; ;ir_servo.c: 153:     }
+[; ;ir_servo.c: 153:         sprintf((char*)bufferTX, "%d,%d,%d", itemNbr, itemWeight, 0);
+[e ( _sprintf (1 , , , (. , -> &U _bufferTX `*uc :s 8C -> _itemNbr `i -> _itemWeight `i -> 0 `i ]
+"154
+[; ;ir_servo.c: 154:         nrf24_send_rf_data(bufferTX);
+[e ( _nrf24_send_rf_data (1 &U _bufferTX ]
+"155
+[; ;ir_servo.c: 155:         printf("[Send] Data: %d,%d,%d\n", itemNbr, itemWeight, 0);
+[e ( _printf , , , (. :s 9C -> _itemNbr `i -> _itemWeight `i -> 0 `i ]
+"158
+[; ;ir_servo.c: 158:         reload_PWM1_dutyCycle(0.10, 0);
+[e ( _reload_PWM1_dutyCycle (2 , .0.10 -> -> 0 `i `d ]
+"161
+[; ;ir_servo.c: 161:         irServoState = IR_STATE_REJECT_STEP1;
+[e = _irServoState . `E36 2 ]
+"162
+[; ;ir_servo.c: 162:         TMR0_ConfigureAndStart(0x3C, 4, 15, 4);
+[e ( _TMR0_ConfigureAndStart (4 , , , -> -> 60 `i `uc -> -> 4 `i `uc -> -> 15 `i `uc -> -> 4 `i `uc ]
+"164
+[; ;ir_servo.c: 164:     }
 }
 [e :U 2426 ]
-"154
-[; ;ir_servo.c: 154: }
+"165
+[; ;ir_servo.c: 165: }
 [e :UE 2424 ]
 }
-"159
-[; ;ir_servo.c: 159: static void ir_servo_reject_step1(void)
+"170
+[; ;ir_servo.c: 170: static void ir_servo_reject_step1(void)
 [v _ir_servo_reject_step1 `(v ~T0 @X0 1 sf ]
-"160
-[; ;ir_servo.c: 160: {
+"171
+[; ;ir_servo.c: 171: {
 {
 [e :U _ir_servo_reject_step1 ]
 [f ]
-"162
-[; ;ir_servo.c: 162:     reload_PWM1_dutyCycle(0.11, 0);
-[e ( _reload_PWM1_dutyCycle (2 , .0.11 -> -> 0 `i `d ]
-"165
-[; ;ir_servo.c: 165:     irServoState = IR_STATE_REJECT_STEP2;
+"173
+[; ;ir_servo.c: 173:     reload_PWM1_dutyCycle(0.023, 0);
+[e ( _reload_PWM1_dutyCycle (2 , .0.023 -> -> 0 `i `d ]
+"176
+[; ;ir_servo.c: 176:     irServoState = IR_STATE_REJECT_STEP2;
 [e = _irServoState . `E36 3 ]
-"166
-[; ;ir_servo.c: 166:     TMR0_ConfigureAndStart(0xF2, 4, 15, 4);
+"177
+[; ;ir_servo.c: 177:     TMR0_ConfigureAndStart(0xF2, 4, 15, 4);
 [e ( _TMR0_ConfigureAndStart (4 , , , -> -> 242 `i `uc -> -> 4 `i `uc -> -> 15 `i `uc -> -> 4 `i `uc ]
-"168
-[; ;ir_servo.c: 168: }
+"179
+[; ;ir_servo.c: 179: }
 [e :UE 2427 ]
 }
-"173
-[; ;ir_servo.c: 173: static void ir_servo_reject_step2_3(void)
+"184
+[; ;ir_servo.c: 184: static void ir_servo_reject_step2_3(void)
 [v _ir_servo_reject_step2_3 `(v ~T0 @X0 1 sf ]
-"174
-[; ;ir_servo.c: 174: {
+"185
+[; ;ir_servo.c: 185: {
 {
 [e :U _ir_servo_reject_step2_3 ]
 [f ]
-"175
-[; ;ir_servo.c: 175:     if (irServoState == IR_STATE_REJECT_STEP2) {
+"186
+[; ;ir_servo.c: 186:     if (irServoState == IR_STATE_REJECT_STEP2) {
 [e $ ! == -> _irServoState `ui -> . `E36 3 `ui 2429  ]
 {
-"177
-[; ;ir_servo.c: 177:         TMR0_ConfigureAndStart(0x79, 4, 15, 4);
+"188
+[; ;ir_servo.c: 188:         TMR0_ConfigureAndStart(0x79, 4, 15, 4);
 [e ( _TMR0_ConfigureAndStart (4 , , , -> -> 121 `i `uc -> -> 4 `i `uc -> -> 15 `i `uc -> -> 4 `i `uc ]
-"179
-[; ;ir_servo.c: 179:         irServoState = IR_STATE_REJECT_STEP3;
+"190
+[; ;ir_servo.c: 190:         irServoState = IR_STATE_REJECT_STEP3;
 [e = _irServoState . `E36 4 ]
-"180
-[; ;ir_servo.c: 180:     } else {
+"191
+[; ;ir_servo.c: 191:     } else {
 }
 [e $U 2430  ]
 [e :U 2429 ]
 {
-"182
-[; ;ir_servo.c: 182:         reload_PWM1_dutyCycle(0.023, 0.75);
-[e ( _reload_PWM1_dutyCycle (2 , .0.023 .0.75 ]
-"185
-[; ;ir_servo.c: 185:         irServoState = IR_STATE_COMPLETE;
+"193
+[; ;ir_servo.c: 193:         reload_PWM1_dutyCycle(0.10, 0.65);
+[e ( _reload_PWM1_dutyCycle (2 , .0.10 .0.65 ]
+"196
+[; ;ir_servo.c: 196:         irServoState = IR_STATE_COMPLETE;
 [e = _irServoState . `E36 5 ]
-"188
-[; ;ir_servo.c: 188:         TMR0_ConfigureAndStart(0x3C, 4, 15, 4);
+"199
+[; ;ir_servo.c: 199:         TMR0_ConfigureAndStart(0x3C, 4, 15, 4);
 [e ( _TMR0_ConfigureAndStart (4 , , , -> -> 60 `i `uc -> -> 4 `i `uc -> -> 15 `i `uc -> -> 4 `i `uc ]
-"190
-[; ;ir_servo.c: 190:     }
+"201
+[; ;ir_servo.c: 201:     }
 }
 [e :U 2430 ]
-"191
-[; ;ir_servo.c: 191: }
+"202
+[; ;ir_servo.c: 202: }
 [e :UE 2428 ]
 }
-"196
-[; ;ir_servo.c: 196: static void ir_servo_complete(void)
+"207
+[; ;ir_servo.c: 207: static void ir_servo_complete(void)
 [v _ir_servo_complete `(v ~T0 @X0 1 sf ]
-"197
-[; ;ir_servo.c: 197: {
+"208
+[; ;ir_servo.c: 208: {
 {
 [e :U _ir_servo_complete ]
 [f ]
-"201
-[; ;ir_servo.c: 201:     (PIR6bits.INT1IF = 0);
+"212
+[; ;ir_servo.c: 212:     (PIR6bits.INT1IF = 0);
 [e = . . _PIR6bits 0 0 -> -> 0 `i `uc ]
-"202
-[; ;ir_servo.c: 202:     (void) printf("\n");
+"213
+[; ;ir_servo.c: 213:     (void) printf("\n");
 [e ( _printf :s 10C ]
-"205
-[; ;ir_servo.c: 205:     irServoState = IR_STATE_IDLE;
+"216
+[; ;ir_servo.c: 216:     irServoState = IR_STATE_IDLE;
 [e = _irServoState . `E36 0 ]
-"206
-[; ;ir_servo.c: 206: }
+"217
+[; ;ir_servo.c: 217: }
 [e :UE 2431 ]
 }
-"211
-[; ;ir_servo.c: 211: static void TMR0_IRQHandler(void)
+"222
+[; ;ir_servo.c: 222: static void TMR0_IRQHandler(void)
 [v _TMR0_IRQHandler `(v ~T0 @X0 1 sf ]
-"212
-[; ;ir_servo.c: 212: {
+"223
+[; ;ir_servo.c: 223: {
 {
 [e :U _TMR0_IRQHandler ]
 [f ]
-"214
-[; ;ir_servo.c: 214:     PIR3bits.TMR0IF = 0;
-[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
-"217
-[; ;ir_servo.c: 217:     switch (irServoState)
-[e $U 2434  ]
-"218
-[; ;ir_servo.c: 218:     {
-{
-"219
-[; ;ir_servo.c: 219:         case IR_STATE_WEIGHT_READ:
-[e :U 2435 ]
-"220
-[; ;ir_servo.c: 220:             ir_servo_weight_read();
-[e ( _ir_servo_weight_read ..  ]
-"221
-[; ;ir_servo.c: 221:             break;
-[e $U 2433  ]
-"223
-[; ;ir_servo.c: 223:         case IR_STATE_REJECT_STEP1:
-[e :U 2436 ]
-"224
-[; ;ir_servo.c: 224:             ir_servo_reject_step1();
-[e ( _ir_servo_reject_step1 ..  ]
 "225
-[; ;ir_servo.c: 225:             break;
-[e $U 2433  ]
-"227
-[; ;ir_servo.c: 227:         case IR_STATE_REJECT_STEP2:
-[e :U 2437 ]
+[; ;ir_servo.c: 225:     PIR3bits.TMR0IF = 0;
+[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
 "228
-[; ;ir_servo.c: 228:         case IR_STATE_REJECT_STEP3:
-[e :U 2438 ]
+[; ;ir_servo.c: 228:     switch (irServoState)
+[e $U 2434  ]
 "229
-[; ;ir_servo.c: 229:             ir_servo_reject_step2_3();
-[e ( _ir_servo_reject_step2_3 ..  ]
+[; ;ir_servo.c: 229:     {
+{
 "230
-[; ;ir_servo.c: 230:             break;
-[e $U 2433  ]
+[; ;ir_servo.c: 230:         case IR_STATE_WEIGHT_READ:
+[e :U 2435 ]
+"231
+[; ;ir_servo.c: 231:             ir_servo_weight_read();
+[e ( _ir_servo_weight_read ..  ]
 "232
-[; ;ir_servo.c: 232:         case IR_STATE_COMPLETE:
-[e :U 2439 ]
-"233
-[; ;ir_servo.c: 233:             ir_servo_complete();
-[e ( _ir_servo_complete ..  ]
+[; ;ir_servo.c: 232:             break;
+[e $U 2433  ]
 "234
-[; ;ir_servo.c: 234:             break;
-[e $U 2433  ]
+[; ;ir_servo.c: 234:         case IR_STATE_REJECT_STEP1:
+[e :U 2436 ]
+"235
+[; ;ir_servo.c: 235:             ir_servo_reject_step1();
+[e ( _ir_servo_reject_step1 ..  ]
 "236
-[; ;ir_servo.c: 236:         case IR_STATE_IDLE:
-[e :U 2440 ]
-"237
-[; ;ir_servo.c: 237:         default:
-[e :U 2441 ]
-"239
-[; ;ir_servo.c: 239:             break;
+[; ;ir_servo.c: 236:             break;
 [e $U 2433  ]
+"238
+[; ;ir_servo.c: 238:         case IR_STATE_REJECT_STEP2:
+[e :U 2437 ]
+"239
+[; ;ir_servo.c: 239:         case IR_STATE_REJECT_STEP3:
+[e :U 2438 ]
 "240
-[; ;ir_servo.c: 240:     }
+[; ;ir_servo.c: 240:             ir_servo_reject_step2_3();
+[e ( _ir_servo_reject_step2_3 ..  ]
+"241
+[; ;ir_servo.c: 241:             break;
+[e $U 2433  ]
+"243
+[; ;ir_servo.c: 243:         case IR_STATE_COMPLETE:
+[e :U 2439 ]
+"244
+[; ;ir_servo.c: 244:             ir_servo_complete();
+[e ( _ir_servo_complete ..  ]
+"245
+[; ;ir_servo.c: 245:             break;
+[e $U 2433  ]
+"247
+[; ;ir_servo.c: 247:         case IR_STATE_IDLE:
+[e :U 2440 ]
+"248
+[; ;ir_servo.c: 248:         default:
+[e :U 2441 ]
+"250
+[; ;ir_servo.c: 250:             break;
+[e $U 2433  ]
+"251
+[; ;ir_servo.c: 251:     }
 }
 [e $U 2433  ]
 [e :U 2434 ]
@@ -3092,155 +3117,155 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> . `E36 0 `ui 2440
  2441 ]
 [e :U 2433 ]
-"241
-[; ;ir_servo.c: 241: }
+"252
+[; ;ir_servo.c: 252: }
 [e :UE 2432 ]
 }
-"246
-[; ;ir_servo.c: 246: void ir_servo_initialize(void)
+"257
+[; ;ir_servo.c: 257: void ir_servo_initialize(void)
 [v _ir_servo_initialize `(v ~T0 @X0 1 ef ]
-"247
-[; ;ir_servo.c: 247: {
+"258
+[; ;ir_servo.c: 258: {
 {
 [e :U _ir_servo_initialize ]
 [f ]
-"249
-[; ;ir_servo.c: 249:     totalPeriod = ((uint16_t)PWM1PRH << 8) | PWM1PRL;
-[e = _totalPeriod -> | << -> -> _PWM1PRH `us `ui -> 8 `i -> _PWM1PRL `ui `us ]
-"252
-[; ;ir_servo.c: 252:     irServoState = IR_STATE_IDLE;
-[e = _irServoState . `E36 0 ]
-"253
-[; ;ir_servo.c: 253:     itemNbr = 0;
-[e = _itemNbr -> -> 0 `i `uc ]
-"256
-[; ;ir_servo.c: 256:     INT1_SetInterruptHandler(ir_servo_start);
-[e ( _INT1_SetInterruptHandler (1 &U _ir_servo_start ]
-"259
-[; ;ir_servo.c: 259:     TMR0_PeriodMatchCallbackRegister(TMR0_IRQHandler);
-[e ( _TMR0_PeriodMatchCallbackRegister (1 &U _TMR0_IRQHandler ]
 "260
-[; ;ir_servo.c: 260: }
+[; ;ir_servo.c: 260:     totalPeriod = ((uint16_t)PWM1PRH << 8) | PWM1PRL;
+[e = _totalPeriod -> | << -> -> _PWM1PRH `us `ui -> 8 `i -> _PWM1PRL `ui `us ]
+"263
+[; ;ir_servo.c: 263:     irServoState = IR_STATE_IDLE;
+[e = _irServoState . `E36 0 ]
+"264
+[; ;ir_servo.c: 264:     itemNbr = 0;
+[e = _itemNbr -> -> 0 `i `uc ]
+"267
+[; ;ir_servo.c: 267:     INT1_SetInterruptHandler(ir_servo_start);
+[e ( _INT1_SetInterruptHandler (1 &U _ir_servo_start ]
+"270
+[; ;ir_servo.c: 270:     TMR0_PeriodMatchCallbackRegister(TMR0_IRQHandler);
+[e ( _TMR0_PeriodMatchCallbackRegister (1 &U _TMR0_IRQHandler ]
+"271
+[; ;ir_servo.c: 271: }
 [e :UE 2442 ]
 }
-"265
-[; ;ir_servo.c: 265: _Bool ir_servo_is_busy(void)
+"276
+[; ;ir_servo.c: 276: _Bool ir_servo_is_busy(void)
 [v _ir_servo_is_busy `(a ~T0 @X0 1 ef ]
-"266
-[; ;ir_servo.c: 266: {
+"277
+[; ;ir_servo.c: 277: {
 {
 [e :U _ir_servo_is_busy ]
 [f ]
-"267
-[; ;ir_servo.c: 267:     return (irServoState != IR_STATE_IDLE);
+"278
+[; ;ir_servo.c: 278:     return (irServoState != IR_STATE_IDLE);
 [e ) -> -> != -> _irServoState `ui -> . `E36 0 `ui `i `a ]
 [e $UE 2443  ]
-"268
-[; ;ir_servo.c: 268: }
+"279
+[; ;ir_servo.c: 279: }
 [e :UE 2443 ]
 }
-"273
-[; ;ir_servo.c: 273: uint8_t ir_servo_get_item_count(void)
+"284
+[; ;ir_servo.c: 284: uint8_t ir_servo_get_item_count(void)
 [v _ir_servo_get_item_count `(uc ~T0 @X0 1 ef ]
-"274
-[; ;ir_servo.c: 274: {
+"285
+[; ;ir_servo.c: 285: {
 {
 [e :U _ir_servo_get_item_count ]
 [f ]
-"275
-[; ;ir_servo.c: 275:     return itemNbr;
+"286
+[; ;ir_servo.c: 286:     return itemNbr;
 [e ) _itemNbr ]
 [e $UE 2444  ]
-"276
-[; ;ir_servo.c: 276: }
+"287
+[; ;ir_servo.c: 287: }
 [e :UE 2444 ]
 }
-"281
-[; ;ir_servo.c: 281: uint16_t ir_servo_get_last_weight(void)
+"292
+[; ;ir_servo.c: 292: uint16_t ir_servo_get_last_weight(void)
 [v _ir_servo_get_last_weight `(us ~T0 @X0 1 ef ]
-"282
-[; ;ir_servo.c: 282: {
+"293
+[; ;ir_servo.c: 293: {
 {
 [e :U _ir_servo_get_last_weight ]
 [f ]
-"283
-[; ;ir_servo.c: 283:     return itemWeight;
+"294
+[; ;ir_servo.c: 294:     return itemWeight;
 [e ) -> _itemWeight `us ]
 [e $UE 2445  ]
-"284
-[; ;ir_servo.c: 284: }
+"295
+[; ;ir_servo.c: 295: }
 [e :UE 2445 ]
 }
-"289
-[; ;ir_servo.c: 289: uint16_t ir_servo_get_min_weight(void)
+"300
+[; ;ir_servo.c: 300: uint16_t ir_servo_get_min_weight(void)
 [v _ir_servo_get_min_weight `(us ~T0 @X0 1 ef ]
-"290
-[; ;ir_servo.c: 290: {
+"301
+[; ;ir_servo.c: 301: {
 {
 [e :U _ir_servo_get_min_weight ]
 [f ]
-"291
-[; ;ir_servo.c: 291:     return weightMin;
+"302
+[; ;ir_servo.c: 302:     return weightMin;
 [e ) _weightMin ]
 [e $UE 2446  ]
-"292
-[; ;ir_servo.c: 292: }
+"303
+[; ;ir_servo.c: 303: }
 [e :UE 2446 ]
 }
-"297
-[; ;ir_servo.c: 297: uint16_t ir_servo_get_max_weight(void)
+"308
+[; ;ir_servo.c: 308: uint16_t ir_servo_get_max_weight(void)
 [v _ir_servo_get_max_weight `(us ~T0 @X0 1 ef ]
-"298
-[; ;ir_servo.c: 298: {
+"309
+[; ;ir_servo.c: 309: {
 {
 [e :U _ir_servo_get_max_weight ]
 [f ]
-"299
-[; ;ir_servo.c: 299:     return weightMax;
+"310
+[; ;ir_servo.c: 310:     return weightMax;
 [e ) _weightMax ]
 [e $UE 2447  ]
-"300
-[; ;ir_servo.c: 300: }
+"311
+[; ;ir_servo.c: 311: }
 [e :UE 2447 ]
 }
-"305
-[; ;ir_servo.c: 305: void ir_servo_set_min_weight(uint16_t min_weight)
+"316
+[; ;ir_servo.c: 316: void ir_servo_set_min_weight(uint16_t min_weight)
 [v _ir_servo_set_min_weight `(v ~T0 @X0 1 ef1`us ]
-"306
-[; ;ir_servo.c: 306: {
+"317
+[; ;ir_servo.c: 317: {
 {
 [e :U _ir_servo_set_min_weight ]
-"305
-[; ;ir_servo.c: 305: void ir_servo_set_min_weight(uint16_t min_weight)
+"316
+[; ;ir_servo.c: 316: void ir_servo_set_min_weight(uint16_t min_weight)
 [v _min_weight `us ~T0 @X0 1 r1 ]
-"306
-[; ;ir_servo.c: 306: {
+"317
+[; ;ir_servo.c: 317: {
 [f ]
-"307
-[; ;ir_servo.c: 307:     weightMin = min_weight;
+"318
+[; ;ir_servo.c: 318:     weightMin = min_weight;
 [e = _weightMin _min_weight ]
-"308
-[; ;ir_servo.c: 308: }
+"319
+[; ;ir_servo.c: 319: }
 [e :UE 2448 ]
 }
-"313
-[; ;ir_servo.c: 313: void ir_servo_set_max_weight(uint16_t max_weight)
+"324
+[; ;ir_servo.c: 324: void ir_servo_set_max_weight(uint16_t max_weight)
 [v _ir_servo_set_max_weight `(v ~T0 @X0 1 ef1`us ]
-"314
-[; ;ir_servo.c: 314: {
+"325
+[; ;ir_servo.c: 325: {
 {
 [e :U _ir_servo_set_max_weight ]
-"313
-[; ;ir_servo.c: 313: void ir_servo_set_max_weight(uint16_t max_weight)
+"324
+[; ;ir_servo.c: 324: void ir_servo_set_max_weight(uint16_t max_weight)
 [v _max_weight `us ~T0 @X0 1 r1 ]
-"314
-[; ;ir_servo.c: 314: {
+"325
+[; ;ir_servo.c: 325: {
 [f ]
-"315
-[; ;ir_servo.c: 315:     weightMax = max_weight;
+"326
+[; ;ir_servo.c: 326:     weightMax = max_weight;
 [e = _weightMax _max_weight ]
-"316
-[; ;ir_servo.c: 316: }
+"327
+[; ;ir_servo.c: 327: }
 [e :UE 2449 ]
 }
 [p f _printf 8388736 ]

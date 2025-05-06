@@ -9,7 +9,7 @@
 # 1 "ir_servo.c" 2
 # 11 "ir_servo.c"
 # 1 "./ir_servo.h" 1
-# 12 "./ir_servo.h"
+# 14 "./ir_servo.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdint.h" 1 3
 
 
@@ -115,10 +115,10 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 149 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdint.h" 2 3
-# 12 "./ir_servo.h" 2
+# 14 "./ir_servo.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdbool.h" 1 3
-# 13 "./ir_servo.h" 2
+# 15 "./ir_servo.h" 2
 
 
 
@@ -137,7 +137,7 @@ typedef enum {
 
 
 static uint16_t totalPeriod;
-# 47 "./ir_servo.h"
+# 50 "./ir_servo.h"
 void ir_servo_initialize(void);
 
 
@@ -196,7 +196,7 @@ void ir_servo_set_min_weight(uint16_t min_weight);
 
 
 void ir_servo_set_max_weight(uint16_t max_weight);
-# 115 "./ir_servo.h"
+# 118 "./ir_servo.h"
 void reload_PWM1_dutyCycle(double slice1, double slice2);
 # 11 "ir_servo.c" 2
 
@@ -30874,7 +30874,7 @@ void ir_servo_start(void)
 
 
     irServoState = IR_STATE_WEIGHT_READ;
-    TMR0_ConfigureAndStart(0x3C, 4, 15, 4);
+    TMR0_ConfigureAndStart(0x72, 4, 15, 4);
 
 }
 
@@ -30887,6 +30887,10 @@ static void ir_servo_weight_read(void)
 
 
 
+
+
+        reload_PWM1_dutyCycle(0.10, 0);
+        _delay((unsigned long)((300)*(64000000U/4000.0)));
 
 
     ADC_SampleCapacitorDischarge();
@@ -30909,6 +30913,13 @@ static void ir_servo_weight_read(void)
         irServoState = IR_STATE_IDLE;
 
 
+        _delay((unsigned long)((100)*(64000000U/4000.0)));
+        reload_PWM1_dutyCycle(0.13, 0.65);
+        _delay((unsigned long)((1000)*(64000000U/4000.0)));
+        _delay((unsigned long)((1000)*(64000000U/4000.0)));
+        _delay((unsigned long)((1000)*(64000000U/4000.0)));
+
+
         (PIR6bits.INT1IF = 0);
     }
     else
@@ -30923,7 +30934,7 @@ static void ir_servo_weight_read(void)
         printf("[Send] Data: %d,%d,%d\n", itemNbr, itemWeight, 0);
 
 
-        reload_PWM1_dutyCycle(0.023, 0);
+        reload_PWM1_dutyCycle(0.10, 0);
 
 
         irServoState = IR_STATE_REJECT_STEP1;
@@ -30938,7 +30949,7 @@ static void ir_servo_weight_read(void)
 static void ir_servo_reject_step1(void)
 {
 
-    reload_PWM1_dutyCycle(0.11, 0);
+    reload_PWM1_dutyCycle(0.023, 0);
 
 
     irServoState = IR_STATE_REJECT_STEP2;
@@ -30958,7 +30969,7 @@ static void ir_servo_reject_step2_3(void)
         irServoState = IR_STATE_REJECT_STEP3;
     } else {
 
-        reload_PWM1_dutyCycle(0.023, 0.75);
+        reload_PWM1_dutyCycle(0.10, 0.65);
 
 
         irServoState = IR_STATE_COMPLETE;

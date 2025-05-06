@@ -30641,7 +30641,7 @@ void nrf24_printf_rf_status(void);
 # 16 "main.c" 2
 
 # 1 "./ir_servo.h" 1
-# 16 "./ir_servo.h"
+# 18 "./ir_servo.h"
 typedef enum {
     IR_STATE_IDLE,
     IR_STATE_WEIGHT_READ,
@@ -30657,7 +30657,7 @@ typedef enum {
 
 
 static uint16_t totalPeriod;
-# 47 "./ir_servo.h"
+# 50 "./ir_servo.h"
 void ir_servo_initialize(void);
 
 
@@ -30716,7 +30716,7 @@ void ir_servo_set_min_weight(uint16_t min_weight);
 
 
 void ir_servo_set_max_weight(uint16_t max_weight);
-# 115 "./ir_servo.h"
+# 118 "./ir_servo.h"
 void reload_PWM1_dutyCycle(double slice1, double slice2);
 # 17 "main.c" 2
 
@@ -30827,7 +30827,7 @@ int main(void)
     {
 
         if (!ir_servo_is_busy())
-            reload_PWM1_dutyCycle(0.023, 0.75);
+            reload_PWM1_dutyCycle(0.10, 0.65);
 # 76 "main.c"
     }
 }
